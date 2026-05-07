@@ -1,0 +1,236 @@
+import {
+    Globe,
+    AtSign,
+    Users,
+    Video,
+    Mail,
+    Phone,
+    MapPin,
+    ArrowRight,
+} from "lucide-react";
+
+export default function Footer() {
+    return (
+        <footer className="w-full bg-[#0f172a] text-white px-6 md:px-16 pt-24 pb-10">
+
+            <div className="max-w-7xl mx-auto">
+
+                {/* TOP GRID */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14 pb-16 border-b border-white/10">
+
+                    {/* BRAND */}
+                    <div>
+
+                        {/* LOGO */}
+                        <div className="flex items-center gap-3 mb-6">
+
+                            <img
+                                src="/logo.png"
+                                alt="Logo"
+                                className="w-14 h-14 object-contain"
+                            />
+
+                            <h2 className="text-2xl font-bold">
+                                Reclaim Hope Rwanda
+                            </h2>
+
+                        </div>
+
+                        {/* DESCRIPTION */}
+                        <p className="text-white/70 leading-relaxed mb-8">
+                            Empowering vulnerable children and communities
+                            through education, mentorship, nutrition,
+                            and sustainable support programs.
+                        </p>
+
+                        {/* SOCIALS */}
+                        <div className="flex items-center gap-4">
+                            <a
+                                href="#"
+                                className="w-10 h-10 rounded-full bg-white/10 hover:bg-orange-500 transition flex items-center justify-center"
+                            >
+                                <Globe className="w-5 h-5" />
+                            </a>
+
+                            <a
+                                href="#"
+                                className="w-10 h-10 rounded-full bg-white/10 hover:bg-orange-500 transition flex items-center justify-center"
+                            >
+                                <AtSign className="w-5 h-5" />
+                            </a>
+
+                            <a
+                                href="#"
+                                className="w-10 h-10 rounded-full bg-white/10 hover:bg-orange-500 transition flex items-center justify-center"
+                            >
+                                <Users className="w-5 h-5" />
+                            </a>
+
+                            <a
+                                href="#"
+                                className="w-10 h-10 rounded-full bg-white/10 hover:bg-orange-500 transition flex items-center justify-center"
+                            >
+                                <Video className="w-5 h-5" />
+                            </a>
+                        </div>
+
+                    </div>
+
+                    {/* QUICK LINKS */}
+                    <div>
+
+                        <h3 className="text-xl font-semibold mb-6">
+                            Quick Links
+                        </h3>
+
+                        <ul className="space-y-4 text-white/70">
+
+                            <li>
+                                <a href="#" className="hover:text-orange-400 transition">
+                                    Home
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" className="hover:text-orange-400 transition">
+                                    About Us
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" className="hover:text-orange-400 transition">
+                                    Programs
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" className="hover:text-orange-400 transition">
+                                    Gallery
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" className="hover:text-orange-400 transition">
+                                    Contact
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    {/* PROGRAMS */}
+                    <div>
+
+                        <h3 className="text-xl font-semibold mb-6">
+                            Our Programs
+                        </h3>
+
+                        <ul className="space-y-4 text-white/70">
+
+                            <li>Education Support</li>
+                            <li>Mentorship Programs</li>
+                            <li>Nutrition Support</li>
+                            <li>Community Outreach</li>
+                            <li>Youth Empowerment</li>
+
+                        </ul>
+
+                    </div>
+
+                    {/* CONTACT */}
+                    <div>
+
+                        <h3 className="text-xl font-semibold mb-6">
+                            Contact Us
+                        </h3>
+
+                        <div className="space-y-5 text-white/70">
+
+                            <div className="flex items-start gap-4">
+
+                                <MapPin className="w-5 h-5 text-orange-400 mt-1" />
+
+                                <p>
+                                    Kigali, Rwanda
+                                </p>
+
+                            </div>
+
+                            <div className="flex items-center gap-4">
+
+                                <Mail className="w-5 h-5 text-orange-400" />
+
+                                <p>
+                                    info@reclaimhope.org
+                                </p>
+
+                            </div>
+
+                            <div className="flex items-center gap-4">
+
+                                <Phone className="w-5 h-5 text-orange-400" />
+
+                                <p>
+                                    +250 7XX XXX XXX
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        {/* MINI NEWSLETTER */}
+                        <div className="mt-8">
+
+                            <p className="text-sm text-white/60 mb-4">
+                                Stay connected with our latest updates.
+                            </p>
+
+                            <div className="flex items-center bg-white/10 rounded-full overflow-hidden">
+
+                                <input
+                                    type="email"
+                                    placeholder="Your email"
+                                    className="bg-transparent px-5 py-3 flex-1 outline-none text-sm"
+                                />
+
+                                <button className="bg-orange-500 hover:bg-orange-600 transition p-3">
+
+                                    <ArrowRight className="w-5 h-5" />
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                {/* BOTTOM BAR */}
+                <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-white/50 text-sm">
+
+                    <p>
+                        © 2026 Reclaim Hope Rwanda. All rights reserved.
+                    </p>
+
+                    <div className="flex items-center gap-6">
+
+                        <a href="#" className="hover:text-orange-400 transition">
+                            Privacy Policy
+                        </a>
+
+                        <a href="#" className="hover:text-orange-400 transition">
+                            Terms & Conditions
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+    );
+}
