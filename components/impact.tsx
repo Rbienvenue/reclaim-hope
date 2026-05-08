@@ -13,25 +13,25 @@ export default function ImpactSection() {
         {
             id: 1,
             icon: Users,
-            number: "500",
+            number: 500,
             label: "Children Supported",
         },
         {
             id: 2,
             icon: BookOpen,
-            number: "120",
+            number: 120,
             label: "Educational Programs",
         },
         {
             id: 3,
             icon: HeartHandshake,
-            number: "300",
+            number: 300,
             label: "Families Empowered",
         },
         {
             id: 4,
             icon: School,
-            number: "15",
+            number: 15,
             label: "Communities Reached",
         },
     ];

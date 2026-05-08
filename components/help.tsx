@@ -86,7 +86,7 @@ export default function HelpSection() {
                     {helpCards.map((card, index) => {
 
                         const Icon = card.icon;
-                        const style = colorStyles[card.color];
+                        const style = colorStyles[card.color as keyof typeof colorStyles];
 
                         return (
                             <div
