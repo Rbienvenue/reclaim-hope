@@ -22,7 +22,7 @@ export default function Navbar() {
                 <ul className="hidden md:flex gap-8 text-black items-center">
                     <li><a href="#" className="hover:text-orange-500">Home</a></li>
                     <li><a href="/about" className="hover:text-orange-500">About us</a></li>
-                    <li><a href="#" className="hover:text-orange-500">Programs</a></li>
+                    <li><a href="/programs" className="hover:text-orange-500">Programs</a></li>
                     <li><a href="#" className="hover:text-orange-500">Get involved</a></li>
                     <li><a href="#" className="hover:text-orange-500">Impact</a></li>
                     <li><a href="#" className="hover:text-orange-500">Newsletter</a></li>

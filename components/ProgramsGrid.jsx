@@ -1,0 +1,118 @@
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+
+export default function ProgramsGrid() {
+
+    const programs = [
+        {
+            id: 1,
+            title: "Basic Needs for Education",
+            image: "/education.png",
+            description:
+                "Providing school materials, tuition support, uniforms, and educational essentials to help children access quality learning opportunities.",
+        },
+
+        {
+            id: 2,
+            title: "LEAD / After School Program",
+            image: "/LEAD.png",
+            description:
+                "Empowering children through mentorship, tutoring, leadership development, and after-school support activities.",
+        },
+
+        {
+            id: 3,
+            title: "Healthy Child & Nutrition Program",
+            image: "/healthy.png",
+            description:
+                "Supporting child wellness through nutritious meals, health monitoring, hygiene education, and wellness initiatives.",
+        },
+
+        {
+            id: 4,
+            title: "Skills & Future Empowerment",
+            image: "/empowerment.png",
+            description:
+                "Equipping youth with vocational training, digital literacy, and life skills that prepare them for future opportunities.",
+        },
+    ];
+
+    return (
+        <section className="w-full bg-[#f9fafb] py-24 px-6 md:px-16">
+
+            <div className="max-w-7xl mx-auto">
+
+                {/* SECTION HEADER */}
+                <div className="text-center mb-20">
+
+                    <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-4">
+                        Our Initiatives
+                    </p>
+
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                        Programs Creating Lasting Change
+                    </h2>
+
+                    <p className="max-w-3xl mx-auto text-gray-600 text-lg leading-relaxed">
+                        Our programs are designed to address immediate needs
+                        while building long-term opportunities for children,
+                        families, and communities.
+                    </p>
+
+                </div>
+
+                {/* PROGRAMS GRID */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+                    {programs.map((program) => (
+                        <div
+                            key={program.id}
+                            className="group bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500 hover:-translate-y-2 border border-gray-100"
+                        >
+
+                            {/* IMAGE */}
+                            <div className="relative overflow-hidden h-[280px]">
+
+                                <Image
+                                    src={program.image}
+                                    alt={program.title}
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition duration-700"
+                                />
+
+                            </div>
+
+                            {/* CONTENT */}
+                            <div className="p-10">
+
+                                {/* TITLE */}
+                                <h3 className="text-3xl font-bold text-gray-900 mb-6">
+                                    {program.title}
+                                </h3>
+
+                                {/* DESCRIPTION */}
+                                <p className="text-gray-600 leading-relaxed mb-8 text-lg">
+                                    {program.description}
+                                </p>
+
+                                {/* BUTTON */}
+                                <button className="flex items-center gap-3 text-orange-500 font-semibold hover:gap-4 transition-all">
+
+                                    Learn More
+
+                                    <ArrowRight className="w-5 h-5" />
+
+                                </button>
+
+                            </div>
+
+                        </div>
+                    ))}
+
+                </div>
+
+            </div>
+
+        </section>
+    );
+}
