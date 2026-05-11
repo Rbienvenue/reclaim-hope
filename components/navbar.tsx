@@ -20,13 +20,13 @@ export default function Navbar() {
 
                 {/* Navigation */}
                 <ul className="hidden md:flex gap-8 text-black items-center">
-                    <li><a href="#" className="hover:text-orange-500">Home</a></li>
+                    <li><a href="/" className="hover:text-orange-500">Home</a></li>
                     <li><a href="/about" className="hover:text-orange-500">About us</a></li>
                     <li><a href="/programs" className="hover:text-orange-500">Programs</a></li>
-                    <li><a href="#" className="hover:text-orange-500">Get involved</a></li>
-                    <li><a href="#" className="hover:text-orange-500">Impact</a></li>
-                    <li><a href="#" className="hover:text-orange-500">Newsletter</a></li>
-                    <li><a href="#" className="hover:text-orange-500">Contact us</a></li>
+                    <li><a href="/GetInvolved" className="hover:text-orange-500">Get involved</a></li>
+                    <li><a href="/impact" className="hover:text-orange-500">Impact</a></li>
+                    <li><a href="/newsletter" className="hover:text-orange-500">Newsletter</a></li>
+                    <li><a href="/contact" className="hover:text-orange-500">Contact us</a></li>
 
                     {/* CTA Button */}
                     <li>
@@ -49,13 +49,13 @@ export default function Navbar() {
             {
                 open && (
                     <ul className="md:hidden mt-2 flex flex-col gap-6 px-6 pb-6 text-center text-black">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Programs</a></li>
-                        <li><a href="#">Get involved</a></li>
-                        <li><a href="#">Impact</a></li>
-                        <li><a href="#">Newsletter</a></li>
-                        <li><a href="#">Contact us</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About us</a></li>
+                        <li><a href="/programs">Programs</a></li>
+                        <li><a href="/GetInvolved">Get involved</a></li>
+                        <li><a href="/impact">Impact</a></li>
+                        <li><a href="/newsletter">Newsletter</a></li>
+                        <li><a href="/contact">Contact us</a></li>
                         <li>
                             <a href="#" className="bg-orange-600 text-white px-5 py-2 rounded inline-block">
                                 Donate
