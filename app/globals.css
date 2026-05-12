@@ -162,4 +162,156 @@ body {
   .animate-parallax {
     animation: parallax 10s ease-out infinite alternate;
   }
+
+  @keyframes slow-zoom {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.02);
+    }
+  }
+
+  .animate-slow-zoom {
+    animation: slow-zoom 15s ease-out infinite alternate;
+  }
+
+  @keyframes stagger-reveal {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-stagger-reveal {
+    animation: stagger-reveal 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-stagger-reveal-delay-1 {
+    animation: stagger-reveal 0.6s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+
+  .animate-stagger-reveal-delay-2 {
+    animation: stagger-reveal 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-stagger-reveal-delay-3 {
+    animation: stagger-reveal 0.6s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes soft-pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .animate-soft-pulse {
+    animation: soft-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes slow-fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .animate-slow-fade {
+    animation: slow-fade 2s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes accordion-expand {
+    0% {
+      max-height: 0;
+      opacity: 0;
+    }
+    100% {
+      max-height: 500px;
+      opacity: 1;
+    }
+  }
+
+  .animate-accordion-expand {
+    animation: accordion-expand 0.3s ease-out forwards;
+  }
+
+  @keyframes soft-hover-glow {
+    0% {
+      box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 10px rgba(249, 115, 22, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(249, 115, 22, 0);
+    }
+  }
+
+  .animate-soft-hover-glow:hover {
+    animation: soft-hover-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes split-reveal {
+    0% {
+      clip-path: inset(0 50% 0 50%);
+      opacity: 0;
+    }
+    50% {
+      clip-path: inset(0 0 0 0);
+      opacity: 1;
+    }
+    100% {
+      clip-path: inset(0 0 0 0);
+      opacity: 1;
+    }
+  }
+
+  .animate-split-reveal {
+    animation: split-reveal 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes slow-background-zoom {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
+  .animate-slow-background-zoom {
+    animation: slow-background-zoom 20s ease-out infinite alternate;
+  }
 }

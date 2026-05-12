@@ -31,7 +31,7 @@ export default function Navbar() {
                     {/* CTA Button */}
                     <li>
                         <a
-                            href="#"
+                            href="/donate"
                             className="bg-orange-600 text-white px-8 py-4 rounded hover:bg-orange-500 transition"
                         >
                             Donate
@@ -57,7 +57,7 @@ export default function Navbar() {
                         <li><a href="/newsletter">Newsletter</a></li>
                         <li><a href="/contact">Contact us</a></li>
                         <li>
-                            <a href="#" className="bg-orange-600 text-white px-5 py-2 rounded inline-block">
+                            <a href="/donate" className="bg-orange-600 text-white px-5 py-2 rounded inline-block">
                                 Donate
                             </a>
                         </li>

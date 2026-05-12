@@ -5,6 +5,7 @@ import {
     Building2,
     ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function WaysToGetInvolved() {
 
@@ -109,7 +110,7 @@ export default function WaysToGetInvolved() {
 
                         const Icon = item.icon;
 
-                        const colors = colorClasses[item.color];
+                        const colors = colorClasses[item.color as keyof typeof colorClasses];
 
                         return (
                             <div
@@ -139,15 +140,30 @@ export default function WaysToGetInvolved() {
                                 </p>
 
                                 {/* BUTTON */}
-                                <button
-                                    className={`${colors.button} text-white px-6 py-4 rounded-full font-semibold flex items-center justify-center gap-3 transition duration-300 hover:scale-105`}
-                                >
-
-                                    {item.button}
-
-                                    <ArrowRight className="w-5 h-5" />
-
-                                </button>
+                                {item.id === 2 ? (
+                                    <Link
+                                        href="/donate"
+                                        className={`${colors.button} text-white px-6 py-4 rounded-full font-semibold flex items-center justify-center gap-3 transition duration-300 hover:scale-105`}
+                                    >
+                                        {item.button}
+                                        <ArrowRight className="w-5 h-5" />
+                                    </Link>
+                                ) : item.id === 1 ? (
+                                    <Link
+                                        href="/donate"
+                                        className={`${colors.button} text-white px-6 py-4 rounded-full font-semibold flex items-center justify-center gap-3 transition duration-300 hover:scale-105`}
+                                    >
+                                        {item.button}
+                                        <ArrowRight className="w-5 h-5" />
+                                    </Link>
+                                ) : (
+                                    <button
+                                        className={`${colors.button} text-white px-6 py-4 rounded-full font-semibold flex items-center justify-center gap-3 transition duration-300 hover:scale-105`}
+                                    >
+                                        {item.button}
+                                        <ArrowRight className="w-5 h-5" />
+                                    </button>
+                                )}
 
                             </div>
                         );

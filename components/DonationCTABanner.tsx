@@ -1,9 +1,11 @@
+import Link from "next/link";
+
 export default function DonationCTABanner() {
     return (
         <section className="w-full px-6 md:px-16 py-24 bg-[#f9fafb]">
 
             <div
-                className="relative overflow-hidden rounded-[40px] bg-cover bg-center"
+                className="relative overflow-hidden rounded-[40px] bg-cover bg-center animate-slow-background-zoom"
                 style={{
                     backgroundImage: "url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hpbGRyZW4lMjBlZHVjYXRpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60')",
                 }}
@@ -45,18 +47,18 @@ export default function DonationCTABanner() {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
 
                         {/* DONATE BUTTON */}
-                        <button className="bg-orange-500 hover:bg-orange-600 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-2xl hover:scale-105">
+                        <Link href="/donate" className="bg-orange-500 hover:bg-orange-600 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-2xl hover:scale-105 inline-block text-center">
 
                             Donate Now
 
-                        </button>
+                        </Link>
 
                         {/* CONTACT BUTTON */}
-                        <button className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold hover:scale-105">
+                        <Link href="/contact" className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold hover:scale-105 inline-block text-center">
 
                             Contact Us
 
-                        </button>
+                        </Link>
 
                     </div>
 

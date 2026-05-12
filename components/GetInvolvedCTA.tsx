@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function GetInvolvedCTA() {
     return (
         <section className="w-full px-6 md:px-16 py-24 bg-[#f9fafb]">
@@ -43,25 +45,25 @@ export default function GetInvolvedCTA() {
                     <div className="flex flex-col lg:flex-row items-center justify-center gap-6">
 
                         {/* SPONSOR BUTTON */}
-                        <button className="bg-orange-500 hover:bg-orange-600 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-2xl hover:scale-105">
+                        <Link href="/donate" className="bg-orange-500 hover:bg-orange-600 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-2xl hover:scale-105 inline-block text-center">
 
                             Sponsor a Child
 
-                        </button>
+                        </Link>
 
                         {/* DONATE BUTTON */}
-                        <button className="bg-green-500 hover:bg-green-600 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-2xl hover:scale-105">
+                        <Link href="/donate" className="bg-green-500 hover:bg-green-600 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-2xl hover:scale-105 inline-block text-center">
 
                             Donate Now
 
-                        </button>
+                        </Link>
 
                         {/* PARTNER BUTTON */}
-                        <button className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold hover:scale-105">
+                        <Link href="/contact" className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold hover:scale-105 inline-block text-center">
 
                             Partner With Us
 
-                        </button>
+                        </Link>
 
                     </div>
 

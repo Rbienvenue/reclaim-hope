@@ -64,30 +64,35 @@ export default function ProgramsGrid() {
                 {/* PROGRAMS GRID */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
-                    {programs.map((program) => (
-                        <div
-                            key={program.id}
-                            className="group bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500 hover:-translate-y-2 border border-gray-100"
-                        >
+                    {programs.map((program, index) => {
+                        const delayClass = index === 0 ? 'animate-stagger-reveal' :
+                                          index === 1 ? 'animate-stagger-reveal-delay-1' :
+                                          index === 2 ? 'animate-stagger-reveal-delay-2' :
+                                          'animate-stagger-reveal-delay-3';
+                        return (
+                            <div
+                                key={program.id}
+                                className={`group bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500 hover:-translate-y-2 border border-gray-100 ${delayClass}`}
+                            >
 
-                            {/* IMAGE */}
-                            <div className="relative overflow-hidden h-[280px]">
+                                {/* IMAGE */}
+                                <div className="relative overflow-hidden h-[280px]">
 
-                                <Image
-                                    src={program.image}
-                                    alt={program.title}
-                                    fill
-                                    className="object-cover group-hover:scale-110 transition duration-700"
-                                />
+                                    <Image
+                                        src={program.image}
+                                        alt={program.title}
+                                        fill
+                                        className="object-cover group-hover:scale-110 transition duration-700"
+                                    />
 
-                            </div>
+                                </div>
 
-                            {/* CONTENT */}
-                            <div className="p-10">
+                                {/* CONTENT */}
+                                <div className="p-10">
 
-                                {/* TITLE */}
-                                <h3 className="text-3xl font-bold text-gray-900 mb-6">
-                                    {program.title}
+                                    {/* TITLE */}
+                                    <h3 className="text-3xl font-bold text-gray-900 mb-6">
+                                        {program.title}
                                 </h3>
 
                                 {/* DESCRIPTION */}
@@ -107,7 +112,8 @@ export default function ProgramsGrid() {
                             </div>
 
                         </div>
-                    ))}
+                        );
+                    })}
 
                 </div>
 

@@ -2,7 +2,7 @@ import { Mail } from "lucide-react";
 
 export default function NewsletterSection() {
     return (
-        <section className="w-full py-24 px-6 md:px-16 bg-white">
+        <section className="w-full py-24 px-6 md:px-16 bg-white" data-aos="fade-up">
 
             <div className="max-w-5xl mx-auto">
 

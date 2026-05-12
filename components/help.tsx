@@ -4,6 +4,7 @@ import {
     Users,
     ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function HelpSection() {
 
@@ -113,13 +114,31 @@ export default function HelpSection() {
                                 </p>
 
                                 {/* BUTTON */}
-                                <button
-                                    className={`${style.button} text-white px-6 py-3 rounded-full font-medium inline-flex items-center gap-2 transition`}
-                                >
-                                    {card.button}
-
-                                    <ArrowRight className="w-5 h-5" />
-                                </button>
+                                {card.id === 1 ? (
+                                    <Link
+                                        href="/donate"
+                                        className={`${style.button} text-white px-6 py-3 rounded-full font-medium inline-flex items-center gap-2 transition`}
+                                    >
+                                        {card.button}
+                                        <ArrowRight className="w-5 h-5" />
+                                    </Link>
+                                ) : card.id === 2 ? (
+                                    <Link
+                                        href="/donate"
+                                        className={`${style.button} text-white px-6 py-3 rounded-full font-medium inline-flex items-center gap-2 transition`}
+                                    >
+                                        {card.button}
+                                        <ArrowRight className="w-5 h-5" />
+                                    </Link>
+                                ) : (
+                                    <Link
+                                        href="/GetInvolved"
+                                        className={`${style.button} text-white px-6 py-3 rounded-full font-medium inline-flex items-center gap-2 transition`}
+                                    >
+                                        {card.button}
+                                        <ArrowRight className="w-5 h-5" />
+                                    </Link>
+                                )}
 
                             </div>
                         );

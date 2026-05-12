@@ -1,12 +1,12 @@
 import Image from "next/image";
 
-export default function HeroSection() {
+export default function ContactHero() {
   return (
     <section className="relative h-screen w-full overflow-hidden">
       {/* Optimized Hero Image */}
       <Image
-        src="/hero-img.jpg"
-        alt="Children in Rwanda receiving education and support from Reclaim Hope"
+        src="/hero-img.jpg" // Or a specific contact hero image
+        alt="Get in touch with Reclaim Hope Rwanda"
         fill
         className="object-cover animate-hero-zoom"
         priority
@@ -17,39 +17,20 @@ export default function HeroSection() {
       />
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Content */}
       <div className="relative z-10 flex h-full items-center justify-center px-6">
         <div className="text-center text-white max-w-2xl">
-
           {/* Title */}
           <h1 className="text-4xl md:text-6xl font-bold leading-tight animate-fade-up">
-            Reclaim Hope Rwanda
+            Get in Touch
           </h1>
 
           {/* Subtitle */}
           <p className="mt-4 text-lg md:text-xl text-gray-200 animate-fade-up-delay-2">
-            Empowering children, transforming lives, and building a brighter future through education and care.
+            We would love to hear from you. Reach out to learn more about our programs, partnerships, sponsorships, and community initiatives.
           </p>
-
-          {/* CTA Buttons */}
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center animate-fade-up-delay-3">
-            <a
-              href="/donate"
-              className="px-6 py-3 bg-green-600 hover:bg-green-500 transition rounded-lg font-semibold"
-            >
-              Donate Now
-            </a>
-
-            <a
-              href="/donate"
-              className="px-6 py-3 bg-orange-600 hover:bg-orange-500 transition rounded-lg font-semibold"
-            >
-              Sponsor a child
-            </a>
-          </div>
-
         </div>
       </div>
     </section>

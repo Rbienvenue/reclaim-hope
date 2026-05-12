@@ -63,7 +63,7 @@ export default function SponsorshipSection() {
                     </div>
 
                     {/* RIGHT SIDE - CONTENT */}
-                    <div data-aos="fade-left">
+                    <div data-aos="fade-left" className="animate-split-reveal">
 
                         {/* LABEL */}
                         <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-6">

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ImpactFinalCTA() {
     return (
         <section className="w-full bg-white py-24 px-6 md:px-16 overflow-hidden">
@@ -58,12 +60,12 @@ export default function ImpactFinalCTA() {
                             </div>
 
                             <div className="space-y-4">
-                                <button className="w-full rounded-full bg-green-700 px-8 py-4 text-base font-semibold text-white shadow-xl shadow-green-700/20 transition hover:bg-green-800">
+                                <Link href="/donate" className="w-full rounded-full bg-green-700 px-8 py-4 text-base font-semibold text-white shadow-xl shadow-green-700/20 transition hover:bg-green-800 inline-block text-center">
                                     Donate Now
-                                </button>
-                                <button className="w-full rounded-full border border-green-700 bg-white px-8 py-4 text-base font-semibold text-green-700 transition hover:bg-green-50">
+                                </Link>
+                                <Link href="/donate" className="w-full rounded-full border border-green-700 bg-white px-8 py-4 text-base font-semibold text-green-700 transition hover:bg-green-50 inline-block text-center">
                                     Sponsor a Child
-                                </button>
+                                </Link>
                             </div>
 
                             <div className="rounded-3xl border border-slate-200 bg-white p-6 text-slate-700">

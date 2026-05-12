@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function AboutCTASection() {
     return (
         <section className="w-full px-6 md:px-16 py-24 bg-white">
@@ -43,18 +45,18 @@ export default function AboutCTASection() {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
 
                         {/* PRIMARY BUTTON */}
-                        <button className="bg-orange-500 hover:bg-orange-600 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-2xl hover:scale-105">
+                        <Link href="/donate" className="bg-orange-500 hover:bg-orange-600 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-2xl hover:scale-105 inline-block text-center">
 
                             Donate Now
 
-                        </button>
+                        </Link>
 
                         {/* SECONDARY BUTTON */}
-                        <button className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold hover:scale-105">
+                        <Link href="/contact" className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold hover:scale-105 inline-block text-center">
 
                             Become a Partner
 
-                        </button>
+                        </Link>
 
                     </div>
 
