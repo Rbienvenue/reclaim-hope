@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function ProgramsGrid() {
@@ -6,6 +7,7 @@ export default function ProgramsGrid() {
     const programs = [
         {
             id: 1,
+            slug: "basic-needs-for-education",
             title: "Basic Needs for Education",
             image: "/education.png",
             description:
@@ -14,6 +16,7 @@ export default function ProgramsGrid() {
 
         {
             id: 2,
+            slug: "lead-after-school-program",
             title: "LEAD / After School Program",
             image: "/LEAD.png",
             description:
@@ -22,6 +25,7 @@ export default function ProgramsGrid() {
 
         {
             id: 3,
+            slug: "healthy-child-nutrition-program",
             title: "Healthy Child & Nutrition Program",
             image: "/healthy.png",
             description:
@@ -30,6 +34,7 @@ export default function ProgramsGrid() {
 
         {
             id: 4,
+            slug: "skills-future-empowerment",
             title: "Skills & Future Empowerment",
             image: "/empowerment.png",
             description:
@@ -101,13 +106,13 @@ export default function ProgramsGrid() {
                                 </p>
 
                                 {/* BUTTON */}
-                                <button className="flex items-center gap-3 text-orange-500 font-semibold hover:gap-4 transition-all">
+                                <Link href={`/programs/${program.slug}`} className="flex items-center gap-3 text-orange-500 font-semibold hover:gap-4 transition-all">
 
                                     Learn More
 
                                     <ArrowRight className="w-5 h-5" />
 
-                                </button>
+                                </Link>
 
                             </div>
 

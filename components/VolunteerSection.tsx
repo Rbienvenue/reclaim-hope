@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
     Users,
     GraduationCap,
@@ -132,11 +133,11 @@ export default function VolunteerSection() {
                         </div>
 
                         {/* CTA BUTTON */}
-                        <button className="bg-green-500 hover:bg-green-600 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-xl hover:scale-105">
+                        <Link href="/GetInvolved" className="bg-green-500 hover:bg-green-600 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-xl hover:scale-105 inline-flex items-center justify-center text-center">
 
                             Join as Volunteer
 
-                        </button>
+                        </Link>
 
                     </div>
 

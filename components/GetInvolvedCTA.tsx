@@ -45,7 +45,7 @@ export default function GetInvolvedCTA() {
                     <div className="flex flex-col lg:flex-row items-center justify-center gap-6">
 
                         {/* SPONSOR BUTTON */}
-                        <Link href="/donate" className="bg-orange-500 hover:bg-orange-600 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-2xl hover:scale-105 inline-block text-center">
+                        <Link href="/sponsor" className="bg-orange-500 hover:bg-orange-600 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-2xl hover:scale-105 inline-block text-center">
 
                             Sponsor a Child
 

@@ -1,9 +1,30 @@
 "use client"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-export default function Navbar() {
+const navItems = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About us" },
+    { href: "/programs", label: "Programs" },
+    { href: "/GetInvolved", label: "Get involved" },
+    { href: "/impact", label: "Impact" },
+    { href: "/newsletter", label: "Newsletter" },
+    { href: "/contact", label: "Contact us" },
+];
 
+export default function Navbar() {
     const [open, setOpen] = useState(false);
+    const pathname = usePathname();
+
+    const isActive = (href: string) => {
+        if (!pathname) return false;
+        if (href === "/") {
+            return pathname === "/";
+        }
+        return pathname === href || pathname.startsWith(href + "/");
+    };
+
     return (
         <div className="w-full bg-white md:flex items-center justify-between px-10 py-4 shadow-sm">
             <nav className="flex justify-between w-full" >
@@ -20,22 +41,29 @@ export default function Navbar() {
 
                 {/* Navigation */}
                 <ul className="hidden md:flex gap-8 text-black items-center">
-                    <li><a href="/" className="hover:text-orange-500">Home</a></li>
-                    <li><a href="/about" className="hover:text-orange-500">About us</a></li>
-                    <li><a href="/programs" className="hover:text-orange-500">Programs</a></li>
-                    <li><a href="/GetInvolved" className="hover:text-orange-500">Get involved</a></li>
-                    <li><a href="/impact" className="hover:text-orange-500">Impact</a></li>
-                    <li><a href="/newsletter" className="hover:text-orange-500">Newsletter</a></li>
-                    <li><a href="/contact" className="hover:text-orange-500">Contact us</a></li>
+                    {navItems.map((item) => {
+                        const active = isActive(item.href);
+                        return (
+                            <li key={item.href}>
+                                <Link
+                                    href={item.href}
+                                    className={`transition ${active ? "text-orange-600 font-semibold" : "hover:text-orange-500"}`}
+                                    aria-current={active ? "page" : undefined}
+                                >
+                                    {item.label}
+                                </Link>
+                            </li>
+                        );
+                    })}
 
                     {/* CTA Button */}
                     <li>
-                        <a
+                        <Link
                             href="/donate"
                             className="bg-orange-600 text-white px-8 py-4 rounded hover:bg-orange-500 transition"
                         >
                             Donate
-                        </a>
+                        </Link>
                     </li>
                 </ul>
                 <button className="md:hidden text-black"
@@ -46,24 +74,29 @@ export default function Navbar() {
             </nav>
 
             {/* mobile menu */}
-            {
-                open && (
-                    <ul className="md:hidden mt-2 flex flex-col gap-6 px-6 pb-6 text-center text-black">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about">About us</a></li>
-                        <li><a href="/programs">Programs</a></li>
-                        <li><a href="/GetInvolved">Get involved</a></li>
-                        <li><a href="/impact">Impact</a></li>
-                        <li><a href="/newsletter">Newsletter</a></li>
-                        <li><a href="/contact">Contact us</a></li>
-                        <li>
-                            <a href="/donate" className="bg-orange-600 text-white px-5 py-2 rounded inline-block">
-                                Donate
-                            </a>
-                        </li>
-                    </ul>
-                )
-            }
+            {open && (
+                <ul className="md:hidden mt-2 flex flex-col gap-6 px-6 pb-6 text-center text-black">
+                    {navItems.map((item) => {
+                        const active = isActive(item.href);
+                        return (
+                            <li key={item.href}>
+                                <Link
+                                    href={item.href}
+                                    className={`block transition ${active ? "text-orange-600 font-semibold" : "hover:text-orange-500"}`}
+                                    aria-current={active ? "page" : undefined}
+                                >
+                                    {item.label}
+                                </Link>
+                            </li>
+                        );
+                    })}
+                    <li>
+                        <Link href="/donate" className="bg-orange-600 text-white px-5 py-2 rounded inline-block">
+                            Donate
+                        </Link>
+                    </li>
+                </ul>
+            )}
 
         </div>
     );

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function FeaturedStory() {
@@ -25,10 +26,10 @@ export default function FeaturedStory() {
             <p className="text-lg text-gray-700 leading-relaxed">
               Meet Jean-Pierre, who overcame incredible odds to become a beacon of hope in his community. Through our education program, he not only learned to read and write but discovered his passion for helping others...
             </p>
-            <button className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 transition px-6 py-3 rounded-full text-white font-semibold">
+            <Link href="/newsletter/from-struggle-to-success" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 transition px-6 py-3 rounded-full text-white font-semibold">
               Read Full Story
               <ArrowRight className="w-5 h-5" />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

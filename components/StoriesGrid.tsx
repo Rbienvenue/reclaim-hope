@@ -1,8 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const stories = [
   {
     id: 1,
+    slug: "empowering-young-minds-through-education",
     title: "Empowering Young Minds Through Education",
     excerpt: "How our literacy program is transforming classrooms across rural Rwanda...",
     date: "March 15, 2024",
@@ -11,6 +13,7 @@ const stories = [
   },
   {
     id: 2,
+    slug: "nutrition-program-saves-lives",
     title: "Nutrition Program Saves Lives",
     excerpt: "The impact of our feeding initiatives on child health and development...",
     date: "February 28, 2024",
@@ -19,6 +22,7 @@ const stories = [
   },
   {
     id: 3,
+    slug: "community-event-brings-families-together",
     title: "Community Event Brings Families Together",
     excerpt: "Celebrating milestones and building stronger community bonds...",
     date: "February 10, 2024",
@@ -27,6 +31,7 @@ const stories = [
   },
   {
     id: 4,
+    slug: "from-orphan-to-leader",
     title: "From Orphan to Leader",
     excerpt: "The inspiring journey of a young girl who became a role model...",
     date: "January 22, 2024",
@@ -71,9 +76,9 @@ export default function StoriesGrid() {
                   </p>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-gray-500">{story.date}</span>
-                    <button className="text-orange-500 hover:text-orange-600 font-semibold">
+                    <Link href={`/newsletter/${story.slug}`} className="text-orange-500 hover:text-orange-600 font-semibold">
                       Read More →
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

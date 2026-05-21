@@ -53,7 +53,7 @@ export default function FinalCTASection() {
                         </Link>
 
                         {/* SPONSOR BUTTON */}
-                        <Link href="/donate" className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold hover:scale-105 hover:shadow-2xl animate-soft-pulse animate-soft-hover-glow inline-block text-center">
+                        <Link href="/sponsor" className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold hover:scale-105 hover:shadow-2xl animate-soft-pulse animate-soft-hover-glow inline-block text-center">
 
                             Become a Sponsor
 

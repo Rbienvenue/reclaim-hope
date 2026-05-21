@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function SuccessStories() {
@@ -6,6 +7,7 @@ export default function SuccessStories() {
     const stories = [
         {
             id: 1,
+            slug: "from-struggling-student-to-future-doctor",
             image: "/aline.png",
             category: "Child Success Story",
             title: "From Struggling Student to Future Doctor",
@@ -15,6 +17,7 @@ export default function SuccessStories() {
 
         {
             id: 2,
+            slug: "a-new-sense-of-hope-for-families",
             image: "/testimonial.png",
             category: "Parent Testimonial",
             title: "A New Sense of Hope for Families",
@@ -24,6 +27,7 @@ export default function SuccessStories() {
 
         {
             id: 3,
+            slug: "creating-impact-through-mentorship",
             image: "/mentors_kids.jpg",
             category: "Volunteer Experience",
             title: "Creating Impact Through Mentorship",
@@ -100,13 +104,13 @@ export default function SuccessStories() {
                                 </p>
 
                                 {/* BUTTON */}
-                                <button className="inline-flex items-center gap-3 text-orange-500 font-semibold hover:gap-4 transition-all duration-300">
+                                <Link href={`/newsletter/${story.slug}`} className="inline-flex items-center gap-3 text-orange-500 font-semibold hover:gap-4 transition-all duration-300">
 
                                     Read More
 
                                     <ArrowRight className="w-5 h-5" />
 
-                                </button>
+                                </Link>
 
                             </div>
 

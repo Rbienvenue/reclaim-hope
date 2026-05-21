@@ -43,7 +43,7 @@ export default function HeroSection() {
             </a>
 
             <a
-              href="/donate"
+              href="/sponsor"
               className="px-6 py-3 bg-orange-600 hover:bg-orange-500 transition rounded-lg font-semibold"
             >
               Sponsor a child

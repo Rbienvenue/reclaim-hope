@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
     Building2,
     Handshake,
@@ -99,13 +100,13 @@ export default function PartnershipSection() {
                         </div>
 
                         {/* BUTTON */}
-                        <button className="bg-purple-600 hover:bg-purple-700 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-xl hover:scale-105 flex items-center gap-3">
+                        <Link href="/contact" className="bg-purple-600 hover:bg-purple-700 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-xl hover:scale-105 inline-flex items-center gap-3 justify-center">
 
                             Become a Partner
 
                             <ArrowRight className="w-5 h-5" />
 
-                        </button>
+                        </Link>
 
                     </div>
 

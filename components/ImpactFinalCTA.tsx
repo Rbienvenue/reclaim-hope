@@ -63,7 +63,7 @@ export default function ImpactFinalCTA() {
                                 <Link href="/donate" className="w-full rounded-full bg-green-700 px-8 py-4 text-base font-semibold text-white shadow-xl shadow-green-700/20 transition hover:bg-green-800 inline-block text-center">
                                     Donate Now
                                 </Link>
-                                <Link href="/donate" className="w-full rounded-full border border-green-700 bg-white px-8 py-4 text-base font-semibold text-green-700 transition hover:bg-green-50 inline-block text-center">
+                                <Link href="/sponsor" className="w-full rounded-full border border-green-700 bg-white px-8 py-4 text-base font-semibold text-green-700 transition hover:bg-green-50 inline-block text-center">
                                     Sponsor a Child
                                 </Link>
                             </div>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
     CheckCircle,
     HeartHandshake,
@@ -134,11 +135,11 @@ export default function SponsorshipSection() {
                         </div>
 
                         {/* CTA BUTTON */}
-                        <button className="bg-orange-500 hover:bg-orange-600 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-xl hover:scale-105">
+                        <Link href="/donate" className="bg-orange-500 hover:bg-orange-600 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-xl hover:scale-105 inline-flex items-center justify-center text-center">
 
                             Become a Sponsor
 
-                        </button>
+                        </Link>
 
                     </div>
 

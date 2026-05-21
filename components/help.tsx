@@ -124,7 +124,7 @@ export default function HelpSection() {
                                     </Link>
                                 ) : card.id === 2 ? (
                                     <Link
-                                        href="/donate"
+                                        href="/sponsor"
                                         className={`${style.button} text-white px-6 py-3 rounded-full font-medium inline-flex items-center gap-2 transition`}
                                     >
                                         {card.button}
