@@ -84,29 +84,67 @@ const stories = [
     ],
   },
   {
-    slug: "from-orphan-to-leader",
-    title: "From Orphan to Leader",
-    date: "January 22, 2024",
-    category: "Success Stories",
+    slug: "from-struggling-student-to-future-doctor",
+    title: "From Struggling Student to Future Doctor",
+    date: "May 10, 2024",
+    category: "Child Success Story",
     image: "/aline.png",
     summary:
-      "An inspiring journey of a young girl who became a role model through education and support.",
+      "Aline transformed from a struggling student into a child who now dreams of becoming a doctor.",
     content: [
-      "Aline arrived at our program burdened by loss and uncertainty, but her determination was clear from the start. With coaching, mentorship, and a safe learning environment, she began to imagine a future beyond her circumstances.",
-      "The program connected Aline with compassionate mentors who helped her set goals, build study habits, and nurture courage. She discovered her voice through storytelling, leadership clubs, and community service.",
-      "As Aline matured, she became a leader among her peers. She tutored other children, shared her story openly, and encouraged others to persist through hardship.",
-      "Today Aline is a reminder that children who receive consistent support can transform pain into purpose and become beacons of hope in their communities.",
+      "Aline once struggled to stay in school because her family could not afford uniforms, books, and transportation. With support from Reclaim Hope Rwanda, she gained access to tutoring, mentorship, and the confidence to keep going.",
+      "Over time, Aline's grades improved and she began to trust her own potential. She attended leadership activities, received academic coaching, and found a supportive community of teachers and volunteers.",
+      "Today, Aline is focused on a future in medicine. She wants to use her education to care for children in her community and inspire others to pursue their dreams.",
     ],
     highlights: [
-      "Youth leadership through mentorship and confidence-building.",
-      "Support for vulnerable children to thrive academically.",
-      "Inspiration for other children and caregivers.",
+      "Personalized academic support that rebuilt confidence.",
+      "Mentorship that helped Aline set long-term goals.",
+      "A renewed sense of purpose and future opportunity.",
+    ],
+  },
+  {
+    slug: "a-new-sense-of-hope-for-families",
+    title: "A New Sense of Hope for Families",
+    date: "April 5, 2024",
+    category: "Parent Testimonial",
+    image: "/testimonial.png",
+    summary:
+      "Family support programs have helped children stay healthy, confident, and motivated to continue learning.",
+    content: [
+      "Parents in our community say the programs have brought stability and renewed hope to their homes. Meeting basic needs made it possible for children to return to school and focus on learning.",
+      "Caregivers appreciated the nutrition, school supplies, and emotional support their children received. This helped families build stronger routines and feel less overwhelmed by daily challenges.",
+      "As children grew healthier and more engaged in school, parents saw renewed optimism for the future. They began to believe that education could open doors for their whole family.",
+    ],
+    highlights: [
+      "Increased family confidence through reliable support.",
+      "Improved child health and school attendance.",
+      "Stronger parent-community connections.",
+    ],
+  },
+  {
+    slug: "creating-impact-through-mentorship",
+    title: "Creating Impact Through Mentorship",
+    date: "March 20, 2024",
+    category: "Volunteer Experience",
+    image: "/mentors_kids.jpg",
+    summary:
+      "Volunteer mentors are helping children build confidence, skills, and long-term hope.",
+    content: [
+      "Volunteers who work with Reclaim Hope Rwanda speak of the joy they feel when children begin to believe in themselves. Mentorship sessions focus on academic support, life skills, and emotional encouragement.",
+      "Children take part in group activities, literacy sessions, and confidence-building exercises. Volunteers help them set goals, practice communication, and pursue dreams beyond their current circumstances.",
+      "The relationships formed in mentorship programs are powerful. Children gain both practical tools and the belief that they can achieve more than they ever thought possible.",
+    ],
+    highlights: [
+      "Inspiring mentorship connections for children and youth.",
+      "Practical support for learning and emotional growth.",
+      "Stronger community bonds through volunteer engagement.",
     ],
   },
 ];
 
-export default function NewsletterStoryPage({ params }: { params: { slug: string } }) {
-  const story = stories.find((item) => item.slug === params.slug);
+export default async function NewsletterStoryPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const story = stories.find((item) => item.slug === slug);
 
   if (!story) {
     notFound();

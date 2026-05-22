@@ -39,8 +39,10 @@ export default function IntroductionSection() {
                         confidence, and a brighter future for every child.
                     </p>
 
-                    <button className="mt-8 bg-green-600 hover:bg-green-700 transition-all duration-300 text-white px-6 py-3 rounded-full font-medium cursor-pointer hover:scale-105">
-                        Learn More
+                    <button className="mt-8">
+                        <a href="/about" className=" bg-green-600 hover:bg-green-700 transition-all duration-300 text-white px-10 py-4 rounded-full font-medium cursor-pointer hover:scale-105">
+                            Learn More
+                        </a>
                     </button>
                 </div>
             </div>

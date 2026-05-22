@@ -20,11 +20,11 @@ export default function AboutHero() {
                     About Us
                 </p>
 
-                <h1 className="text-4xl md:text-6xl font-bold">
+                <h1 className="text-4xl md:text-6xl font-bold animate-fade-up">
                     About Reclaim Hope Rwanda
                 </h1>
 
-                <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl">
+                <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl animate-fade-up-delay-2">
                     Empowering children and communities through hope,
                     education, and sustainable support.
                 </p>

@@ -38,15 +38,55 @@ const stories = [
     category: "Success Stories",
     image: "/aline.png"
   },
-  // Add more stories as needed
+  {
+    id: 5,
+    slug: "from-struggling-student-to-future-doctor",
+    title: "From Struggling Student to Future Doctor",
+    excerpt: "Aline overcame school challenges and now dreams of becoming a doctor.",
+    date: "May 10, 2024",
+    category: "Child Success Story",
+    image: "/aline.png"
+  },
+  {
+    id: 6,
+    slug: "a-new-sense-of-hope-for-families",
+    title: "A New Sense of Hope for Families",
+    excerpt: "Family support programs are helping children stay healthy, confident, and motivated.",
+    date: "April 5, 2024",
+    category: "Parent Testimonial",
+    image: "/testimonial.png"
+  },
+  {
+    id: 7,
+    slug: "creating-impact-through-mentorship",
+    title: "Creating Impact Through Mentorship",
+    excerpt: "Volunteer mentors help children build confidence, skills, and long-term hope.",
+    date: "March 20, 2024",
+    category: "Volunteer Experience",
+    image: "/mentors_kids.jpg"
+  },
 ];
 
-export default function StoriesGrid() {
+interface StoriesGridProps {
+  activeCategory?: string;
+}
+
+function matchesCategory(storyCategory: string, activeCategory: string) {
+  if (activeCategory === "All Stories") return true;
+  if (activeCategory === "Success Stories") {
+    return storyCategory.toLowerCase().includes("success");
+  }
+  return storyCategory === activeCategory;
+}
+
+export default function StoriesGrid({ activeCategory = "All Stories" }: StoriesGridProps) {
   return (
     <section className="w-full py-24 px-6 md:px-16 bg-gray-50" data-aos="fade-up">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {stories.map((story, index) => {
+          {stories
+            .filter((story) => matchesCategory(story.category, activeCategory))
+            .map((story, index) => {
             const delayClass = index === 0 ? 'animate-stagger-reveal' :
                               index === 1 ? 'animate-stagger-reveal-delay-1' :
                               index === 2 ? 'animate-stagger-reveal-delay-2' :
