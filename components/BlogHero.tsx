@@ -28,13 +28,13 @@ export default function BlogHero() {
           </h1>
 
           {/* Subtitle */}
-          <p className="mt-4 text-lg md:text-xl text-gray-200 animate-fade-up-delay-2">
+          <p className="mt-4 text-lg md:text-xl text-slate-200 animate-fade-up-delay-2">
             Discover real stories of children, families, and communities whose lives are being changed through our programs.
           </p>
 
           {/* Optional CTA or just scroll indicator */}
           <div className="mt-8 animate-fade-up-delay-3">
-            <p className="text-gray-300">Scroll to explore our stories</p>
+            <p className="text-slate-200">Scroll to explore our stories</p>
           </div>
         </div>
       </div>

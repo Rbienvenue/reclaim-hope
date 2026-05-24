@@ -24,7 +24,33 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
 @layer utilities {
+  .text-gray-200 {
+    color: #94a3b8;
+  }
+
+  .text-gray-300 {
+    color: #64748b;
+  }
+
+  .text-gray-400 {
+    color: #475569;
+  }
+
+  .text-gray-500 {
+    color: #334155;
+  }
+
+  .text-gray-600 {
+    color: #1e293b;
+  }
+
+  .text-gray-700,
+  .text-gray-800 {
+    color: #0f172a;
+  }
+
   @keyframes float {
     0% {
       transform: translateY(0px);

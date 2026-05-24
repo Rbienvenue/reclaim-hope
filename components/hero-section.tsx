@@ -29,7 +29,7 @@ export default function HeroSection() {
           </h1>
 
           {/* Subtitle */}
-          <p className="mt-4 text-lg md:text-xl text-gray-200 animate-fade-up-delay-2">
+          <p className="mt-4 text-lg md:text-xl text-slate-200 animate-fade-up-delay-2">
             Empowering children, transforming lives, and building a brighter future through education and care.
           </p>
 

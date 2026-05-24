@@ -28,7 +28,7 @@ export default function ContactHero() {
           </h1>
 
           {/* Subtitle */}
-          <p className="mt-4 text-lg md:text-xl text-gray-200 animate-fade-up-delay-2">
+          <p className="mt-4 text-lg md:text-xl text-slate-200 animate-fade-up-delay-2">
             We would love to hear from you. Reach out to learn more about our programs, partnerships, sponsorships, and community initiatives.
           </p>
         </div>

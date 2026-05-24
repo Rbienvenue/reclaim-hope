@@ -83,9 +83,8 @@ export default function DonateFAQ() {
                 <h3 className="text-lg font-semibold text-gray-900">
                   {faq.question}
                 </h3>
-                <div className={`transform transition-transform duration-200 ${
-                  openFAQ === index ? 'rotate-180' : ''
-                }`}>
+                <div className={`transform transition-transform duration-200 ${openFAQ === index ? 'rotate-180' : ''
+                  }`}>
                   <svg
                     className="w-6 h-6 text-gray-600"
                     fill="none"

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import StillHaveQuestion from "./stillHaveQuestion";
 
 export default function FaqSection() {
 
@@ -128,6 +129,9 @@ export default function FaqSection() {
                 </div>
 
             </div>
+
+                {/* STILL HAVE QUESTIONS */}        
+                <StillHaveQuestion/>
 
         </section>
     );

@@ -77,6 +77,9 @@ export default function WaysToGetInvolved() {
         },
     };
 
+    const buttonClasses =
+        "text-white px-6 py-4 rounded-full font-semibold flex items-center justify-center gap-3 transition duration-300 hover:scale-105 whitespace-nowrap";
+
     return (
         <section className="w-full bg-[#f9fafb] py-24 px-6 md:px-16">
 
@@ -143,34 +146,30 @@ export default function WaysToGetInvolved() {
                                 {item.id === 2 ? (
                                     <Link
                                         href="/donate"
-                                        className={`${colors.button} text-white px-6 py-4 rounded-full font-semibold flex items-center justify-center gap-3 transition duration-300 hover:scale-105`}
+                                        className={`${colors.button} ${buttonClasses}`}
                                     >
                                         {item.button}
-                                        <ArrowRight className="w-5 h-5" />
                                     </Link>
                                 ) : item.id === 1 ? (
                                     <Link
                                         href="/donate"
-                                        className={`${colors.button} text-white px-6 py-4 rounded-full font-semibold flex items-center justify-center gap-3 transition duration-300 hover:scale-105`}
+                                        className={`${colors.button} ${buttonClasses}`}
                                     >
                                         {item.button}
-                                        <ArrowRight className="w-5 h-5" />
                                     </Link>
                                 ) : item.id === 3 ? (
                                     <Link
                                         href="/GetInvolved"
-                                        className={`${colors.button} text-white px-6 py-4 rounded-full font-semibold flex items-center justify-center gap-3 transition duration-300 hover:scale-105`}
+                                        className={`${colors.button} ${buttonClasses}`}
                                     >
                                         {item.button}
-                                        <ArrowRight className="w-5 h-5" />
                                     </Link>
                                 ) : (
                                     <Link
                                         href="/contact"
-                                        className={`${colors.button} text-white px-6 py-4 rounded-full font-semibold flex items-center justify-center gap-3 transition duration-300 hover:scale-105`}
+                                        className={`${colors.button} ${buttonClasses}`}
                                     >
                                         {item.button}
-                                        <ArrowRight className="w-5 h-5" />
                                     </Link>
                                 )}
 

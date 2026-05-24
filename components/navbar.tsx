@@ -9,6 +9,8 @@ const navItems = [
     { href: "/programs", label: "Programs" },
     { href: "/GetInvolved", label: "Get involved" },
     { href: "/impact", label: "Impact" },
+    { href: "/sponsor", label: "Sponsor" },
+    { href: "/shop", label: "Shop" },
     { href: "/newsletter", label: "Newsletter" },
     { href: "/contact", label: "Contact us" },
 ];
