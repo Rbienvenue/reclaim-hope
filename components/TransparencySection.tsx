@@ -20,7 +20,7 @@ export default function TransparencySection() {
             icon: ShieldCheck,
             title: "Registered NGO",
             description:
-                "Reclaim Hope Rwanda operates as a registered nonprofit organization committed to serving vulnerable children and communities responsibly.",
+                "Reclaim Hope Rwanda operates as a registered nonprofit organization committed to serving underserved children and communities responsibly.",
         },
 
         {

@@ -33,7 +33,7 @@ export default function ImpactMetrics() {
             suffix: "+",
             title: "Meals Served",
             description:
-                "Providing consistent nutrition support to vulnerable children and families.",
+                "Providing consistent nutrition support to underserved children and families.",
             growth: "+18% this year",
             color: "orange",
         },

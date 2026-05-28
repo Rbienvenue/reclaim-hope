@@ -38,7 +38,7 @@ export default function DonationCTABanner() {
 
                     {/* DESCRIPTION */}
                     <p className="text-lg md:text-2xl text-white/85 leading-relaxed max-w-3xl mx-auto mb-14">
-                        Your support helps vulnerable children access
+                        Your support helps underserved children access
                         education, nutrition, mentorship, and opportunities
                         that inspire hope and lasting transformation.
                     </p>

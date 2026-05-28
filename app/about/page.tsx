@@ -17,7 +17,6 @@ export default function AboutPage() {
             <LeadershipSection/>
             <WhyOurWorkMatters/>
             <ImpactSnapshot/>
-            <AboutCTASection/>
         </div>
     )
 }

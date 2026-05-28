@@ -38,7 +38,7 @@ export default function FinalCTASection() {
                     {/* DESCRIPTION */}
                     <p className="text-white/80 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                         Your support helps provide education, mentorship,
-                        nutrition, and opportunities that empower vulnerable
+                        nutrition, and opportunities that empower underserved
                         children to build brighter futures.
                     </p>
 

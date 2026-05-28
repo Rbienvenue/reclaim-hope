@@ -36,7 +36,7 @@ export default function AboutCTASection() {
 
                     {/* DESCRIPTION */}
                     <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-3xl mx-auto mb-12">
-                        Together, we can empower vulnerable children through
+                        Together, we can empower underserved children through
                         education, mentorship, nutrition, and opportunities
                         that inspire brighter futures and stronger communities.
                     </p>

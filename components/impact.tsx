@@ -28,12 +28,6 @@ export default function ImpactSection() {
             number: 300,
             label: "Families Empowered",
         },
-        {
-            id: 4,
-            icon: School,
-            number: 15,
-            label: "Communities Reached",
-        },
     ];
 
     return (
@@ -42,23 +36,19 @@ export default function ImpactSection() {
             {/* SECTION HEADER */}
             <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in-up">
 
-                <p className="text-orange-500 font-semibold uppercase tracking-widest mb-3">
+                <p className="text-orange-500 font-semibold uppercase tracking-widest mb-3 text-lg">
                     Our Impact
                 </p>
-
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    Changing Lives Through Hope & Action
-                </h2>
 
                 <p className="text-gray-600 text-lg leading-relaxed">
                     Through education, mentorship, and community support,
                     Reclaim Hope Rwanda continues to positively impact
-                    vulnerable children and families.
+                    underserved children and families.
                 </p>
             </div>
 
             {/* STATS GRID */}
-            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
                 {stats.map((item, index) => {
                     const Icon = item.icon;

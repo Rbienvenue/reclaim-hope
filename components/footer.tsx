@@ -38,7 +38,7 @@ export default function Footer() {
 
                         {/* DESCRIPTION */}
                         <p className="text-white/70 leading-relaxed mb-8">
-                            Empowering vulnerable children and communities
+                            Empowering underserved children and communities
                             through education, mentorship, nutrition,
                             and sustainable support programs.
                         </p>
@@ -162,7 +162,7 @@ export default function Footer() {
                                 <Mail className="w-5 h-5 text-orange-400" />
 
                                 <p>
-                                    info@reclaimhope.org
+                                    info@reclaimhope.rw
                                 </p>
 
                             </div>

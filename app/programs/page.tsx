@@ -3,6 +3,8 @@ import ProgramsIntroduction from "@/components/ProgramsIntroduction";
 import ProgramsGrid from "@/components/ProgramsGrid";
 import ProgramImpactHighlights from "@/components/ProgramImpactHighlights";
 import GetInvolvedCTA from "@/components/GetInvolvedCTA";
+import ImpactSection from "@/components/impact";
+import HelpSection from "@/components/help";
 
 export default function Page() {
     return (
@@ -10,8 +12,8 @@ export default function Page() {
             <ProgramsHero />
             <ProgramsIntroduction />
             <ProgramsGrid/>
-            <ProgramImpactHighlights/>
-            <GetInvolvedCTA />
+            <ImpactSection/>
+            <HelpSection/>
         </div>
     )
 }

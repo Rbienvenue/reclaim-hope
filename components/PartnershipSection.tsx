@@ -66,7 +66,7 @@ export default function PartnershipSection() {
                             We believe sustainable change happens through
                             strong partnerships. By collaborating with NGOs,
                             companies, institutions, and foundations, we can
-                            expand opportunities for vulnerable children and
+                            expand opportunities for underserved children and
                             strengthen communities through impactful programs.
                         </p>
 

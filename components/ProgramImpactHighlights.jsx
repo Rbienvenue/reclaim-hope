@@ -33,10 +33,6 @@ export default function ProgramImpactHighlights() {
                         Program Impact
                     </p>
 
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Transforming Lives Through Action
-                    </h2>
-
                     <p className="max-w-3xl mx-auto text-gray-600 text-lg leading-relaxed">
                         Our programs continue to create measurable impact
                         across communities by supporting children through

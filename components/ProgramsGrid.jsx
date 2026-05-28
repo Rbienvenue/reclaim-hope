@@ -54,10 +54,6 @@ export default function ProgramsGrid() {
                         Our Initiatives
                     </p>
 
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Programs Creating Lasting Change
-                    </h2>
-
                     <p className="max-w-3xl mx-auto text-gray-600 text-lg leading-relaxed">
                         Our programs are designed to address immediate needs
                         while building long-term opportunities for children,

@@ -31,7 +31,7 @@ export default function SponsorHero() {
                 {/* SUBTITLE */}
                 <p className="text-lg md:text-2xl text-white/85 leading-relaxed max-w-4xl mx-auto mb-10">
 
-                    Your sponsorship helps vulnerable children access
+                    Your sponsorship helps underserved children access
                     education, nutrition, mentorship, and opportunities
                     to build brighter futures.
 

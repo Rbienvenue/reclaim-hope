@@ -14,7 +14,7 @@ export default function LeadershipSection() {
             name: "John Doe",
             role: "Executive Director",
             image: "/team1.jpg",
-            bio: "Passionate about empowering vulnerable children through education and community development initiatives.",
+            bio: "Passionate about empowering underserved children through education and community development initiatives.",
         },
 
         {
@@ -45,10 +45,6 @@ export default function LeadershipSection() {
                     <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-4">
                         Leadership Team
                     </p>
-
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Meet the People Behind the Mission
-                    </h2>
 
                     <p className="max-w-3xl mx-auto text-gray-600 text-lg leading-relaxed">
                         Our dedicated team works tirelessly to empower children,

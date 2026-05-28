@@ -30,7 +30,7 @@ const timeline: TimelineItem[] = [
         year: "2022",
         title: "Nutrition Programs Expanded",
         description:
-            "Introduced consistent meal and wellness initiatives for vulnerable children.",
+            "Introduced consistent meal and wellness initiatives for underserved children.",
     },
 
     {
@@ -108,7 +108,7 @@ export default function AnnualGrowthSection() {
                     <p className="max-w-3xl mx-auto text-gray-600 text-lg leading-relaxed">
                         Our journey reflects continuous growth in educational support,
                         nutrition initiatives, community partnerships, and opportunities
-                        created for vulnerable children and families.
+                        created for underserved children and families.
                     </p>
 
                 </div>

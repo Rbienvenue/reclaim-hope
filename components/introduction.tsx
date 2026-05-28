@@ -30,7 +30,7 @@ export default function IntroductionSection() {
                     </h2>
 
                     <p className="text-gray-600 text-lg leading-relaxed mb-4 font-poppins">
-                        Reclaim Hope Rwanda supports vulnerable children and communities
+                        Reclaim Hope Rwanda supports underserved children and communities
                         through education, mentorship, nutrition, and empowerment programs.
                     </p>
 

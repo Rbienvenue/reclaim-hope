@@ -55,7 +55,7 @@ export default function ImpactFinalCTA() {
                                     Give hope now with a simple choice.
                                 </h3>
                                 <p className="mt-4 text-slate-600 leading-7">
-                                    Choose a meaningful next step toward sustainable change for vulnerable children and their communities.
+                                    Choose a meaningful next step toward sustainable change for underserved children and their communities.
                                 </p>
                             </div>
 

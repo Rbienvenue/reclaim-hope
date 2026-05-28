@@ -18,27 +18,23 @@ export default function WhyOurWorkMatters() {
                 </p>
 
                 {/* MAIN TITLE */}
-                <h2 className="text-4xl md:text-6xl font-bold leading-tight mb-10">
-                    Every Child
-                    <br />
-                    Deserves Hope
-                </h2>
 
                 {/* MAIN CONTENT */}
-                <p className="text-lg md:text-2xl leading-relaxed text-white/85 mb-8">
-                    Many vulnerable children face barriers to education,
+                <p className="text-lg md:text-2xl leading-relaxed text-white/85 mb-4">
+                    Many underserved children face barriers to education,
                     nutrition, mentorship, and opportunities that shape
                     their future. Without support, countless dreams remain
                     unrealized.
                 </p>
 
-                <p className="text-lg md:text-xl leading-relaxed text-white/75 max-w-4xl mx-auto">
+
+                <p className="text-lg md:text-2xl leading-relaxed text-white/85 mb-8">
                     At Reclaim Hope Rwanda, we believe every child deserves
                     the chance to learn, grow, and thrive in a supportive
                     community. Through education, empowerment, and hope-centered
                     initiatives, we are helping transform lives and build
                     brighter futures for generations to come.
-                </p>
+                </p>               
 
             </div>
 

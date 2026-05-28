@@ -13,7 +13,7 @@ export default function HelpSection() {
             id: 1,
             title: "Donate",
             description:
-                "Support vulnerable children with educational materials, nutrition, and mentorship opportunities.",
+                "Support underserved children with educational materials, nutrition, and mentorship opportunities.",
             icon: HandCoins,
             color: "orange",
             button: "Donate Now",
@@ -69,10 +69,6 @@ export default function HelpSection() {
                     <p className="text-orange-500 font-semibold uppercase tracking-widest mb-3">
                         How You Can Help
                     </p>
-
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Be Part of the Change
-                    </h2>
 
                     <p className="max-w-3xl mx-auto text-gray-600 text-lg leading-relaxed">
                         Your support can help transform lives through education,

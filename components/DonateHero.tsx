@@ -36,7 +36,7 @@ export default function DonateHero() {
           </h1>
 
           <p className="text-xl md:text-2xl mb-8 leading-relaxed opacity-90">
-            Every contribution helps provide education, nutrition, mentorship, and hope to vulnerable children across Rwanda.
+            Every contribution helps provide education, nutrition, mentorship, and hope to underserved children across Rwanda.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

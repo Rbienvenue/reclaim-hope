@@ -80,7 +80,7 @@ export default function SponsorshipSection() {
 
                         {/* DESCRIPTION */}
                         <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                            Sponsorship provides vulnerable children with
+                            Sponsorship provides underserved children with
                             access to education, nutrition, mentorship,
                             emotional support, and opportunities that
                             transform lives. Your contribution creates

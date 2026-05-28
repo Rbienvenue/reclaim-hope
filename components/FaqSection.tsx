@@ -10,7 +10,7 @@ export default function FaqSection() {
         {
             question: "How does child sponsorship work?",
             answer:
-                "Child sponsorship helps provide education, nutrition, mentorship, and emotional support for vulnerable children through long-term community-centered programs.",
+                "Child sponsorship helps provide education, nutrition, mentorship, and emotional support for underserved children through long-term community-centered programs.",
         },
 
         {

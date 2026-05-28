@@ -29,7 +29,7 @@ export default function NewsletterSection() {
                     {/* DESCRIPTION */}
                     <p className="max-w-2xl mx-auto text-lg md:text-xl text-white/90 leading-relaxed mb-10">
                         Stay updated with our programs, community impact stories,
-                        events, and opportunities to support vulnerable children.
+                        events, and opportunities to support underserved children.
                     </p>
 
                     {/* FORM */}

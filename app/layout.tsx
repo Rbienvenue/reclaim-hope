@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Reclaim Hope Rwanda | Empowering Children Through Education & Care",
-  description: "Join Reclaim Hope Rwanda in transforming lives through education, mentorship, and community support. Help vulnerable children in Rwanda build brighter futures through our comprehensive programs.",
+  description: "Join Reclaim Hope Rwanda in transforming lives through education, mentorship, and community support. Help underserved children in Rwanda build brighter futures through our comprehensive programs.",
   keywords: ["Rwanda", "education", "children", "mentorship", "community support", "NGO", "charity", "donate", "sponsor child", "empowerment"],
   authors: [{ name: "Reclaim Hope Rwanda" }],
   creator: "Reclaim Hope Rwanda",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Reclaim Hope Rwanda | Empowering Children Through Education & Care",
-    description: "Join Reclaim Hope Rwanda in transforming lives through education, mentorship, and community support. Help vulnerable children in Rwanda build brighter futures.",
+    description: "Join Reclaim Hope Rwanda in transforming lives through education, mentorship, and community support. Help underserved children in Rwanda build brighter futures.",
     url: 'https://reclaimhope.rw',
     siteName: 'Reclaim Hope Rwanda',
     images: [
@@ -88,7 +88,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "NonprofitOrganization",
     "name": "Reclaim Hope Rwanda",
-    "description": "Reclaim Hope Rwanda supports vulnerable children and communities through education, mentorship, nutrition, and empowerment programs.",
+    "description": "Reclaim Hope Rwanda supports underserved children and communities through education, mentorship, nutrition, and empowerment programs.",
     "url": "https://reclaimhope.rw",
     "logo": "https://reclaimhope.rw/logo.png",
     "sameAs": [

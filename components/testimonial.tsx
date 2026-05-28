@@ -73,9 +73,7 @@ export default function TestimonialSection() {
                     <p className="text-orange-500 font-semibold uppercase tracking-widest mb-3">
                         Success Story
                     </p>
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-                        Transforming Lives Through Hope
-                    </h2>
+                    
                 </div>
 
                 {/* CAROUSEL */}

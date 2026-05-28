@@ -33,7 +33,7 @@ export default function GetInvolvedHero() {
 
                 {/* SUBTITLE */}
                 <p className="text-lg md:text-2xl text-white/85 leading-relaxed max-w-3xl mx-auto">
-                    Your support helps vulnerable children access education,
+                    Your support helps underserved children access education,
                     nutrition, mentorship, and hope for a better future
                     through community-driven initiatives.
                 </p>

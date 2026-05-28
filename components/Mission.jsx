@@ -11,7 +11,7 @@ export default function MissionVisionValues() {
             id: 1,
             title: "Mission",
             description:
-                "To empower vulnerable children through education, nutrition, mentorship, and holistic community support programs.",
+                "To empower underserved children through education, nutrition, mentorship, and holistic community support programs.",
             icon: Target,
             color: "orange",
         },

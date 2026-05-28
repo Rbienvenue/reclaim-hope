@@ -14,7 +14,7 @@ export default function WaysToGetInvolved() {
             id: 1,
             title: "Sponsor a Child",
             description:
-                "Help provide education, nutrition, and emotional support for vulnerable children.",
+                "Help provide education, nutrition, and emotional support for underserved children.",
             button: "Become a Sponsor",
             icon: HeartHandshake,
             color: "orange",

@@ -29,12 +29,6 @@ export default function ImpactSnapshot() {
             icon: GraduationCap,
         },
 
-        {
-            id: 4,
-            number: "15+",
-            label: "Communities Reached",
-            icon: MapPinned,
-        },
     ];
 
     return (
@@ -49,10 +43,6 @@ export default function ImpactSnapshot() {
                         Impact Snapshot
                     </p>
 
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                        Small Numbers, Big Impact
-                    </h2>
-
                     <p className="max-w-2xl mx-auto text-gray-600 text-lg leading-relaxed">
                         Every initiative contributes toward transforming lives
                         and creating stronger communities across Rwanda.
@@ -61,7 +51,7 @@ export default function ImpactSnapshot() {
                 </div>
 
                 {/* STATS GRID */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
 
                     {stats.map((stat) => {
 

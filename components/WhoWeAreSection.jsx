@@ -45,7 +45,7 @@ export default function WhoWeAreSection() {
                     {/* PARAGRAPH */}
                     <p className="text-gray-600 text-lg leading-relaxed mb-6">
                         Reclaim Hope Rwanda is a community-driven organization
-                        committed to empowering vulnerable children and families
+                        committed to empowering underserved children and families
                         through education, mentorship, nutrition, and sustainable
                         support initiatives.
                     </p>

@@ -30,7 +30,7 @@ const programs = [
     image: "/healthy.png",
     category: "Nutrition & Wellness",
     summary:
-      "A holistic wellness initiative that supplies nutritious meals, health education, and hygiene support to vulnerable children.",
+      "A holistic wellness initiative that supplies nutritious meals, health education, and hygiene support to underserved children.",
     details: [
       "Our Healthy Child & Nutrition Program brings nourishing meals to school and community centers while teaching children and families the importance of food, hygiene, and healthy habits. Nutrition is the foundation of learning, growth, and emotional resilience.",
       "The program includes daily meal distribution, health screenings, and nutritious food packs for families. Children receive balanced breakfasts or lunches that support their concentration, energy levels, and physical development.",

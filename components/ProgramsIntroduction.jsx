@@ -10,15 +10,11 @@ export default function ProgramsIntroduction() {
                 </p>
 
                 {/* HEADING */}
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-8">
-                    Creating Lasting Impact
-                    Through Holistic Support
-                </h2>
 
                 {/* DESCRIPTION */}
                 <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
                     Our programs are designed to provide immediate support
-                    while creating long-term opportunities for vulnerable
+                    while creating long-term opportunities for underserved
                     children and communities. Through education, mentorship,
                     nutrition, and empowerment initiatives, we aim to nurture
                     confidence, resilience, and sustainable growth for a

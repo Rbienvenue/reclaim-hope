@@ -21,7 +21,7 @@ export default function GetInvolvedIntro() {
                     Every contribution — whether through sponsorship,
                     volunteering, donations, or partnerships — helps
                     transform lives and strengthen communities. Together,
-                    we can provide vulnerable children with education,
+                    we can provide underserved children with education,
                     mentorship, nutrition, and opportunities for a
                     brighter future.
                 </p>

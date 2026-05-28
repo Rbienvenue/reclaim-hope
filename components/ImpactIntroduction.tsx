@@ -19,7 +19,7 @@ export default function ImpactIntroduction() {
                 {/* DESCRIPTION */}
                 <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
                     We believe transparency and measurable outcomes are
-                    essential in creating sustainable change for vulnerable
+                    essential in creating sustainable change for underserved
                     children and communities. By tracking progress and
                     evaluating impact, we ensure our programs continue
                     transforming lives and creating meaningful opportunities

@@ -16,7 +16,7 @@ export default function OurStorySection() {
             year: "2020",
             title: "Community Support Began",
             description:
-                "Reclaim Hope Rwanda started as a small community initiative focused on supporting vulnerable children and families.",
+                "Reclaim Hope Rwanda started as a small community initiative focused on supporting underserved children and families.",
             icon: HeartHandshake,
         },
 
@@ -82,12 +82,8 @@ export default function OurStorySection() {
                         Our Journey
                     </p>
 
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                        The Story Behind Reclaim Hope Rwanda
-                    </h2>
-
                     <p className="max-w-3xl mx-auto text-gray-600 text-lg leading-relaxed">
-                        What started as a passion for helping vulnerable children
+                        What started as a passion for helping underserved children
                         has grown into a mission dedicated to transforming lives
                         through education, mentorship, nutrition, and community support.
                     </p>

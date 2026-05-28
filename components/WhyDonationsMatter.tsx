@@ -47,7 +47,7 @@ export default function WhyDonationsMatter() {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            Your generosity directly impacts the lives of vulnerable children in Rwanda,
+            Your generosity directly impacts the lives of underserved children in Rwanda,
             providing them with the tools and support they need to build brighter futures.
           </p>
         </div>
