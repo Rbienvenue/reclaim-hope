@@ -26,7 +26,7 @@ export default function ProgramsGrid() {
         {
             id: 3,
             slug: "healthy-child-nutrition-program",
-            title: "Healthy Child & Nutrition Program",
+            title: "Healthy Child Program",
             image: "/healthy.png",
             description:
                 "Supporting child wellness through nutritious meals, health monitoring, hygiene education, and wellness initiatives.",
@@ -39,6 +39,14 @@ export default function ProgramsGrid() {
             image: "/empowerment.png",
             description:
                 "Equipping youth with vocational training, digital literacy, and life skills that prepare them for future opportunities.",
+        },
+        {
+            id: 4,
+            slug: "tallent-development",
+            title: "Talent development",
+            image: "/empowerment.png",
+            description:
+                "Supporting our children in their favored talents, to help them keep growing.",
         },
     ];
 

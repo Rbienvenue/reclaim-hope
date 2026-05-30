@@ -6,7 +6,7 @@ export default function ProgramsIntroduction() {
 
                 {/* SMALL LABEL */}
                 <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-6">
-                    Our Approach
+                    Our Philosophy
                 </p>
 
                 {/* HEADING */}

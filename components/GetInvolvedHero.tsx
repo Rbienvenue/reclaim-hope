@@ -25,12 +25,6 @@ export default function GetInvolvedHero() {
                 </p>
 
                 {/* HEADING */}
-                <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
-                    Be Part of
-                    <br />
-                    the Change
-                </h1>
-
                 {/* SUBTITLE */}
                 <p className="text-lg md:text-2xl text-white/85 leading-relaxed max-w-3xl mx-auto">
                     Your support helps underserved children access education,

@@ -48,12 +48,6 @@ export default function SuccessStories() {
                         Stories of Transformation
                     </p>
 
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Real Stories.
-                        <br />
-                        Real Impact.
-                    </h2>
-
                     <p className="max-w-3xl mx-auto text-gray-600 text-lg leading-relaxed">
                         Behind every number is a child, a family, or a community
                         whose life has been transformed through education,

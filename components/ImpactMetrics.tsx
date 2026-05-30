@@ -113,12 +113,6 @@ export default function ImpactMetrics() {
                         Impact Highlights
                     </p>
 
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Measuring Real
-                        <br />
-                        Community Transformation
-                    </h2>
-
                     <p className="max-w-3xl mx-auto text-gray-600 text-lg leading-relaxed">
                         Every number represents lives impacted, opportunities created,
                         and communities strengthened through our programs and partnerships.

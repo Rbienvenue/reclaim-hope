@@ -6,6 +6,7 @@ import LeadershipSection from "@/components/LeadershipSection";
 import WhyOurWorkMatters from "@/components/WhyOurWorkMatters";
 import ImpactSnapshot from "@/components/ImpactSnapshot";
 import AboutCTASection from "@/components/AboutCTASection";
+import HelpSection from "@/components/help";
 
 export default function AboutPage() {
     return (
@@ -14,9 +15,10 @@ export default function AboutPage() {
             < WhoWeAreSection/>
             <MissionVisionValues/>
             <OurStorySection/>
-            <LeadershipSection/>
             <WhyOurWorkMatters/>
+            <LeadershipSection/>
             <ImpactSnapshot/>
+            <HelpSection/>
         </div>
     )
 }

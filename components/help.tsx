@@ -3,6 +3,7 @@ import {
     HandCoins,
     Users,
     ArrowRight,
+    ShoppingBasket,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -25,7 +26,7 @@ export default function HelpSection() {
                 "Help provide school fees, healthcare, and long-term support for a child’s future.",
             icon: Heart,
             color: "green",
-            button: "Become a Sponsor",
+            button: "Sponsor",
         },
         {
             id: 3,
@@ -36,6 +37,16 @@ export default function HelpSection() {
             color: "blue",
             button: "Get Involved",
         },
+        {
+            id: 4,
+            title: "Shop",
+            description:
+                "Support children through buying products and handcrafts made by their parents",
+            icon: ShoppingBasket,
+            color: "yellow",
+            button: "Shop now",
+        },
+
     ];
 
     const colorStyles = {
@@ -55,6 +66,12 @@ export default function HelpSection() {
             bg: "bg-blue-100",
             text: "text-blue-600",
             button: "bg-blue-600 hover:bg-blue-700",
+        },
+
+        yellow: {
+            bg: "bg-yellow-100",
+            text: "text-yellow-600",
+            button: "bg-yellow-600 hover:bg-yellow-700",
         },
     };
 
@@ -78,7 +95,7 @@ export default function HelpSection() {
                 </div>
 
                 {/* CARDS */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
 
                     {helpCards.map((card, index) => {
 

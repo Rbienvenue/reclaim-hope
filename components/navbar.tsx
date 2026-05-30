@@ -11,7 +11,7 @@ const navItems = [
     { href: "/impact", label: "Impact" },
     { href: "/sponsor", label: "Sponsor" },
     { href: "/shop", label: "Shop" },
-    { href: "/newsletter", label: "Newsletter" },
+    { href: "/media-center", label: "Media center" },
     { href: "/contact", label: "Contact us" },
 ];
 

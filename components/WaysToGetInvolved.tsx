@@ -92,12 +92,6 @@ export default function WaysToGetInvolved() {
                         Ways to Get Involved
                     </p>
 
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Choose How You Want
-                        <br />
-                        to Make an Impact
-                    </h2>
-
                     <p className="max-w-3xl mx-auto text-gray-600 text-lg leading-relaxed">
                         Every contribution matters. Whether through sponsorship,
                         donations, volunteering, or partnerships, your support

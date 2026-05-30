@@ -24,12 +24,6 @@ export default function ImpactHero() {
                 </p>
 
                 {/* HEADING */}
-                <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
-                    Creating
-                    <br />
-                    Lasting Impact
-                </h1>
-
                 {/* SUBTITLE */}
                 <p className="text-lg md:text-2xl text-white/85 leading-relaxed max-w-4xl mx-auto">
                     Through education, nutrition, mentorship, and

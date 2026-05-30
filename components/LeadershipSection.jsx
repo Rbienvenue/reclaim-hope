@@ -90,29 +90,9 @@ export default function LeadershipSection() {
                             </p>
 
                             {/* SOCIALS */}
-                            <div className="flex items-center justify-center gap-4">
 
-                                <a
-                                    href="#"
-                                    className="w-10 h-10 rounded-full bg-orange-100 hover:bg-orange-500 transition flex items-center justify-center group"
-                                >
-                                    <Share2 className="w-5 h-5 text-orange-500 group-hover:text-white" />
-                                </a>
-
-                                <a
-                                    href="#"
-                                    className="w-10 h-10 rounded-full bg-orange-100 hover:bg-orange-500 transition flex items-center justify-center group"
-                                >
-                                    <Users className="w-5 h-5 text-orange-500 group-hover:text-white" />
-                                </a>
-
-                                <a
-                                    href="#"
-                                    className="w-10 h-10 rounded-full bg-orange-100 hover:bg-orange-500 transition flex items-center justify-center group"
-                                >
-                                    <Mail className="w-5 h-5 text-orange-500 group-hover:text-white" />
-                                </a>
-
+                            <div className="flex rounded-full text-white gap-2 justify-center bg-orange-500 py-2 cursor-pointer">
+                                <Mail className="w-5 h-5 " /> cecile@reclaimhope.rw
                             </div>
 
                         </div>

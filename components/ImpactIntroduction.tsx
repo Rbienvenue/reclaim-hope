@@ -10,12 +10,6 @@ export default function ImpactIntroduction() {
                 </p>
 
                 {/* HEADING */}
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-8">
-                    Impact That Goes
-                    <br />
-                    Beyond Numbers
-                </h2>
-
                 {/* DESCRIPTION */}
                 <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
                     We believe transparency and measurable outcomes are

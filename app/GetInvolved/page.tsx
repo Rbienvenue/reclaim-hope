@@ -7,6 +7,7 @@ import PartnershipSection from "@/components/PartnershipSection";
 import DonationCTABanner from "@/components/DonationCTABanner";
 import FaqSection from "@/components/FaqSection";
 import FinalCTA from "@/components/FinalCTA";
+import HelpSection from "@/components/help";
 
 export default function Page() {
     return (
@@ -14,12 +15,10 @@ export default function Page() {
             <GetInvolvedHero />
             <GetInvolvedIntro />
             <WaysToGetInvolved />
-            <SponsorshipSection />
             <VolunteerSection />
             <PartnershipSection />
-            <DonationCTABanner />
+            <HelpSection/>
             <FaqSection />
-            <FinalCTA />
         </div>
     )
 }

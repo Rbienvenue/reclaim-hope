@@ -6,6 +6,7 @@ import VisualImpactGallery from "@/components/VisualImpactGallery"
 import TransparencySection from "@/components/TransparencySection"
 import AnnualGrowthSection from "@/components/AnnualGrowthSection"
 import ImpactFinalCTA from "@/components/ImpactFinalCTA"
+import HelpSection from "@/components/help"
 
 export default function Page(){
 
@@ -14,11 +15,9 @@ export default function Page(){
             <ImpactHero />
             <ImpactIntroduction/>
             <ImpactMetrics/>
-            <SuccessStories/>
-            <VisualImpactGallery/>
             <TransparencySection />
             <AnnualGrowthSection />
-            <ImpactFinalCTA />
+            <HelpSection/>
         </div>
     )
     

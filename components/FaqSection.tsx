@@ -14,12 +14,6 @@ export default function FaqSection() {
         },
 
         {
-            question: "Are donations secure?",
-            answer:
-                "Yes. We are committed to transparency and accountability. Donations are processed securely and directly support our programs and initiatives.",
-        },
-
-        {
             question: "Can international donors contribute?",
             answer:
                 "Absolutely. We welcome support from individuals, organizations, and partners around the world who want to help create lasting impact.",
@@ -55,12 +49,6 @@ export default function FaqSection() {
                     <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-4">
                         Frequently Asked Questions
                     </p>
-
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Questions About
-                        <br />
-                        Getting Involved
-                    </h2>
 
                     <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
                         We believe transparency and trust are essential.

@@ -20,7 +20,7 @@ export default function ImpactSection() {
             id: 2,
             icon: BookOpen,
             number: 120,
-            label: "Educational Programs",
+            label: "Programs",
         },
         {
             id: 3,

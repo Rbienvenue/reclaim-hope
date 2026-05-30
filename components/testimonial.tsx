@@ -71,7 +71,7 @@ export default function TestimonialSection() {
                 {/* SECTION HEADER */}
                 <div className="text-center mb-16 animate-fade-in-up">
                     <p className="text-orange-500 font-semibold uppercase tracking-widest mb-3">
-                        Success Story
+                        Testimonials
                     </p>
                     
                 </div>
