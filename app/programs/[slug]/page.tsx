@@ -25,8 +25,8 @@ const programs = [
       "Children in LEAD are more likely to stay in school, engage in class, and envision a brighter future. The program empowers learners to become role models and active contributors in their communities.",
   },
   {
-    slug: "healthy-child-nutrition-program",
-    title: "Healthy Child & Nutrition Program",
+    slug: "healthy-child-program",
+    title: "Healthy Child",
     image: "/healthy.png",
     category: "Nutrition & Wellness",
     summary:
@@ -41,6 +41,9 @@ const programs = [
       "Health monitoring and preventative wellness support.",
       "Nutrition education for children and caregivers.",
       "Stronger family resilience through food security and hygiene awareness.",
+      "Health insurance support for children with medical needs, ensuring they can access care when necessary.",
+      "Hygiene kits that provide essential supplies to maintain health and prevent illness, especially during school hours.",
+      "SHRH education sessions that empower children with knowledge about their bodies, health, and well-being, fostering confidence and informed decision-making as they grow.",
     ],
     impact:
       "By meeting the nutritional and health needs of children, this program reduces absenteeism, supports better learning outcomes, and gives families stability during difficult times.",

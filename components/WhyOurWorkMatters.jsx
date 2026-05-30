@@ -1,40 +1,60 @@
+import Image from "next/image";
+import { CheckCircle } from "lucide-react";
 export default function WhyOurWorkMatters() {
     return (
-        <section
-            className="relative w-full bg-cover bg-center py-32 px-6 md:px-16 overflow-hidden"
-            style={{
-                backgroundImage: "url('/work-matters.jpg')",
-            }}
-        >
+        <section className="w-full bg-white py-24 px-6 md:px-16">
 
-            {/* DARK OVERLAY */}
-            <div className="absolute inset-0 bg-black/70"></div>
-            {/* CONTENT */}
-            <div className="relative z-10 max-w-5xl mx-auto text-center text-white">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-                {/* SMALL LABEL */}
-                <p className="text-orange-400 uppercase tracking-[0.3em] font-semibold mb-6">
-                    Why Our Work Matters
-                </p>
+                {/* IMAGE SIDE */}
+                <div className="relative animate-slide-in-left">
 
-                {/* MAIN TITLE */}
+                    {/* BACKGROUND SHAPE */}
+                    <div className="absolute -top-6 -left-6 w-full h-full bg-orange-100 rounded-[40px]"></div>
 
-                {/* MAIN CONTENT */}
-                <p className="text-lg md:text-2xl leading-relaxed text-white/85 mb-4">
-                    Many underserved children face barriers to education,
+                    {/* IMAGE */}
+                    <div className="relative overflow-hidden rounded-[40px] shadow-xl">
+
+                        <Image
+                            src="/work-matters.jpg"
+                            alt="Children learning together"
+                            width={700}
+                            height={700}
+                            className="w-full h-[500px] object-cover hover:scale-105 transition duration-700"
+                        />
+
+                    </div>
+
+                </div>
+
+                {/* TEXT SIDE */}
+                <div className="animate-slide-in-right">
+
+                    {/* SMALL LABEL */}
+                    <p className="text-orange-400 uppercase tracking-[0.3em] font-semibold mb-6">
+                        Why Our Work Matters
+                    </p>
+
+                    {/* PARAGRAPH */}
+                    <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                        Many underserved children face barriers to education,
                     nutrition, mentorship, and opportunities that shape
                     their future. Without support, countless dreams remain
                     unrealized.
-                </p>
+                    </p>
 
-
-                <p className="text-lg md:text-2xl leading-relaxed text-white/85 mb-8">
-                    At Reclaim Hope Rwanda, we believe every child deserves
+                    <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                        At Reclaim Hope Rwanda, we believe every child deserves
                     the chance to learn, grow, and thrive in a supportive
                     community. Through education, empowerment, and hope-centered
                     initiatives, we are helping transform lives and build
                     brighter futures for generations to come.
-                </p>               
+                    </p>
+
+                    {/* HIGHLIGHTS */}
+                    
+
+                </div>
 
             </div>
 

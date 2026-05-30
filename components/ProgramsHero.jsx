@@ -24,12 +24,7 @@ export default function ProgramsHero() {
                 </p>
 
                 {/* TITLE */}
-                <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8 animation-fade-up">
-                    Programs That
-                    <br />
-                    Transform Lives
-                </h1>
-
+    
                 {/* SUBTITLE */}
                 <p className="text-lg md:text-2xl text-white/85 leading-relaxed max-w-3xl mx-auto animation-fade-up-delay-2">
                     Supporting children and families through education,

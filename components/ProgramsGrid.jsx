@@ -25,7 +25,7 @@ export default function ProgramsGrid() {
 
         {
             id: 3,
-            slug: "healthy-child-nutrition-program",
+            slug: "healthy-child-program",
             title: "Healthy Child Program",
             image: "/healthy.png",
             description:
