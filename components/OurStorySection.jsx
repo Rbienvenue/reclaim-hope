@@ -7,40 +7,37 @@ import {
     BookOpen,
     Soup,
     Users,
+    Pencil,
 } from "lucide-react";
 
 export default function OurStorySection() {
 
     const timeline = [
         {
-            year: "2020",
-            title: "Community Support Began",
+            title: " Basic Needs for Education",
             description:
-                "Reclaim Hope Rwanda started as a small community initiative focused on supporting underserved children and families.",
-            icon: HeartHandshake,
+                "We eliminate barriers to education by equipping students with essential academic resources, including school fees, required uniforms, scholastic materials, and annual health insurance (Mutuelle de Santé)",
+            icon: Pencil,
         },
 
         {
-            year: "2024",
-            title: "Education Programs Expanded",
+            title: "L.E.A.D. After-School Program",
             description:
-                "We introduced mentorship and educational support programs to help children access learning opportunities.",
+                "Our Life Enhancement & Academic Development (L.E.A.D.) program provides a safe space where children access tutoring, electricity, internet connectivity, and vital mentorship to thrive into healthy adulthood",
             icon: BookOpen,
         },
 
         {
-            year: "2025",
-            title: "Nutrition Initiatives Launched",
+            title: "Healthy Child",
             description:
-                "Nutrition and wellness programs were introduced to improve child well-being and community health.",
+                " We pair health education with direct physical care, serving thousands of hot meals annually sourced from our community learning garden alongside clean water filtration initiatives.",
             icon: Soup,
         },
 
         {
-            year: "2026",
-            title: "Hundreds of Children Supported",
+            title: "Family Wrap-Around Support",
             description:
-                "Our programs expanded across communities, impacting hundreds of children and families through hope-centered initiatives.",
+                "We break generational poverty cycles by offering vocational training such as tailoring and artisan crafts—and cultivating leadership through our elected parent committees.",
             icon: Users,
         },
     ];
@@ -142,11 +139,6 @@ export default function OurStorySection() {
 
                                         {/* CONTENT */}
                                         <div>
-
-                                            {/* YEAR */}
-                                            <p className="text-orange-500 font-bold text-lg mb-2">
-                                                {item.year}
-                                            </p>
 
                                             {/* TITLE */}
                                             <h3 className="text-2xl font-bold text-gray-900 mb-3">

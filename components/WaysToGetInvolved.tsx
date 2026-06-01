@@ -153,14 +153,14 @@ export default function WaysToGetInvolved() {
                                     </Link>
                                 ) : item.id === 3 ? (
                                     <Link
-                                        href="/GetInvolved"
+                                        href="/GetInvolved/volunteer"
                                         className={`${colors.button} ${buttonClasses}`}
                                     >
                                         {item.button}
                                     </Link>
                                 ) : (
                                     <Link
-                                        href="/contact"
+                                        href="/GetInvolved/partner"
                                         className={`${colors.button} ${buttonClasses}`}
                                     >
                                         {item.button}

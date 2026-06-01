@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 const navItems = [
     { href: "/", label: "Home" },
@@ -15,8 +16,16 @@ const navItems = [
     { href: "/contact", label: "Contact us" },
 ];
 
+const mediaCenterItems = [
+    { href: "/testimonials", label: "Testimonials" },
+    { href: "/newsletter", label: "Newsletters" },
+    { href: "/blog", label: "Blog" },
+    { href: "/gallery", label: "Gallery" },
+];
+
 export default function Navbar() {
     const [open, setOpen] = useState(false);
+    const [mediaOpen, setMediaOpen] = useState(false);
     const pathname = usePathname();
 
     const isActive = (href: string) => {
@@ -45,6 +54,42 @@ export default function Navbar() {
                 <ul className="hidden md:flex gap-8 text-black items-center">
                     {navItems.map((item) => {
                         const active = isActive(item.href);
+
+                        if (item.href === "/media-center") {
+                            return (
+                                <li
+                                    key={item.href}
+                                    className="relative z-50"
+                                    onMouseEnter={() => setMediaOpen(true)}
+                                    onMouseLeave={() => setMediaOpen(false)}
+                                >
+                                    <button
+                                        type="button"
+                                        className={`transition inline-flex items-center gap-1 ${active ? "text-orange-600 font-semibold" : "hover:text-orange-500"}`}
+                                        aria-expanded={mediaOpen}
+                                        onClick={() => setMediaOpen((prev) => !prev)}
+                                    >
+                                        {item.label}
+                                        <ChevronDown className={`w-4 h-4 transition-transform ${mediaOpen ? "rotate-180" : ""}`} />
+                                    </button>
+
+                                    {mediaOpen && (
+                                        <div className="absolute right-0 top-full w-56 rounded-3xl border border-gray-200 bg-white shadow-2xl py-3 z-50">
+                                            {mediaCenterItems.map((subItem) => (
+                                                <Link
+                                                    key={subItem.href}
+                                                    href={subItem.href}
+                                                    className="block px-5 py-3 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition"
+                                                >
+                                                    {subItem.label}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    )}
+                                </li>
+                            );
+                        }
+
                         return (
                             <li key={item.href}>
                                 <Link
@@ -80,6 +125,29 @@ export default function Navbar() {
                 <ul className="md:hidden mt-2 flex flex-col gap-6 px-6 pb-6 text-center text-black">
                     {navItems.map((item) => {
                         const active = isActive(item.href);
+                        if (item.href === "/media-center") {
+                            return (
+                                <li key={item.href} className="space-y-2">
+                                    <div
+                                        className={`block transition ${active ? "text-orange-600 font-semibold" : "hover:text-orange-500"}`}
+                                    >
+                                        {item.label}
+                                    </div>
+                                    <div className="space-y-1 px-4">
+                                        {mediaCenterItems.map((subItem) => (
+                                            <Link
+                                                key={subItem.href}
+                                                href={subItem.href}
+                                                className="block rounded-full px-4 py-2 text-gray-700 hover:bg-gray-100 transition"
+                                            >
+                                                {subItem.label}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </li>
+                            );
+                        }
+
                         return (
                             <li key={item.href}>
                                 <Link

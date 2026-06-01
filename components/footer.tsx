@@ -11,7 +11,7 @@ import {
 
 export default function Footer() {
     return (
-        <footer className="w-full bg-[#0f172a] text-white px-6 md:px-16 pt-24 pb-10">
+        <footer className="w-full bg-[#055a02] text-white px-6 md:px-16 pt-24 pb-10">
 
             <div className="max-w-7xl mx-auto">
 
@@ -25,7 +25,7 @@ export default function Footer() {
                         <div className="flex items-center gap-3 mb-6">
 
                             <img
-                                src="/logo.png"
+                                src="/logo-transparent.png"
                                 alt="Logo"
                                 className="w-14 h-14 object-contain"
                             />

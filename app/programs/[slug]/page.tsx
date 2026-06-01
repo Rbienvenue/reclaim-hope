@@ -90,6 +90,27 @@ const programs = [
     impact:
       "Youth who complete this program are better prepared to pursue education, employment, or entrepreneurship, creating a stronger future for themselves and their communities.",
   },
+  {
+    slug: "tallent-development",
+    title: "Talent Development",
+    image: "/empowerment.png",
+    category: "Creative & Cultural Development",
+    summary:
+      "Supporting children’s talents through sports scholarships, traditional dance, singing, art and craft, and storytelling.",
+    details: [
+      "The Talent Development program gives children access to sports scholarships, performance training, and cultural arts education so they can grow their gifts with confidence.",
+      "Participants engage in traditional dance, singing, storytelling, and creative arts workshops led by experienced mentors. These activities build self-expression, teamwork, and cultural pride.",
+      "Young people also receive support in art and craft, performance preparation, and scholarship opportunities that help them pursue their passions while staying connected to school and community.",
+    ],
+    benefits: [
+      "Sports scholarship opportunities to nurture athletic talent.",
+      "Creative training in traditional dance, singing, and storytelling.",
+      "Art and craft workshops that develop fine motor skills and imagination.",
+      "Increased confidence, cultural pride, and community engagement.",
+    ],
+    impact:
+      "By investing in talent and cultural expression, this program helps children discover their strengths, stay motivated in school, and become positive role models in their communities.",
+  },
 ];
 
 export default async function ProgramDetailPage({ params }: { params: Promise<{ slug: string }> }) {

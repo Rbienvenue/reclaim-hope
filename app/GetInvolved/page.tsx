@@ -1,23 +1,16 @@
 import GetInvolvedHero from "@/components/GetInvolvedHero";
 import GetInvolvedIntro from "@/components/GetInvolvedIntro";
 import WaysToGetInvolved from "@/components/WaysToGetInvolved";
-import SponsorshipSection from "@/components/SponsorshipSection";
-import VolunteerSection from "@/components/VolunteerSection";
-import PartnershipSection from "@/components/PartnershipSection";
-import DonationCTABanner from "@/components/DonationCTABanner";
 import FaqSection from "@/components/FaqSection";
-import FinalCTA from "@/components/FinalCTA";
 import HelpSection from "@/components/help";
 
 export default function Page() {
     return (
-        <div>
+        <div className="bg-white">
             <GetInvolvedHero />
             <GetInvolvedIntro />
             <WaysToGetInvolved />
-            <VolunteerSection />
-            <PartnershipSection />
-            <HelpSection/>
+            <HelpSection />
             <FaqSection />
         </div>
     )

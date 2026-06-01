@@ -41,12 +41,12 @@ export default function ProgramsGrid() {
                 "Equipping youth with vocational training, digital literacy, and life skills that prepare them for future opportunities.",
         },
         {
-            id: 4,
+            id: 5,
             slug: "tallent-development",
-            title: "Talent development",
+            title: "Talent Development",
             image: "/empowerment.png",
             description:
-                "Supporting our children in their favored talents, to help them keep growing.",
+                "Supporting our children in sports, traditional dance, singing, art & craft, and storytelling so they keep growing in confidence.",
         },
     ];
 
