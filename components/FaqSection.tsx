@@ -46,7 +46,7 @@ export default function FaqSection() {
                 {/* SECTION HEADER */}
                 <div className="text-center mb-16">
 
-                    <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-4">
+                    <p className="text-yellow-500 uppercase tracking-[0.3em] font-semibold mb-4">
                         Frequently Asked Questions
                     </p>
 

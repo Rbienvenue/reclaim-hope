@@ -25,7 +25,7 @@ export default function MapLocation() {
 
             <div className="space-y-4">
               <div className="flex items-start gap-4">
-                <MapPin className="w-6 h-6 text-orange-500 mt-1" />
+                <MapPin className="w-6 h-6 text-yellow-500 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900">Address</h3>
                   <p className="text-gray-600">
@@ -36,7 +36,7 @@ export default function MapLocation() {
               </div>
 
               <div className="flex items-start gap-4">
-                <Clock className="w-6 h-6 text-orange-500 mt-1" />
+                <Clock className="w-6 h-6 text-yellow-500 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900">Office Hours</h3>
                   <p className="text-gray-600">
@@ -48,7 +48,7 @@ export default function MapLocation() {
               </div>
 
               <div className="flex items-start gap-4">
-                <Car className="w-6 h-6 text-orange-500 mt-1" />
+                <Car className="w-6 h-6 text-yellow-500 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900">Getting Here</h3>
                   <p className="text-gray-600">

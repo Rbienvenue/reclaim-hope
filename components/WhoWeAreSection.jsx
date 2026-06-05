@@ -11,7 +11,7 @@ export default function WhoWeAreSection() {
                 <div className="relative animate-slide-in-left">
 
                     {/* BACKGROUND SHAPE */}
-                    <div className="absolute -top-6 -left-6 w-full h-full bg-orange-100 rounded-[40px]"></div>
+                    <div className="absolute -top-6 -left-6 w-full h-full bg-yellow-100 rounded-[40px]"></div>
 
                     {/* IMAGE */}
                     <div className="relative overflow-hidden rounded-[40px] shadow-xl">
@@ -32,7 +32,7 @@ export default function WhoWeAreSection() {
                 <div className="animate-slide-in-right">
 
                     {/* SMALL LABEL */}
-                    <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-4">
+                    <p className="text-yellow-500 uppercase tracking-[0.3em] font-semibold mb-4">
                         Who We Are
                     </p>
 

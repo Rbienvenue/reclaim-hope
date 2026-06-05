@@ -73,7 +73,7 @@ export default function HeroSection() {
 
             <a
               href="/sponsor"
-              className="px-6 py-3 bg-orange-600 hover:bg-orange-500 transition rounded-lg font-semibold"
+              className="px-6 py-3 bg-yellow-600 hover:bg-yellow-500 transition rounded-lg font-semibold"
             >
               Sponsor a Child
             </a>

@@ -124,13 +124,13 @@ export default async function ProgramDetailPage({ params }: { params: Promise<{ 
   return (
     <div className="min-h-screen bg-white px-6 md:px-16 py-24">
       <div className="max-w-5xl mx-auto">
-        <Link href="/programs" className="text-orange-500 font-semibold mb-8 inline-block">
+        <Link href="/programs" className="text-yellow-500 font-semibold mb-8 inline-block">
           ← Back to Programs
         </Link>
 
         <section className="grid gap-12 lg:grid-cols-[1.4fr_1fr] items-start">
           <div>
-            <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-4">
+            <p className="text-yellow-500 uppercase tracking-[0.3em] font-semibold mb-4">
               {program.category}
             </p>
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-8">
@@ -165,7 +165,7 @@ export default async function ProgramDetailPage({ params }: { params: Promise<{ 
               />
             </div>
 
-            <div className="rounded-[32px] border border-gray-100 bg-orange-50 p-8">
+            <div className="rounded-[32px] border border-gray-100 bg-yellow-50 p-8">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Impact Snapshot</h2>
               <p className="text-gray-700 leading-relaxed">{program.impact}</p>
             </div>

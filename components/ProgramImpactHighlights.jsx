@@ -29,7 +29,7 @@ export default function ProgramImpactHighlights() {
                 {/* SECTION HEADER */}
                 <div className="text-center mb-20">
 
-                    <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-4">
+                    <p className="text-yellow-500 uppercase tracking-[0.3em] font-semibold mb-4">
                         Program Impact
                     </p>
 
@@ -45,7 +45,7 @@ export default function ProgramImpactHighlights() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
 
                     {/* LEFT BIG CARD */}
-                    <div className="relative overflow-hidden rounded-[40px] bg-gradient-to-br from-orange-500 to-orange-600 text-white p-12 flex flex-col justify-center">
+                    <div className="relative overflow-hidden rounded-[40px] bg-gradient-to-br from-yellow-500 to-yellow-600 text-white p-12 flex flex-col justify-center">
 
                         {/* DECORATIVE GLOW */}
                         <div className="absolute -top-10 -right-10 w-52 h-52 bg-white/10 rounded-full blur-3xl"></div>
@@ -86,7 +86,7 @@ export default function ProgramImpactHighlights() {
                                         Meals Served
                                     </h4>
 
-                                    <span className="text-orange-500 font-bold text-xl">
+                                    <span className="text-yellow-500 font-bold text-xl">
 
                                         <CountUp
                                             end={65000}
@@ -102,7 +102,7 @@ export default function ProgramImpactHighlights() {
 
                                 <div className="w-full h-4 bg-gray-200 rounded-full overflow-hidden">
 
-                                    <div className="h-full bg-orange-500 rounded-full w-[85%]"></div>
+                                    <div className="h-full bg-yellow-500 rounded-full w-[85%]"></div>
 
                                 </div>
 

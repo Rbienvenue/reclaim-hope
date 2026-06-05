@@ -25,7 +25,7 @@ export default function SponsorshipSection() {
                     <div className="relative" data-aos="fade-right">
 
                         {/* DECORATIVE SHAPE */}
-                        <div className="absolute -bottom-6 -left-6 w-full h-full bg-orange-100 rounded-[40px]"></div>
+                        <div className="absolute -bottom-6 -left-6 w-full h-full bg-yellow-100 rounded-[40px]"></div>
 
                         {/* IMAGE */}
                         <div className="relative overflow-hidden rounded-[40px] shadow-2xl">
@@ -43,7 +43,7 @@ export default function SponsorshipSection() {
                         {/* SAMPLE PROFILE CARD */}
                         <div className="absolute bottom-8 right-8 bg-white rounded-3xl shadow-xl p-6 max-w-xs">
 
-                            <p className="text-orange-500 font-semibold mb-2">
+                            <p className="text-yellow-500 font-semibold mb-2">
                                 Sponsored Child
                             </p>
 
@@ -55,7 +55,7 @@ export default function SponsorshipSection() {
                                 Dreams of becoming a doctor and helping her community.
                             </p>
 
-                            <div className="bg-orange-100 text-orange-600 px-4 py-2 rounded-full text-sm font-semibold inline-block">
+                            <div className="bg-yellow-100 text-yellow-600 px-4 py-2 rounded-full text-sm font-semibold inline-block">
                                 $35/month sponsorship
                             </div>
 
@@ -67,7 +67,7 @@ export default function SponsorshipSection() {
                     <div data-aos="fade-left" className="animate-split-reveal">
 
                         {/* LABEL */}
-                        <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-6">
+                        <p className="text-yellow-500 uppercase tracking-[0.3em] font-semibold mb-6">
                             Child Sponsorship
                         </p>
 
@@ -113,7 +113,7 @@ export default function SponsorshipSection() {
 
                             <div className="flex items-start gap-4">
 
-                                <HeartHandshake className="w-8 h-8 text-orange-500 flex-shrink-0" />
+                                <HeartHandshake className="w-8 h-8 text-yellow-500 flex-shrink-0" />
 
                                 <div>
 
@@ -135,7 +135,7 @@ export default function SponsorshipSection() {
                         </div>
 
                         {/* CTA BUTTON */}
-                        <Link href="/sponsor" className="bg-orange-500 hover:bg-orange-600 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-xl hover:scale-105 inline-flex items-center justify-center text-center">
+                        <Link href="/sponsor" className="bg-yellow-500 hover:bg-yellow-600 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-xl hover:scale-105 inline-flex items-center justify-center text-center">
 
                             Become a Sponsor
 

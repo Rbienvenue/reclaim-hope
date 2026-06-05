@@ -11,7 +11,7 @@ export default function ProgramsHero() {
             <div className="absolute inset-0 bg-black/65"></div>
 
             {/* DECORATIVE GLOW */}
-            <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/20 blur-3xl rounded-full"></div>
+            <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-500/20 blur-3xl rounded-full"></div>
 
             <div className="absolute bottom-10 right-10 w-72 h-72 bg-green-500/20 blur-3xl rounded-full"></div>
 
@@ -19,7 +19,7 @@ export default function ProgramsHero() {
             <div className="relative z-10 max-w-4xl text-center text-white">
 
                 {/* SMALL LABEL */}
-                <p className="text-orange-400 uppercase tracking-[0.3em] font-semibold mb-6">
+                <p className="text-yellow-400 uppercase tracking-[0.3em] font-semibold mb-6">
                     Our Programs
                 </p>
 

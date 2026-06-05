@@ -16,7 +16,7 @@ export default function HelpSection() {
             description:
                 "Support underserved children with educational materials, nutrition, and mentorship opportunities.",
             icon: HandCoins,
-            color: "orange",
+            color: "yellow",
             button: "Donate Now",
         },
         {
@@ -50,10 +50,10 @@ export default function HelpSection() {
     ];
 
     const colorStyles = {
-        orange: {
-            bg: "bg-orange-100",
-            text: "text-orange-500",
-            button: "bg-orange-500 hover:bg-orange-600",
+        yellow: {
+            bg: "bg-yellow-100",
+            text: "text-yellow-500",
+            button: "bg-yellow-500 hover:bg-yellow-600",
         },
 
         green: {
@@ -83,7 +83,7 @@ export default function HelpSection() {
                 {/* SECTION HEADER */}
                 <div className="text-center mb-16 animate-fade-in-up">
 
-                    <p className="text-orange-500 font-semibold uppercase tracking-widest mb-3">
+                    <p className="text-yellow-500 font-semibold uppercase tracking-widest mb-3">
                         How You Can Help
                     </p>
 

@@ -73,7 +73,7 @@ export default function ContactForm() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-700"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent text-gray-700"
                   placeholder="Your full name"
                 />
               </div>
@@ -89,7 +89,7 @@ export default function ContactForm() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-700"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent text-gray-700"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -106,7 +106,7 @@ export default function ContactForm() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-700"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent text-gray-700"
                   placeholder="+250 788 123 456"
                 />
               </div>
@@ -121,7 +121,7 @@ export default function ContactForm() {
                   required
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-700"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent text-gray-700"
                 >
                   <option value="">Select a subject</option>
                   {subjects.map((subject) => (
@@ -144,7 +144,7 @@ export default function ContactForm() {
                 rows={6}
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none text-gray-700"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent resize-none text-gray-700"
                 placeholder="Tell us how we can help you..."
               />
             </div>
@@ -152,7 +152,7 @@ export default function ContactForm() {
             <div className="text-center">
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 transition px-8 py-4 rounded-full text-white font-semibold text-lg"
+                className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 transition px-8 py-4 rounded-full text-white font-semibold text-lg"
               >
                 Send Message
                 <Send className="w-5 h-5" />

@@ -78,7 +78,7 @@ export default function DonationForm() {
                 name="amount"
                 value={formData.amount}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
                 placeholder="Enter amount"
                 min="1"
                 required
@@ -92,7 +92,7 @@ export default function DonationForm() {
                 name="isMonthly"
                 checked={formData.isMonthly}
                 onChange={handleInputChange}
-                className="w-4 h-4 text-orange-600 focus:ring-orange-600 border-gray-300 rounded"
+                className="w-4 h-4 text-yellow-600 focus:ring-yellow-600 border-gray-300 rounded"
               />
               <label className="ml-2 text-gray-700">
                 Make this a monthly donation
@@ -110,7 +110,7 @@ export default function DonationForm() {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
                   placeholder="Your full name"
                   required
                 />
@@ -125,7 +125,7 @@ export default function DonationForm() {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
                   placeholder="your@email.com"
                   required
                 />
@@ -141,7 +141,7 @@ export default function DonationForm() {
                 name="country"
                 value={formData.country}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
                 required
               >
                 <option value="">Select your country</option>
@@ -166,7 +166,7 @@ export default function DonationForm() {
                     value="card"
                     checked={formData.paymentMethod === 'card'}
                     onChange={handleInputChange}
-                    className="w-4 h-4 text-orange-600 focus:ring-orange-600 border-gray-300"
+                    className="w-4 h-4 text-yellow-600 focus:ring-yellow-600 border-gray-300"
                   />
                   <span className="ml-2 text-gray-700">Credit/Debit Card (Stripe)</span>
                 </label>
@@ -178,7 +178,7 @@ export default function DonationForm() {
                     value="mobile"
                     checked={formData.paymentMethod === 'mobile'}
                     onChange={handleInputChange}
-                    className="w-4 h-4 text-orange-600 focus:ring-orange-600 border-gray-300"
+                    className="w-4 h-4 text-yellow-600 focus:ring-yellow-600 border-gray-300"
                   />
                   <span className="ml-2 text-gray-700">Mobile Money (MTN/Airtel)</span>
                 </label>
@@ -190,7 +190,7 @@ export default function DonationForm() {
                     value="flutterwave"
                     checked={formData.paymentMethod === 'flutterwave'}
                     onChange={handleInputChange}
-                    className="w-4 h-4 text-orange-600 focus:ring-orange-600 border-gray-300"
+                    className="w-4 h-4 text-yellow-600 focus:ring-yellow-600 border-gray-300"
                   />
                   <span className="ml-2 text-gray-700">Other Payment Methods (Flutterwave)</span>
                 </label>
@@ -206,7 +206,7 @@ export default function DonationForm() {
                 name="message"
                 value={formData.message}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
                 placeholder="Leave a message of encouragement..."
                 rows={3}
               />
@@ -234,7 +234,7 @@ export default function DonationForm() {
                 className={`px-12 py-4 rounded-lg font-semibold text-lg transition-all duration-300 ${
                   isSubmitting
                     ? 'bg-gray-400 cursor-not-allowed'
-                    : 'bg-orange-600 hover:bg-orange-700 hover:scale-105 shadow-lg'
+                    : 'bg-yellow-600 hover:bg-yellow-700 hover:scale-105 shadow-lg'
                 } text-white`}
               >
                 {isSubmitting ? 'Processing...' : `Donate $${formData.amount || '0'}`}

@@ -48,7 +48,7 @@ export default function ChildGrid() {
                 {/* HEADER */}
                 <div className="text-center mb-20">
 
-                    <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-4">
+                    <p className="text-yellow-500 uppercase tracking-[0.3em] font-semibold mb-4">
                         Meet the Children
                     </p>
 

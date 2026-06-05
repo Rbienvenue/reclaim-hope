@@ -102,7 +102,7 @@ export default function StoriesGrid({ activeCategory = "All Stories" }: StoriesG
                     quality={85}
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    <span className="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                       {story.category}
                     </span>
                   </div>
@@ -116,7 +116,7 @@ export default function StoriesGrid({ activeCategory = "All Stories" }: StoriesG
                   </p>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-gray-500">{story.date}</span>
-                    <Link href={`/newsletter/${story.slug}`} className="text-orange-500 hover:text-orange-600 font-semibold">
+                    <Link href={`/newsletter/${story.slug}`} className="text-yellow-500 hover:text-yellow-600 font-semibold">
                       Read More →
                     </Link>
                   </div>

@@ -153,13 +153,13 @@ export default async function NewsletterStoryPage({ params }: { params: Promise<
   return (
     <div className="min-h-screen bg-white px-6 md:px-16 py-24">
       <div className="max-w-5xl mx-auto">
-        <Link href="/newsletter" className="text-orange-500 font-semibold mb-8 inline-block">
+        <Link href="/newsletter" className="text-yellow-500 font-semibold mb-8 inline-block">
           ← Back to Stories
         </Link>
 
         <article className="space-y-10">
           <header className="space-y-6">
-            <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold">
+            <p className="text-yellow-500 uppercase tracking-[0.3em] font-semibold">
               {story.category}
             </p>
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">

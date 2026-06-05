@@ -13,7 +13,7 @@ export default function MissionVisionValues() {
             description:
                 "To empower underserved children through education, nutrition, mentorship, and holistic community support programs.",
             icon: Target,
-            color: "orange",
+            color: "yellow",
         },
 
         {
@@ -36,9 +36,9 @@ export default function MissionVisionValues() {
     ];
 
     const colorStyles = {
-        orange: {
-            bg: "bg-orange-100",
-            text: "text-orange-500",
+        yellow: {
+            bg: "bg-yellow-100",
+            text: "text-yellow-500",
         },
 
         green: {
@@ -66,7 +66,7 @@ export default function MissionVisionValues() {
                 {/* SECTION HEADER */}
                 <div className="text-center mb-16">
 
-                    <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-4">
+                    <p className="text-yellow-500 uppercase tracking-[0.3em] font-semibold mb-4">
                         Our Foundation
                     </p>
 

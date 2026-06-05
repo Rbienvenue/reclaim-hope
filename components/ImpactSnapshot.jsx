@@ -39,7 +39,7 @@ export default function ImpactSnapshot() {
                 {/* SECTION HEADER */}
                 <div className="text-center mb-14">
 
-                    <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-4">
+                    <p className="text-yellow-500 uppercase tracking-[0.3em] font-semibold mb-4">
                         Impact Snapshot
                     </p>
 
@@ -64,9 +64,9 @@ export default function ImpactSnapshot() {
                             >
 
                                 {/* ICON */}
-                                <div className="w-16 h-16 mx-auto rounded-full bg-orange-100 flex items-center justify-center mb-6">
+                                <div className="w-16 h-16 mx-auto rounded-full bg-yellow-100 flex items-center justify-center mb-6">
 
-                                    <Icon className="w-8 h-8 text-orange-500" />
+                                    <Icon className="w-8 h-8 text-yellow-500" />
 
                                 </div>
 

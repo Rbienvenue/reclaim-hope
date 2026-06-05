@@ -75,7 +75,7 @@ export default function OurStorySection() {
                 {/* SECTION HEADER */}
                 <div className="text-center mb-20">
 
-                    <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-4">
+                    <p className="text-yellow-500 uppercase tracking-[0.3em] font-semibold mb-4">
                         Our Journey
                     </p>
 
@@ -94,7 +94,7 @@ export default function OurStorySection() {
                     <div className="relative">
 
                         {/* DECORATIVE SHAPE */}
-                        <div className="absolute -top-6 -right-6 w-full h-full bg-orange-100 rounded-[40px]"></div>
+                        <div className="absolute -top-6 -right-6 w-full h-full bg-yellow-100 rounded-[40px]"></div>
 
                         {/* IMAGE */}
                         <div className="relative overflow-hidden rounded-[40px] shadow-xl">
@@ -115,7 +115,7 @@ export default function OurStorySection() {
                     <div className="relative">
 
                         {/* TIMELINE LINE */}
-                        <div className="absolute left-8 top-0 bottom-0 w-[2px] bg-orange-200"></div>
+                        <div className="absolute left-8 top-0 bottom-0 w-[2px] bg-yellow-200"></div>
 
                         <div className="space-y-12">
 
@@ -131,7 +131,7 @@ export default function OurStorySection() {
                                     >
 
                                         {/* ICON */}
-                                        <div className="relative z-10 flex-shrink-0 w-16 h-16 rounded-full bg-orange-500 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition duration-300">
+                                        <div className="relative z-10 flex-shrink-0 w-16 h-16 rounded-full bg-yellow-500 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition duration-300">
 
                                             <Icon className="w-8 h-8" />
 

@@ -11,7 +11,7 @@ import {
 
 export default function Footer() {
     return (
-        <footer className="w-full bg-[#055a02] text-white px-6 md:px-16 pt-24 pb-10">
+        <footer className="w-full bg-[#11a0db] text-white px-6 md:px-16 pt-24 pb-10">
 
             <div className="max-w-7xl mx-auto">
 
@@ -47,28 +47,28 @@ export default function Footer() {
                         <div className="flex items-center gap-4">
                             <a
                                 href="#"
-                                className="w-10 h-10 rounded-full bg-white/10 hover:bg-orange-500 transition flex items-center justify-center"
+                                className="w-10 h-10 rounded-full bg-white/10 hover:bg-yellow-500 transition flex items-center justify-center"
                             >
                                 <Globe className="w-5 h-5" />
                             </a>
 
                             <a
                                 href="#"
-                                className="w-10 h-10 rounded-full bg-white/10 hover:bg-orange-500 transition flex items-center justify-center"
+                                className="w-10 h-10 rounded-full bg-white/10 hover:bg-yellow-500 transition flex items-center justify-center"
                             >
                                 <AtSign className="w-5 h-5" />
                             </a>
 
                             <a
                                 href="#"
-                                className="w-10 h-10 rounded-full bg-white/10 hover:bg-orange-500 transition flex items-center justify-center"
+                                className="w-10 h-10 rounded-full bg-white/10 hover:bg-yellow-500 transition flex items-center justify-center"
                             >
                                 <Users className="w-5 h-5" />
                             </a>
 
                             <a
                                 href="#"
-                                className="w-10 h-10 rounded-full bg-white/10 hover:bg-orange-500 transition flex items-center justify-center"
+                                className="w-10 h-10 rounded-full bg-white/10 hover:bg-yellow-500 transition flex items-center justify-center"
                             >
                                 <Video className="w-5 h-5" />
                             </a>
@@ -86,31 +86,31 @@ export default function Footer() {
                         <ul className="space-y-4 text-white/70">
 
                             <li>
-                                <a href="#" className="hover:text-orange-400 transition">
+                                <a href="#" className="hover:text-yellow-400 transition">
                                     Home
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" className="hover:text-orange-400 transition">
+                                <a href="#" className="hover:text-yellow-400 transition">
                                     About Us
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" className="hover:text-orange-400 transition">
+                                <a href="#" className="hover:text-yellow-400 transition">
                                     Programs
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" className="hover:text-orange-400 transition">
+                                <a href="#" className="hover:text-yellow-400 transition">
                                     Gallery
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" className="hover:text-orange-400 transition">
+                                <a href="#" className="hover:text-yellow-400 transition">
                                     Contact
                                 </a>
                             </li>
@@ -149,7 +149,7 @@ export default function Footer() {
 
                             <div className="flex items-start gap-4">
 
-                                <MapPin className="w-5 h-5 text-orange-400 mt-1" />
+                                <MapPin className="w-5 h-5 text-yellow-400 mt-1" />
 
                                 <p>
                                     Kigali, Rwanda
@@ -159,7 +159,7 @@ export default function Footer() {
 
                             <div className="flex items-center gap-4">
 
-                                <Mail className="w-5 h-5 text-orange-400" />
+                                <Mail className="w-5 h-5 text-yellow-400" />
 
                                 <p>
                                     info@reclaimhope.rw
@@ -169,7 +169,7 @@ export default function Footer() {
 
                             <div className="flex items-center gap-4">
 
-                                <Phone className="w-5 h-5 text-orange-400" />
+                                <Phone className="w-5 h-5 text-yellow-400" />
 
                                 <p>
                                     +250 7XX XXX XXX
@@ -194,7 +194,7 @@ export default function Footer() {
                                     className="bg-transparent px-5 py-3 flex-1 outline-none text-sm"
                                 />
 
-                                <button className="bg-orange-500 hover:bg-orange-600 transition p-3">
+                                <button className="bg-yellow-500 hover:bg-yellow-600 transition p-3">
 
                                     <ArrowRight className="w-5 h-5" />
 
@@ -217,11 +217,11 @@ export default function Footer() {
 
                     <div className="flex items-center gap-6">
 
-                        <a href="#" className="hover:text-orange-400 transition">
+                        <a href="#" className="hover:text-yellow-400 transition">
                             Privacy Policy
                         </a>
 
-                        <a href="#" className="hover:text-orange-400 transition">
+                        <a href="#" className="hover:text-yellow-400 transition">
                             Terms & Conditions
                         </a>
 

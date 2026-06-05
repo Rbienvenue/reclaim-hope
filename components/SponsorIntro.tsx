@@ -6,7 +6,7 @@ export default function SponsorIntro() {
             <div className="max-w-5xl mx-auto text-center">
 
                 {/* LABEL */}
-                <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-6">
+                <p className="text-yellow-500 uppercase tracking-[0.3em] font-semibold mb-6">
                     Why Sponsorship Matters
                 </p>
 

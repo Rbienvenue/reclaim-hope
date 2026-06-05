@@ -5,7 +5,7 @@ export default function FinalCTA() {
             <div className="max-w-4xl mx-auto text-center">
 
                 {/* SMALL LABEL */}
-                <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-6">
+                <p className="text-yellow-500 uppercase tracking-[0.3em] font-semibold mb-6">
                     Join the Mission
                 </p>
 
@@ -23,7 +23,7 @@ export default function FinalCTA() {
                 </p>
 
                 {/* CTA BUTTON */}
-                <button className="bg-orange-500 hover:bg-orange-600 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-xl hover:scale-105">
+                <button className="bg-yellow-500 hover:bg-yellow-600 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-xl hover:scale-105">
 
                     Take Action Today
 

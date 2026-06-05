@@ -10,7 +10,7 @@ import {
     TrendingUp,
 } from "lucide-react";
 
-type MetricColor = "orange" | "green" | "blue" | "purple";
+type MetricColor = "yellow" | "green" | "blue" | "purple";
 
 type MetricItem = {
     id: number;
@@ -35,7 +35,7 @@ export default function ImpactMetrics() {
             description:
                 "Providing consistent nutrition support to underserved children and families.",
             growth: "+18% this year",
-            color: "orange",
+            color: "yellow",
         },
 
         {
@@ -76,10 +76,10 @@ export default function ImpactMetrics() {
     ];
 
     const colorClasses: Record<MetricColor, { bg: string; text: string; glow: string }> = {
-        orange: {
-            bg: "bg-orange-100",
-            text: "text-orange-500",
-            glow: "group-hover:shadow-orange-200",
+        yellow: {
+            bg: "bg-yellow-100",
+            text: "text-yellow-500",
+            glow: "group-hover:shadow-yellow-200",
         },
 
         green: {
@@ -109,7 +109,7 @@ export default function ImpactMetrics() {
                 {/* SECTION HEADER */}
                 <div className="text-center mb-20">
 
-                    <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-4">
+                    <p className="text-yellow-500 uppercase tracking-[0.3em] font-semibold mb-4">
                         Impact Highlights
                     </p>
 

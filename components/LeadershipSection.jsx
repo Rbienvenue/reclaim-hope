@@ -42,7 +42,7 @@ export default function LeadershipSection() {
                 {/* SECTION HEADER */}
                 <div className="text-center mb-20">
 
-                    <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-4">
+                    <p className="text-yellow-500 uppercase tracking-[0.3em] font-semibold mb-4">
                         Leadership Team
                     </p>
 
@@ -69,7 +69,7 @@ export default function LeadershipSection() {
                                     src={leader.image}
                                     alt={leader.name}
                                     fill
-                                    className="object-cover rounded-full border-4 border-orange-100"
+                                    className="object-cover rounded-full border-4 border-yellow-100"
                                 />
 
                             </div>
@@ -80,7 +80,7 @@ export default function LeadershipSection() {
                             </h3>
 
                             {/* ROLE */}
-                            <p className="text-orange-500 font-semibold mb-6">
+                            <p className="text-yellow-500 font-semibold mb-6">
                                 {leader.role}
                             </p>
 
@@ -91,7 +91,7 @@ export default function LeadershipSection() {
 
                             {/* SOCIALS */}
 
-                            <div className="flex rounded-full text-white gap-2 justify-center bg-orange-500 py-2 cursor-pointer">
+                            <div className="flex rounded-full text-white gap-2 justify-center bg-yellow-500 py-2 cursor-pointer">
                                 <Mail className="w-5 h-5 " /> cecile@reclaimhope.rw
                             </div>
 

@@ -10,7 +10,7 @@ export default function DonateFinalCTA() {
   }, []);
 
   return (
-    <section className="py-20 bg-gradient-to-r from-orange-600 to-orange-700 text-white relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-r from-yellow-600 to-yellow-700 text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -32,14 +32,14 @@ export default function DonateFinalCTA() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
             <a
               href="#donation-form"
-              className="bg-white text-orange-600 hover:bg-gray-100 px-10 py-4 rounded-lg font-bold text-xl transition-all duration-300 hover:scale-105 shadow-2xl"
+              className="bg-white text-yellow-600 hover:bg-gray-100 px-10 py-4 rounded-lg font-bold text-xl transition-all duration-300 hover:scale-105 shadow-2xl"
             >
               Donate Now
             </a>
 
             <a
               href="#impact"
-              className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-10 py-4 rounded-lg font-bold text-xl transition-all duration-300 hover:scale-105"
+              className="border-2 border-white text-white hover:bg-white hover:text-yellow-600 px-10 py-4 rounded-lg font-bold text-xl transition-all duration-300 hover:scale-105"
             >
               See Our Impact
             </a>

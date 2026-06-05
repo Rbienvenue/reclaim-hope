@@ -58,7 +58,7 @@ export default function ProgramsGrid() {
                 {/* SECTION HEADER */}
                 <div className="text-center mb-20">
 
-                    <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-4">
+                    <p className="text-yellow-500 uppercase tracking-[0.3em] font-semibold mb-4">
                         Our Initiatives
                     </p>
 
@@ -110,7 +110,7 @@ export default function ProgramsGrid() {
                                 </p>
 
                                 {/* BUTTON */}
-                                <Link href={`/programs/${program.slug}`} className="flex items-center gap-3 text-orange-500 font-semibold hover:gap-4 transition-all">
+                                <Link href={`/programs/${program.slug}`} className="flex items-center gap-3 text-yellow-500 font-semibold hover:gap-4 transition-all">
 
                                     Learn More
 

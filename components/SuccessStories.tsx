@@ -44,7 +44,7 @@ export default function SuccessStories() {
                 {/* SECTION HEADER */}
                 <div className="text-center mb-20">
 
-                    <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-4">
+                    <p className="text-yellow-500 uppercase tracking-[0.3em] font-semibold mb-4">
                         Stories of Transformation
                     </p>
 
@@ -83,7 +83,7 @@ export default function SuccessStories() {
                             <div className="p-8">
 
                                 {/* CATEGORY */}
-                                <p className="text-orange-500 font-semibold uppercase tracking-wide mb-4 text-sm">
+                                <p className="text-yellow-500 font-semibold uppercase tracking-wide mb-4 text-sm">
                                     {story.category}
                                 </p>
 
@@ -98,7 +98,7 @@ export default function SuccessStories() {
                                 </p>
 
                                 {/* BUTTON */}
-                                <Link href={`/newsletter/${story.slug}`} className="inline-flex items-center gap-3 text-orange-500 font-semibold hover:gap-4 transition-all duration-300">
+                                <Link href={`/newsletter/${story.slug}`} className="inline-flex items-center gap-3 text-yellow-500 font-semibold hover:gap-4 transition-all duration-300">
 
                                     Read More
 

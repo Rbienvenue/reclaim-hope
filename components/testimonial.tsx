@@ -70,7 +70,7 @@ export default function TestimonialSection() {
             <div className="max-w-7xl mx-auto">
                 {/* SECTION HEADER */}
                 <div className="text-center mb-16 animate-fade-in-up">
-                    <p className="text-orange-500 font-semibold uppercase tracking-widest mb-3">
+                    <p className="text-yellow-500 font-semibold uppercase tracking-widest mb-3">
                         Testimonials
                     </p>
                     
@@ -96,8 +96,8 @@ export default function TestimonialSection() {
                                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/20"></div>
                                 </div>
                                 <div className="p-10 md:p-16 animate-fade-in-up">
-                                    <div className="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mb-8 animate-fade-in-up">
-                                        <Quote className="w-8 h-8 text-orange-500" />
+                                    <div className="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center mb-8 animate-fade-in-up">
+                                        <Quote className="w-8 h-8 text-yellow-500" />
                                     </div>
                                     <p className="text-2xl md:text-3xl leading-relaxed text-gray-800 font-medium mb-8">
                                         "{testimonial.quote}"
@@ -117,7 +117,7 @@ export default function TestimonialSection() {
 
                     <button
                         onClick={goToPrevious}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 md:-translate-x-20 bg-orange-500 hover:bg-orange-600 text-white rounded-full p-3 transition duration-300 z-10"
+                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 md:-translate-x-20 bg-yellow-500 hover:bg-yellow-600 text-white rounded-full p-3 transition duration-300 z-10"
                         aria-label="Previous testimonial"
                     >
                         <ChevronLeft className="w-6 h-6" />
@@ -125,7 +125,7 @@ export default function TestimonialSection() {
 
                     <button
                         onClick={goToNext}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 md:translate-x-20 bg-orange-500 hover:bg-orange-600 text-white rounded-full p-3 transition duration-300 z-10"
+                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 md:translate-x-20 bg-yellow-500 hover:bg-yellow-600 text-white rounded-full p-3 transition duration-300 z-10"
                         aria-label="Next testimonial"
                     >
                         <ChevronRight className="w-6 h-6" />
@@ -138,7 +138,7 @@ export default function TestimonialSection() {
                             key={index}
                             onClick={() => goToSlide(index)}
                             className={`h-3 rounded-full transition-all duration-300 ${
-                                index === currentIndex ? "bg-orange-500 w-8" : "bg-gray-300 w-3 hover:bg-gray-400"
+                                index === currentIndex ? "bg-yellow-500 w-8" : "bg-gray-300 w-3 hover:bg-gray-400"
                             }`}
                             aria-label={`Go to testimonial ${index + 1}`}
                         />

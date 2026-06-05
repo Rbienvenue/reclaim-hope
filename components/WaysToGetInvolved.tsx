@@ -17,7 +17,7 @@ export default function WaysToGetInvolved() {
                 "Help provide education, nutrition, and emotional support for underserved children.",
             button: "Become a Sponsor",
             icon: HeartHandshake,
-            color: "orange",
+            color: "yellow",
         },
 
         {
@@ -52,10 +52,10 @@ export default function WaysToGetInvolved() {
     ];
 
     const colorClasses = {
-        orange: {
-            bg: "bg-orange-100",
-            text: "text-orange-500",
-            button: "bg-orange-500 hover:bg-orange-600",
+        yellow: {
+            bg: "bg-yellow-100",
+            text: "text-yellow-500",
+            button: "bg-yellow-500 hover:bg-yellow-600",
         },
 
         green: {
@@ -88,7 +88,7 @@ export default function WaysToGetInvolved() {
                 {/* SECTION HEADER */}
                 <div className="text-center mb-20">
 
-                    <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-4">
+                    <p className="text-yellow-500 uppercase tracking-[0.3em] font-semibold mb-4">
                         Ways to Get Involved
                     </p>
 

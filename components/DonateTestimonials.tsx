@@ -79,7 +79,7 @@ export default function DonateTestimonials() {
                     {testimonial.name}
                   </h3>
                   <p className="text-gray-600">{testimonial.location}</p>
-                  <p className="text-orange-600 font-semibold text-sm mt-1">
+                  <p className="text-yellow-600 font-semibold text-sm mt-1">
                     {testimonial.impact}
                   </p>
                 </div>
@@ -90,7 +90,7 @@ export default function DonateTestimonials() {
               </blockquote>
 
               <div className="mt-6 flex items-center">
-                <div className="flex text-orange-400">
+                <div className="flex text-yellow-400">
                   {'★'.repeat(5)}
                 </div>
                 <span className="ml-2 text-gray-600 text-sm">
@@ -118,7 +118,7 @@ export default function DonateTestimonials() {
             </p>
             <a
               href="#donation-form"
-              className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg inline-block"
+              className="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg inline-block"
             >
               Start Your Story Today
             </a>

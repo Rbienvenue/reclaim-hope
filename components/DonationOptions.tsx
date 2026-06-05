@@ -42,7 +42,7 @@ export default function DonationOptions() {
               onClick={() => setDonationType('one-time')}
               className={`px-8 py-3 rounded-md font-semibold transition-all duration-300 ${
                 donationType === 'one-time'
-                  ? 'bg-orange-600 text-white shadow-lg'
+                  ? 'bg-yellow-600 text-white shadow-lg'
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
@@ -52,7 +52,7 @@ export default function DonationOptions() {
               onClick={() => setDonationType('monthly')}
               className={`px-8 py-3 rounded-md font-semibold transition-all duration-300 ${
                 donationType === 'monthly'
-                  ? 'bg-orange-600 text-white shadow-lg'
+                  ? 'bg-yellow-600 text-white shadow-lg'
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
@@ -66,7 +66,7 @@ export default function DonationOptions() {
           <div
             className={`p-8 rounded-xl border-2 transition-all duration-300 ${
               donationType === 'one-time'
-                ? 'border-orange-600 bg-orange-50'
+                ? 'border-yellow-600 bg-yellow-50'
                 : 'border-gray-200 bg-gray-50'
             }`}
             data-aos="fade-right"
@@ -90,7 +90,7 @@ export default function DonationOptions() {
           <div
             className={`p-8 rounded-xl border-2 transition-all duration-300 ${
               donationType === 'monthly'
-                ? 'border-orange-600 bg-orange-50'
+                ? 'border-yellow-600 bg-yellow-50'
                 : 'border-gray-200 bg-gray-50'
             }`}
             data-aos="fade-left"
@@ -121,7 +121,7 @@ export default function DonationOptions() {
           </p>
           <a
             href="#suggested-amounts"
-            className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg inline-block"
+            className="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg inline-block"
           >
             Choose Amount
           </a>

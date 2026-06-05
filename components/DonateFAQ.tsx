@@ -114,7 +114,7 @@ export default function DonateFAQ() {
 
         {/* Still have questions */}
         <div
-          className="text-center mt-12 bg-orange-50 border border-orange-200 rounded-xl p-8"
+          className="text-center mt-12 bg-yellow-50 border border-yellow-200 rounded-xl p-8"
           data-aos="fade-up"
           data-aos-delay="600"
         >
@@ -128,13 +128,13 @@ export default function DonateFAQ() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact"
-              className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+              className="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
             >
               Contact Us
             </a>
             <a
               href="tel:+1234567890"
-              className="bg-white border border-orange-600 text-orange-600 hover:bg-orange-50 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+              className="bg-white border border-yellow-600 text-yellow-600 hover:bg-yellow-50 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
             >
               Call Now
             </a>

@@ -51,13 +51,13 @@ export default function ImpactTransparency() {
                       <span className="font-semibold text-gray-900">
                         {item.category}
                       </span>
-                      <span className="text-orange-600 font-bold">
+                      <span className="text-yellow-600 font-bold">
                         {item.percentage}%
                       </span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-3">
                       <div
-                        className="bg-orange-600 h-3 rounded-full transition-all duration-1000"
+                        className="bg-yellow-600 h-3 rounded-full transition-all duration-1000"
                         style={{ width: `${item.percentage}%` }}
                       ></div>
                     </div>
@@ -129,15 +129,15 @@ export default function ImpactTransparency() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div>
-              <div className="text-3xl font-bold text-orange-400 mb-2">98%</div>
+              <div className="text-3xl font-bold text-yellow-400 mb-2">98%</div>
               <div className="text-gray-300">Program Efficiency</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-orange-400 mb-2">100%</div>
+              <div className="text-3xl font-bold text-yellow-400 mb-2">100%</div>
               <div className="text-gray-300">Financial Transparency</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-orange-400 mb-2">24/7</div>
+              <div className="text-3xl font-bold text-yellow-400 mb-2">24/7</div>
               <div className="text-gray-300">Donor Support</div>
             </div>
           </div>

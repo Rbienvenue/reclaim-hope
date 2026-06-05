@@ -95,7 +95,7 @@ export default function AnnualGrowthSection() {
                 {/* SECTION HEADER */}
                 <div className="text-center mb-20">
 
-                    <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-4">
+                    <p className="text-yellow-500 uppercase tracking-[0.3em] font-semibold mb-4">
                         Growth & Progress
                     </p>
 
@@ -119,7 +119,7 @@ export default function AnnualGrowthSection() {
                     <div className="relative" data-aos="fade-right" data-aos-duration="1000">
 
                         {/* VERTICAL LINE */}
-                        <div className="absolute left-5 top-0 bottom-0 w-[2px] bg-orange-200"></div>
+                        <div className="absolute left-5 top-0 bottom-0 w-[2px] bg-yellow-200"></div>
 
                         <div className="space-y-12">
 
@@ -133,12 +133,12 @@ export default function AnnualGrowthSection() {
                                 >
 
                                     {/* DOT */}
-                                    <div className="absolute left-0 top-2 w-10 h-10 rounded-full bg-orange-500 border-8 border-orange-100"></div>
+                                    <div className="absolute left-0 top-2 w-10 h-10 rounded-full bg-yellow-500 border-8 border-yellow-100"></div>
 
                                     {/* CARD */}
                                     <div className="bg-white rounded-[28px] p-8 shadow-sm border border-gray-100 hover:shadow-xl transition duration-500">
 
-                                        <span className="inline-block bg-orange-100 text-orange-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                                        <span className="inline-block bg-yellow-100 text-yellow-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">
                                             {item.year}
                                         </span>
 

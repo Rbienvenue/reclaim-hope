@@ -1,8 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --brand-yellow: #f9d20a;
+  --brand-yellow-light: #FFE033;
+  --brand-yellow-soft: #FFF8E1;
+  --brand-blue: #0099CC;
+  --brand-blue-dark: #003D5C;
+  --brand-green: #1B7063;
+  --surface: #ffffff;
+  --muted: #475569;
 }
 
 @theme inline {
@@ -14,8 +22,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0f172a;
+    --foreground: #f8fafc;
   }
 }
 
@@ -23,6 +31,223 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .bg-brand-yellow {
+    background-color: var(--brand-yellow);
+  }
+
+  .bg-brand-yellow-dark {
+    background-color: var(--brand-yellow-dark);
+  }
+
+  .bg-brand-yellow-soft {
+    background-color: var(--brand-yellow-soft);
+  }
+
+  .text-brand-yellow {
+    color: var(--brand-yellow);
+  }
+
+  .text-brand-blue {
+    color: var(--brand-blue);
+  }
+
+  .bg-brand-blue {
+    background-color: var(--brand-blue);
+  }
+
+  .text-brand-green {
+    color: var(--brand-green);
+  }
+
+  .bg-brand-green {
+    background-color: var(--brand-green);
+  }
+
+  .border-brand-yellow {
+    border-color: var(--brand-yellow);
+  }
+
+  .shadow-brand-yellow {
+    box-shadow: 0 20px 40px rgba(247, 198, 0, 0.18);
+  }
+
+  .bg-surface {
+    background-color: var(--surface);
+  }
+
+  .text-muted {
+    color: var(--muted);
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-15px);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  .animate-float {
+    animation: float 2s ease-in-out infinite;
+  }
+
+  @keyframes hero-zoom {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.05);
+    }
+  }
+
+  .animate-hero-zoom {
+    animation: hero-zoom 20s ease-out infinite alternate;
+  }
+
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.8s ease-out forwards;
+  }
+
+  .animate-fade-up-delay-1 {
+    animation: fade-up 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-up-delay-2 {
+    animation: fade-up 0.8s ease-out 0.5s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-up-delay-3 {
+    animation: fade-up 0.8s ease-out 0.8s forwards;
+    opacity: 0;
+  }
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes slide-in-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-left 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes slide-in-right {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes slide-in-bottom {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-in-bottom {
+    animation: slide-in-bottom 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes parallax {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .animate-parallax {
+    animation: parallax 10s ease-out infinite alternate;
+  }
+
+  @keyframes slow-zoom {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.02);
+    }
+  }
+
+  .animate-slow-zoom {
+    animation: slow-zoom 15s ease-out infinite alternate;
+  }
+
+  @keyframes stagger-reveal {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-stagger-reveal {
+    animation: stagger-reveal 0.6s ease-out forwards;
+    opacity: 0;
+  }
 }
 
 @layer utilities {

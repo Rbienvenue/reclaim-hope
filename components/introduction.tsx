@@ -21,7 +21,7 @@ export default function IntroductionSection() {
 
                 {/* TEXT SIDE */}
                 <div className="animate-fade-in-up">
-                    <p className="text-orange-600 font-semibold uppercase tracking-widest mb-3 font-poppins">
+                    <p className="text-yellow-600 font-semibold uppercase tracking-widest mb-3 font-poppins">
                         About Us
                     </p>
 

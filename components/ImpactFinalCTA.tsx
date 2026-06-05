@@ -9,8 +9,8 @@ export default function ImpactFinalCTA() {
                 <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] p-10 md:p-16">
 
                     <div className="space-y-8">
-                <div className="inline-flex items-center gap-3 rounded-full bg-orange-50 px-4 py-2 text-sm font-semibold text-orange-600 mb-6" data-aos="fade-up" data-aos-duration="700">
-                            <span className="h-2.5 w-2.5 rounded-full bg-orange-500" />
+                <div className="inline-flex items-center gap-3 rounded-full bg-yellow-50 px-4 py-2 text-sm font-semibold text-yellow-600 mb-6" data-aos="fade-up" data-aos-duration="700">
+                            <span className="h-2.5 w-2.5 rounded-full bg-yellow-500" />
                             Your Support Creates Real Change
                         </div>
 
@@ -21,7 +21,7 @@ export default function ImpactFinalCTA() {
 
                             <h2 className="text-4xl md:text-5xl font-bold text-slate-950 leading-tight">
                                 Mobilize hope with action that feels
-                                <span className="block text-orange-600">grounded, measurable, and lasting.</span>
+                                <span className="block text-yellow-600">grounded, measurable, and lasting.</span>
                             </h2>
 
                             <p className="max-w-3xl text-lg text-slate-700 leading-8">
@@ -48,7 +48,7 @@ export default function ImpactFinalCTA() {
                     <div className="rounded-[28px] bg-gradient-to-br from-white via-slate-50 to-green-50 p-8 shadow-inner shadow-slate-200/50">
                         <div className="space-y-8">
                             <div className="rounded-[28px] bg-white p-8 shadow-[0_20px_50px_rgba(15,23,42,0.08)]">
-                                <p className="text-sm uppercase tracking-[0.3em] font-semibold text-orange-600 mb-4">
+                                <p className="text-sm uppercase tracking-[0.3em] font-semibold text-yellow-600 mb-4">
                                     Ready to make impact?
                                 </p>
                                 <h3 className="text-3xl font-bold text-slate-950 leading-tight">

@@ -65,7 +65,7 @@ export default function Navbar() {
                                 >
                                     <button
                                         type="button"
-                                        className={`transition inline-flex items-center gap-1 ${active ? "text-orange-600 font-semibold" : "hover:text-orange-500"}`}
+                                        className={`transition inline-flex items-center gap-1 ${active ? "text-yellow-600 font-semibold" : "hover:text-yellow-500"}`}
                                         aria-expanded={mediaOpen}
                                         onClick={() => setMediaOpen((prev) => !prev)}
                                     >
@@ -79,7 +79,7 @@ export default function Navbar() {
                                                 <Link
                                                     key={subItem.href}
                                                     href={subItem.href}
-                                                    className="block px-5 py-3 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition"
+                                                    className="block px-5 py-3 text-gray-700 hover:bg-yellow-50 hover:text-yellow-600 transition"
                                                 >
                                                     {subItem.label}
                                                 </Link>
@@ -94,7 +94,7 @@ export default function Navbar() {
                             <li key={item.href}>
                                 <Link
                                     href={item.href}
-                                    className={`transition ${active ? "text-orange-600 font-semibold" : "hover:text-orange-500"}`}
+                                    className={`transition ${active ? "text-yellow-600 font-semibold" : "hover:text-yellow-500"}`}
                                     aria-current={active ? "page" : undefined}
                                 >
                                     {item.label}
@@ -107,7 +107,7 @@ export default function Navbar() {
                     <li>
                         <Link
                             href="/donate"
-                            className="bg-orange-600 text-white px-8 py-4 rounded hover:bg-orange-500 transition"
+                            className="bg-yellow-600 text-white px-8 py-4 rounded hover:bg-yellow-500 transition"
                         >
                             Donate
                         </Link>
@@ -129,7 +129,7 @@ export default function Navbar() {
                             return (
                                 <li key={item.href} className="space-y-2">
                                     <div
-                                        className={`block transition ${active ? "text-orange-600 font-semibold" : "hover:text-orange-500"}`}
+                                        className={`block transition ${active ? "text-yellow-600 font-semibold" : "hover:text-yellow-500"}`}
                                     >
                                         {item.label}
                                     </div>
@@ -152,7 +152,7 @@ export default function Navbar() {
                             <li key={item.href}>
                                 <Link
                                     href={item.href}
-                                    className={`block transition ${active ? "text-orange-600 font-semibold" : "hover:text-orange-500"}`}
+                                    className={`block transition ${active ? "text-yellow-600 font-semibold" : "hover:text-yellow-500"}`}
                                     aria-current={active ? "page" : undefined}
                                 >
                                     {item.label}
@@ -161,7 +161,7 @@ export default function Navbar() {
                         );
                     })}
                     <li>
-                        <Link href="/donate" className="bg-orange-600 text-white px-5 py-2 rounded inline-block">
+                        <Link href="/donate" className="bg-yellow-600 text-white px-5 py-2 rounded inline-block">
                             Donate
                         </Link>
                     </li>

@@ -60,12 +60,12 @@ export default function ContactInformation() {
               <a
                 key={item.title}
                 href={item.href}
-                className={`bg-gray-50 hover:bg-orange-50 transition-all duration-300 rounded-2xl p-6 text-center group ${delayClass}`}
+                className={`bg-gray-50 hover:bg-yellow-50 transition-all duration-300 rounded-2xl p-6 text-center group ${delayClass}`}
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
-                <div className="w-16 h-16 mx-auto rounded-full bg-orange-100 group-hover:bg-orange-200 flex items-center justify-center mb-4 transition-colors">
-                  <Icon className="w-8 h-8 text-orange-600" />
+                <div className="w-16 h-16 mx-auto rounded-full bg-yellow-100 group-hover:bg-yellow-200 flex items-center justify-center mb-4 transition-colors">
+                  <Icon className="w-8 h-8 text-yellow-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {item.title}

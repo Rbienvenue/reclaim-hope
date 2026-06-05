@@ -101,7 +101,7 @@ export default function ProductModal({ open, product, onClose }: { open: boolean
                     onClose();
                   }}
                   disabled={!isQuantityValid}
-                  className={`bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg ${!isQuantityValid ? 'opacity-50 cursor-not-allowed pointer-events-none' : 'cursor-pointer'}`}
+                  className={`bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded-lg ${!isQuantityValid ? 'opacity-50 cursor-not-allowed pointer-events-none' : 'cursor-pointer'}`}
                 >
                   Buy ${total}
                 </button>

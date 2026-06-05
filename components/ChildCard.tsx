@@ -43,7 +43,7 @@ export default function ChildCard({
                 </h3>
 
                 {/* DREAM */}
-                <p className="text-orange-500 font-semibold text-lg mb-4">
+                <p className="text-yellow-500 font-semibold text-lg mb-4">
                     Dreams of becoming {dream}
                 </p>
 
@@ -55,7 +55,7 @@ export default function ChildCard({
                 {/* BUTTON */}
                 <Link
                     href={`/sponsor/${id}`}
-                    className="inline-flex items-center justify-center w-full bg-orange-500 hover:bg-orange-600 transition duration-300 text-white py-4 rounded-full font-semibold text-lg"
+                    className="inline-flex items-center justify-center w-full bg-yellow-500 hover:bg-yellow-600 transition duration-300 text-white py-4 rounded-full font-semibold text-lg"
                 >
                     Sponsor {name}
                 </Link>

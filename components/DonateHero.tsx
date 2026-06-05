@@ -42,7 +42,7 @@ export default function DonateHero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="#donation-form"
-              className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg"
+              className="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg"
             >
               Donate Now
             </a>

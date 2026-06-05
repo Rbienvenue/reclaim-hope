@@ -10,7 +10,7 @@ export default function WhyOurWorkMatters() {
                 <div className="relative animate-slide-in-left">
 
                     {/* BACKGROUND SHAPE */}
-                    <div className="absolute -top-6 -left-6 w-full h-full bg-orange-100 rounded-[40px]"></div>
+                    <div className="absolute -top-6 -left-6 w-full h-full bg-yellow-100 rounded-[40px]"></div>
 
                     {/* IMAGE */}
                     <div className="relative overflow-hidden rounded-[40px] shadow-xl">
@@ -31,7 +31,7 @@ export default function WhyOurWorkMatters() {
                 <div className="animate-slide-in-right">
 
                     {/* SMALL LABEL */}
-                    <p className="text-orange-400 uppercase tracking-[0.3em] font-semibold mb-6">
+                    <p className="text-yellow-400 uppercase tracking-[0.3em] font-semibold mb-6">
                         Why Our Work Matters
                     </p>
 

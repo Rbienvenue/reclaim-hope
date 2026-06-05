@@ -15,7 +15,7 @@ export default function AboutCTASection() {
                 <div className="absolute inset-0 bg-black/70"></div>
 
                 {/* DECORATIVE GLOW */}
-                <div className="absolute top-0 right-0 w-72 h-72 bg-orange-500/20 blur-3xl rounded-full"></div>
+                <div className="absolute top-0 right-0 w-72 h-72 bg-yellow-500/20 blur-3xl rounded-full"></div>
 
                 <div className="absolute bottom-0 left-0 w-72 h-72 bg-green-500/20 blur-3xl rounded-full"></div>
 
@@ -23,7 +23,7 @@ export default function AboutCTASection() {
                 <div className="relative z-10 max-w-4xl mx-auto text-center px-8 py-28 animate-fade-up">
 
                     {/* SMALL LABEL */}
-                    <p className="text-orange-400 uppercase tracking-[0.3em] font-semibold mb-6">
+                    <p className="text-yellow-400 uppercase tracking-[0.3em] font-semibold mb-6">
                         Join Our Mission
                     </p>
 
@@ -45,7 +45,7 @@ export default function AboutCTASection() {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
 
                         {/* PRIMARY BUTTON */}
-                        <Link href="/donate" className="bg-orange-500 hover:bg-orange-600 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-2xl hover:scale-105 inline-block text-center">
+                        <Link href="/donate" className="bg-yellow-500 hover:bg-yellow-600 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-2xl hover:scale-105 inline-block text-center">
 
                             Donate Now
 

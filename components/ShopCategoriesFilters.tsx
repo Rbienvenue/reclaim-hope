@@ -24,7 +24,7 @@ export default function ShopCategoriesFilters({ activeCategory, onChange }: Shop
               onClick={() => onChange(category)}
               className={`px-5 py-2 rounded-full font-semibold transition ${
                 activeCategory === category
-                  ? "bg-orange-500 text-white"
+                  ? "bg-yellow-500 text-white"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >

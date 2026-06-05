@@ -71,7 +71,7 @@ export default function PartnershipSection() {
                         </p>
 
                         {/* HIGHLIGHT BOX */}
-                        <div className="bg-gradient-to-r from-purple-50 to-orange-50 border border-purple-100 rounded-[32px] p-8 mb-10">
+                        <div className="bg-gradient-to-r from-purple-50 to-yellow-50 border border-purple-100 rounded-[32px] p-8 mb-10">
 
                             <h4 className="text-2xl font-bold text-gray-900 mb-4">
                                 Why Partner With Reclaim Hope Rwanda?

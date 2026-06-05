@@ -36,7 +36,7 @@ export default function ImpactSection() {
             {/* SECTION HEADER */}
             <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in-up">
 
-                <p className="text-orange-500 font-semibold uppercase tracking-widest mb-3 text-lg">
+                <p className="text-yellow-500 font-semibold uppercase tracking-widest mb-3 text-lg">
                     Our Impact
                 </p>
 
@@ -61,8 +61,8 @@ export default function ImpactSection() {
                         >
 
                             {/* ICON */}
-                            <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-orange-100 flex items-center justify-center">
-                                <Icon className="w-8 h-8 text-orange-500" />
+                            <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-yellow-100 flex items-center justify-center">
+                                <Icon className="w-8 h-8 text-yellow-500" />
                             </div>
 
                             {/* NUMBER */}

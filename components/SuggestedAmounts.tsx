@@ -73,7 +73,7 @@ export default function SuggestedAmounts() {
               key={index}
               className={`relative bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105 ${
                 selectedAmount === option.amount
-                  ? 'ring-2 ring-orange-600 bg-orange-50'
+                  ? 'ring-2 ring-yellow-600 bg-yellow-50'
                   : ''
               }`}
               onClick={() => setSelectedAmount(option.amount)}
@@ -82,7 +82,7 @@ export default function SuggestedAmounts() {
             >
               {option.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  <span className="bg-yellow-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                     Most Popular
                   </span>
                 </div>
@@ -102,7 +102,7 @@ export default function SuggestedAmounts() {
                     placeholder="Enter amount"
                     value={customAmount}
                     onChange={(e) => setCustomAmount(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-600"
                     min="1"
                   />
                 )}
@@ -116,7 +116,7 @@ export default function SuggestedAmounts() {
             href="#donation-form"
             className={`inline-block px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg ${
               selectedAmount
-                ? 'bg-orange-600 hover:bg-orange-700 text-white'
+                ? 'bg-yellow-600 hover:bg-yellow-700 text-white'
                 : 'bg-gray-300 text-gray-500 cursor-not-allowed'
             }`}
             onClick={(e) => {

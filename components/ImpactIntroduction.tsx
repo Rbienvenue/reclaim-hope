@@ -5,7 +5,7 @@ export default function ImpactIntroduction() {
             <div className="max-w-4xl mx-auto text-center">
 
                 {/* SMALL LABEL */}
-                <p className="text-orange-500 uppercase tracking-[0.3em] font-semibold mb-6">
+                <p className="text-yellow-500 uppercase tracking-[0.3em] font-semibold mb-6">
                     Measuring Change
                 </p>
 

@@ -15,7 +15,7 @@ export default function SponsorHero() {
             <div className="relative z-10 text-center text-white px-6 max-w-5xl">
 
                 {/* LABEL */}
-                <p className="text-orange-400 uppercase tracking-[0.3em] font-semibold mb-6">
+                <p className="text-yellow-400 uppercase tracking-[0.3em] font-semibold mb-6">
                     Sponsor a Child
                 </p>
 
@@ -40,7 +40,7 @@ export default function SponsorHero() {
                 {/* BUTTONS */}
                 <div className="flex flex-col sm:flex-row gap-5 justify-center">
 
-                    <button className="bg-orange-500 hover:bg-orange-600 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-xl hover:scale-105">
+                    <button className="bg-yellow-500 hover:bg-yellow-600 transition duration-300 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-xl hover:scale-105">
 
                         Sponsor a Child
 

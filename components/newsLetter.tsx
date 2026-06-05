@@ -7,7 +7,7 @@ export default function NewsletterSection() {
             <div className="max-w-5xl mx-auto">
 
                 {/* NEWSLETTER CARD */}
-                <div className="relative overflow-hidden bg-gradient-to-r from-orange-500 to-orange-600 rounded-[40px] px-8 py-16 md:px-16 text-center text-white">
+                <div className="relative overflow-hidden bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-[40px] px-8 py-16 md:px-16 text-center text-white">
 
                     {/* BACKGROUND DECORATION */}
                     <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
