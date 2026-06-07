@@ -67,12 +67,6 @@ export default function HelpSection() {
             text: "text-blue-600",
             button: "bg-blue-600 hover:bg-blue-700",
         },
-
-        yellow: {
-            bg: "bg-yellow-100",
-            text: "text-yellow-600",
-            button: "bg-yellow-600 hover:bg-yellow-700",
-        },
     };
 
     return (

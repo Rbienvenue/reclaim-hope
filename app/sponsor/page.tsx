@@ -1,11 +1,11 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { Suspense, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import ChildGrid, { children as childList } from "@/components/ChildGrid";
 import FeaturedChild from "@/components/FeaturedChild";
 
-export default function SponsorPage() {
+function SponsorPageContent() {
   const searchParams = useSearchParams();
   const queryChildId = searchParams.get("child");
   const featuredRef = useRef<HTMLDivElement>(null);
@@ -34,5 +34,13 @@ export default function SponsorPage() {
         onChildSelect={handleChildSelect}
       />
     </>
+  );
+}
+
+export default function SponsorPage() {
+  return (
+    <Suspense fallback={null}>
+      <SponsorPageContent />
+    </Suspense>
   );
 }
