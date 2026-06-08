@@ -8,6 +8,7 @@ import MediaFeaturedStory from "@/components/MediaFeaturedStory";
 import MediaHero from "@/components/MediaHero";
 import MediaTestimonials from "@/components/MediaTestimonials";
 import NewsletterArchive from "@/components/NewsletterArchive";
+import ReportsArchive from "@/components/ReportsArchive";
 
 export default function MediaCenterPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -36,8 +37,8 @@ export default function MediaCenterPage() {
         <NewsletterArchive />
       )}
 
-      {(selectedCategory === "All" || selectedCategory === "Gallery") && (
-        <GallerySection />
+      {(selectedCategory === "All" || selectedCategory === "Reports") && (
+        <ReportsArchive />
       )}
     </>
   );

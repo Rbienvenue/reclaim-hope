@@ -1,13 +1,16 @@
 import {
-    Globe,
-    AtSign,
-    Users,
-    Video,
     Mail,
     Phone,
     MapPin,
     ArrowRight,
 } from "lucide-react";
+import {
+    FaFacebook,
+    FaInstagram,
+    FaLinkedin,
+    FaYoutube,
+    FaXTwitter
+} from "react-icons/fa6";
 
 export default function Footer() {
     return (
@@ -47,30 +50,37 @@ export default function Footer() {
                         <div className="flex items-center gap-4">
                             <a
                                 href="#"
-                                className="w-10 h-10 rounded-full bg-white/10 hover:bg-yellow-500 transition flex items-center justify-center"
+                                className="w-10 h-10 rounded-full bg-white/10 hover:text-[#11a0db] hover:bg-white transition flex items-center justify-center"
                             >
-                                <Globe className="w-5 h-5" />
+                                <FaFacebook className="w-5 h-5" />
                             </a>
 
                             <a
                                 href="#"
-                                className="w-10 h-10 rounded-full bg-white/10 hover:bg-yellow-500 transition flex items-center justify-center"
+                                className="w-10 h-10 rounded-full bg-white/10 hover:text-[#11a0db] hover:bg-white transition flex items-center justify-center"
                             >
-                                <AtSign className="w-5 h-5" />
+                                <FaInstagram className="w-5 h-5" />
                             </a>
 
                             <a
                                 href="#"
-                                className="w-10 h-10 rounded-full bg-white/10 hover:bg-yellow-500 transition flex items-center justify-center"
+                                className="w-10 h-10 rounded-full bg-white/10 hover:text-[#11a0db] hover:bg-white transition flex items-center justify-center"
                             >
-                                <Users className="w-5 h-5" />
+                                <FaLinkedin className="w-5 h-5" />
                             </a>
 
                             <a
                                 href="#"
-                                className="w-10 h-10 rounded-full bg-white/10 hover:bg-yellow-500 transition flex items-center justify-center"
+                                className="w-10 h-10 rounded-full bg-white/10 hover:text-[#11a0db] hover:bg-white transition flex items-center justify-center"
                             >
-                                <Video className="w-5 h-5" />
+                                <FaYoutube className="w-5 h-5" />
+                            </a>
+
+                            <a
+                                href="#"
+                                className="w-10 h-10 rounded-full bg-white/10 hover:text-[#11a0db] hover:bg-white transition flex items-center justify-center"
+                            >
+                                <FaXTwitter className="w-5 h-5" />
                             </a>
                         </div>
 
@@ -82,35 +92,34 @@ export default function Footer() {
                         <h3 className="text-xl font-semibold mb-6">
                             Quick Links
                         </h3>
-
                         <ul className="space-y-4 text-white/70">
 
                             <li>
-                                <a href="#" className="hover:text-yellow-400 transition">
+                                <a href="/" className="hover:text-yellow-400 transition">
                                     Home
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" className="hover:text-yellow-400 transition">
+                                <a href="/about" className="hover:text-yellow-400 transition">
                                     About Us
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" className="hover:text-yellow-400 transition">
+                                <a href="/programs" className="hover:text-yellow-400 transition">
                                     Programs
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" className="hover:text-yellow-400 transition">
-                                    Gallery
+                                <a href="/sponsor" className="hover:text-yellow-400 transition">
+                                    SPonsor a Child
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" className="hover:text-yellow-400 transition">
+                                <a href="/contact" className="hover:text-yellow-400 transition">
                                     Contact
                                 </a>
                             </li>
@@ -162,7 +171,7 @@ export default function Footer() {
                                 <Mail className="w-5 h-5 text-yellow-400" />
 
                                 <p>
-                                    info@reclaimhope.rw
+                                    info@reclaimhoperw.org
                                 </p>
 
                             </div>
@@ -172,7 +181,7 @@ export default function Footer() {
                                 <Phone className="w-5 h-5 text-yellow-400" />
 
                                 <p>
-                                    +250 7XX XXX XXX
+                                    +250 727 589 358
                                 </p>
 
                             </div>
