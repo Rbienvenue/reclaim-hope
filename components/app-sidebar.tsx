@@ -26,7 +26,7 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "#",
+      url: "/admin",
       icon: (
         <LayoutDashboardIcon
         />
@@ -34,14 +34,14 @@ const data = {
     },
     {
       title: "Children",
-      url: "#",
+      url: "/admin/children",
       icon: (
         <FaChild/>
       ),
     },
     {
       title: "Sponsors",
-      url: "#",
+      url: "/admin/sponsors",
       icon: (
         <GoSponsorTiers/>
     
@@ -49,7 +49,7 @@ const data = {
     },
     {
       title: "Media",
-      url: "#",
+      url: "/admin/media",
       icon: (
         <VideoIcon
         />
@@ -57,7 +57,7 @@ const data = {
     },
     {
       title: "Documents",
-      url: "#",
+      url: "/admin/documents",
       icon: (
         <File
         />
