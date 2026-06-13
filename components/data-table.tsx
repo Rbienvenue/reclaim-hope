@@ -27,7 +27,17 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-const data = [
+type DataTableItem = {
+  id: number;
+  header: string;
+  type: string;
+  status: string;
+  target: string;
+  limit: string;
+  reviewer: string;
+};
+
+const defaultData: DataTableItem[] = [
   {
     id: 1,
     header: "Hero Section",
@@ -48,7 +58,13 @@ const data = [
   },
 ];
 
-export default function DataTable() {
+interface DataTableProps {
+  data?: DataTableItem[];
+}
+
+export default function DataTable({ data }: DataTableProps) {
+  const rows = data ?? defaultData;
+
   return (
     <div className="space-y-4">
       {/* Top Actions */}
@@ -84,7 +100,7 @@ export default function DataTable() {
           </TableHeader>
 
           <TableBody>
-            {data.map((item) => (
+            {rows.map((item) => (
               <TableRow key={item.id}>
                 <TableCell className="font-medium">
                   {item.header}
