@@ -33,7 +33,6 @@ type DataTableItem = {
   type: string;
   status: string;
   target: string;
-  limit: string;
   reviewer: string;
 };
 
@@ -44,7 +43,6 @@ const defaultData: DataTableItem[] = [
     type: "Landing Page",
     status: "Done",
     target: "100",
-    limit: "50",
     reviewer: "John Doe",
   },
   {
@@ -53,7 +51,6 @@ const defaultData: DataTableItem[] = [
     type: "Content",
     status: "In Progress",
     target: "80",
-    limit: "40",
     reviewer: "Jane Smith",
   },
 ];
@@ -66,36 +63,27 @@ export default function DataTable({ data }: DataTableProps) {
   const rows = data ?? defaultData;
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 mx-auto px-4 max-w-7xl sm:px-6 lg:px-8">
       {/* Top Actions */}
       <div className="flex items-center justify-between">
-        <h2 className="text-xl font-semibold">Website Sections</h2>
-
-        <div className="flex gap-2">
-          <Button variant="outline">
-            <Columns />
-            Columns
-          </Button>
-
-          <Button>
-            <Plus />
-            Add Section
-          </Button>
-        </div>
+        <h2 className="text-xl font-semibold">Manage Children</h2>
+        <Button>
+          <Plus />
+          Add Child
+        </Button>
       </div>
 
       {/* Table */}
-      <div className="overflow-hidden rounded-lg border">
+      <div className="overflow-hidden rounded-lg border flex flex-col items-center w-[1050px]">
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Header</TableHead>
-              <TableHead>Type</TableHead>
+              <TableHead>Full name</TableHead>
+              <TableHead>Age</TableHead>
               <TableHead>Status</TableHead>
-              <TableHead>Target</TableHead>
-              <TableHead>Limit</TableHead>
+              <TableHead>Sponsor</TableHead>
               <TableHead>Reviewer</TableHead>
-              <TableHead className="w-[60px]"></TableHead>
+              <TableHead>Action</TableHead>
             </TableRow>
           </TableHeader>
 
@@ -123,9 +111,6 @@ export default function DataTable({ data }: DataTableProps) {
                 </TableCell>
 
                 <TableCell>{item.target}</TableCell>
-
-                <TableCell>{item.limit}</TableCell>
-
                 <TableCell>{item.reviewer}</TableCell>
 
                 <TableCell>
