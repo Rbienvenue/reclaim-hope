@@ -120,21 +120,11 @@ export default function SuggestedAmounts() {
 
         <div className="text-center">
           <a
-            href="#donation-form"
-            className={`inline-block px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg ${
-              selectedAmount
-                ? 'bg-yellow-600 hover:bg-yellow-700 text-white'
-                : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-            }`}
-            onClick={(e) => {
-              if (!selectedAmount) e.preventDefault();
-            }}
+            href="#donation-workflow"
+            className="inline-block px-8 py-4 rounded-full font-bold text-base transition-all duration-300 bg-yellow-500 hover:bg-yellow-600 text-white shadow-lg shadow-yellow-500/25 hover:scale-105"
           >
-            Continue to Donate
+            Start Your Donation Below
           </a>
-          {!selectedAmount && (
-            <p className="text-gray-500 mt-2">Please select an amount to continue</p>
-          )}
         </div>
       </div>
     </section>

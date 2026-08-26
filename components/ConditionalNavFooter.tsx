@@ -10,13 +10,16 @@ export default function ConditionalNavFooter({
   children: React.ReactNode;
 }) {
   const pathname = usePathname() || "";
-  const isAdmin = pathname.startsWith("/admin");
+  const isExcluded =
+    pathname.startsWith("/admin") ||
+    pathname.startsWith("/login") ||
+    pathname.startsWith("/dashboard");
 
   return (
     <>
-      {!isAdmin && <Navbar />}
+      {!isExcluded && <Navbar />}
       {children}
-      {!isAdmin && <Footer />}
+      {!isExcluded && <Footer />}
     </>
   );
 }

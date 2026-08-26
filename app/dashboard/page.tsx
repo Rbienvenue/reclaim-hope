@@ -7,8 +7,11 @@ import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
 
 import data from "./data.json"
 import { TooltipProvider } from "@/components/ui/tooltip"
+import { verifyAdminSession } from "@/lib/auth"
 
-export default function Page() {
+export default async function Page() {
+  await verifyAdminSession();
+
   return (
     <TooltipProvider>
       <SidebarProvider
@@ -29,7 +32,7 @@ export default function Page() {
                 <div className="px-4 lg:px-6">
                   <ChartAreaInteractive />
                 </div>
-                <DataTable data={data} />
+                <DataTable />
               </div>
             </div>
           </div>

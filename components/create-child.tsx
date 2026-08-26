@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import {
     Dialog,
@@ -13,25 +15,19 @@ import { Field, FieldGroup } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Plus } from "lucide-react"
-import { CheckCircle2, CircleOff } from "lucide-react"
 import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select"
 import React from "react"
 import { toast } from "sonner"
 import { useRouter } from "next/navigation"
-import useSWR, {mutate} from "swr"
-
+import { mutate } from "swr"
+import { ImageDropzone } from "@/components/image-drop-area"
 
 export function CreateChildDialog() {
-    enum SponsorshipStatus {
-        Sponsored = "Sponsored",
-        NotSponsored = "NotSponsored",
-    }
-    const [sponsorshipStatus, setSponsorshipStatus] = React.useState<SponsorshipStatus>
-    (SponsorshipStatus.NotSponsored)
     const [isLoading, setIsLoading] = React.useState(false);
     const router = useRouter();
     const [isOpen, setIsOpen] = React.useState(false);
+    const [images, setImages] = React.useState<File[]>([]);
+
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         try {
@@ -45,30 +41,29 @@ export function CreateChildDialog() {
             const summary = String(formData.get("summary") ?? "").trim();
             const story = String(formData.get("story") ?? "").trim();
 
-            if (!firstName || !lastName || !dateOfBirth || !dream || !summary || !story) {
+            if (!firstName || !lastName || !dateOfBirth || !dream || !summary) {
                 toast.error("Please fill in all required fields.");
                 return;
             }
 
-            const data = { firstName, lastName, dateOfBirth, dream, imageUrl, summary, story, sponsorshipStatus };
+            if (images[0]) {
+                formData.append("image", images[0]);
+            }
+
             const response = await fetch('/api/children', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
+                body: formData,
             });
             const result = await response.json();
             if (!response.ok) {
                 console.error("Error creating child:", result.error);
-                toast.error("Failed to create child. Please try again.");
+                toast.error(result.error || "Failed to create child. Please try again.");
             } else {
                 toast.success("Child created successfully!");
-                setSponsorshipStatus(SponsorshipStatus.NotSponsored);
                 mutate('/api/children');
+                setImages([]);
                 setIsOpen(false);
                 router.refresh();
-
             }
         } catch (error) {
             console.error("Error creating child:", error);
@@ -77,35 +72,37 @@ export function CreateChildDialog() {
             setIsLoading(false);
         }
     }
+
     return (
         <Dialog open={isOpen} onOpenChange={(open) => setIsOpen(open)}>
             <DialogTrigger asChild onClick={() => setIsOpen(true)}>
                 <Button
                     type="button"
-                    className="bg-black text-white cursor-pointer hover:bg-gray-500  hover:text-white"
+                    className="bg-black text-white cursor-pointer hover:bg-gray-800 hover:text-white"
                     variant="outline"
                 >
-                    <Plus />
+                    <Plus className="mr-2 h-4 w-4" />
                     Create Child
                 </Button>
             </DialogTrigger>
 
-            <DialogContent className="w-[90vw] md:w-[70vw] max-w-none">
+            <DialogContent className="h-[85vh] max-h-[85vh] w-[90vw] overflow-y-auto sm:w-[80vw] sm:max-w-[900px]">
                 <form onSubmit={handleSubmit}>
                     <DialogHeader>
                         <DialogTitle>Add a Child</DialogTitle>
                         <DialogDescription>
-                            Fill in the details for the new child.
+                            Fill in the profile details for the child.
                         </DialogDescription>
                     </DialogHeader>
 
-                    <FieldGroup className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <FieldGroup className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
                         <Field>
                             <Label htmlFor="firstName">First Name</Label>
                             <Input
                                 id="firstName"
                                 name="firstName"
                                 placeholder="Enter child's first name"
+                                required
                             />
                         </Field>
                         <Field>
@@ -114,16 +111,18 @@ export function CreateChildDialog() {
                                 id="lastName"
                                 name="lastName"
                                 placeholder="Enter child's last name"
+                                required
                             />
                         </Field>
 
                         <Field>
-                            <Label htmlFor="age">Date of Birth</Label>
+                            <Label htmlFor="dateOfBirth">Date of Birth</Label>
                             <Input
-                                id="age"
+                                id="dateOfBirth"
                                 type="date"
                                 name="dateOfBirth"
                                 placeholder="Enter date of birth"
+                                required
                             />
                         </Field>
 
@@ -132,51 +131,24 @@ export function CreateChildDialog() {
                             <Input
                                 id="dream"
                                 name="dream"
-                                placeholder="Dream profession"
+                                placeholder="e.g. Doctor, Software Developer, Pilot"
+                                required
                             />
                         </Field>
 
-                        <Field>
-                            <Label htmlFor="imageUrl">Image Link</Label>
-                            <Input
-                                id="imageUrl"
-                                name="imageUrl"
-                                type="url"
-                                placeholder="https://..."
-                            />
+                        <Field className="md:col-span-2">
+                            <Label>Child Image</Label>
+                            <ImageDropzone value={images} onChange={setImages} maxFiles={1} />
                         </Field>
-                        <Field>
-                            <Label htmlFor="status">Sponsorship Status</Label>
 
-                            <Select value={sponsorshipStatus} onValueChange={(value) => setSponsorshipStatus(value as SponsorshipStatus)}>
-                                <SelectTrigger>
-                                    <SelectValue placeholder="Select status" />
-                                </SelectTrigger>
-
-                                <SelectContent>
-                                    <SelectItem value={SponsorshipStatus.Sponsored}>
-                                        <div className="flex items-center gap-2">
-                                            <CheckCircle2 className="h-4 w-4 text-green-600" />
-                                            <span>Sponsored</span>
-                                        </div>
-                                    </SelectItem>
-
-                                    <SelectItem value={SponsorshipStatus.NotSponsored}>
-                                        <div className="flex items-center gap-2">
-                                            <CircleOff className="h-4 w-4 text-gray-500" />
-                                            <span>Not Sponsored</span>
-                                        </div>
-                                    </SelectItem>
-                                </SelectContent>
-                            </Select>
-                        </Field>
                         <Field className="md:col-span-2">
                             <Label htmlFor="summary">Summary</Label>
                             <Textarea
                                 id="summary"
                                 name="summary"
-                                rows={3}
-                                placeholder="Short summary..."
+                                rows={2}
+                                placeholder="Short summary about the child..."
+                                required
                             />
                         </Field>
 
@@ -185,8 +157,9 @@ export function CreateChildDialog() {
                             <Textarea
                                 id="story"
                                 name="story"
-                                rows={10}
-                                placeholder="Tell the child's story..."
+                                rows={6}
+                                placeholder="Tell the child's story in detail..."
+                                required
                             />
                         </Field>
                     </FieldGroup>
@@ -198,7 +171,7 @@ export function CreateChildDialog() {
                             </Button>
                         </DialogClose>
 
-                        <Button type="submit" disabled={isLoading}>
+                        <Button type="submit" disabled={isLoading} className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold">
                             {isLoading ? "Saving..." : "Save Child"}
                         </Button>
                     </DialogFooter>

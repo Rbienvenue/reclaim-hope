@@ -21,6 +21,7 @@ import { toast } from "sonner"
 import { useRouter } from "next/navigation"
 import useSWR, { mutate } from "swr"
 import { updateChildAction } from "@/app/actions"
+import { ImageDropzone } from "@/components/image-drop-area"
 
 type childProps = {
     id: string;
@@ -55,6 +56,7 @@ export function UpdateChildDialog({ child }: { child: childProps }) {
 
     const [isLoading, setIsLoading] = React.useState(false);
     const [isOpen, setIsOpen] = React.useState(false);
+    const [images, setImages] = React.useState<File[]>([]);
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         try {
@@ -64,13 +66,16 @@ export function UpdateChildDialog({ child }: { child: childProps }) {
             const lastName = String(formData.get("lastName") ?? "").trim();
             const dateOfBirth = String(formData.get("dateOfBirth") ?? "").trim();
             const dream = String(formData.get("dream") ?? "").trim();
-            const imageUrl = String(formData.get("imageUrl") ?? "").trim();
             const summary = String(formData.get("summary") ?? "").trim();
             const story = String(formData.get("story") ?? "").trim();
 
             if (!firstName || !lastName || !dateOfBirth || !dream || !summary || !story) {
                 toast.error("Please fill in all required fields.");
                 return;
+            }
+
+            if (images[0]) {
+                formData.append("image", images[0]);
             }
 
             const response = await updateChildAction(child.id, formData);
@@ -101,7 +106,7 @@ export function UpdateChildDialog({ child }: { child: childProps }) {
                 </button>
             </DialogTrigger>
 
-            <DialogContent className="w-[90vw] md:w-[70vw] max-w-none">
+            <DialogContent className="h-[85vh] max-h-[85vh] w-[90vw] overflow-y-auto sm:w-[80vw] sm:max-w-[900px]">
                 <form onSubmit={handleSubmit}>
                     <DialogHeader>
                         <DialogTitle>Edit Child</DialogTitle>
@@ -110,7 +115,7 @@ export function UpdateChildDialog({ child }: { child: childProps }) {
                         </DialogDescription>
                     </DialogHeader>
 
-                    <FieldGroup className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <FieldGroup className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
                         <Field>
                             <Label htmlFor="firstName">First Name</Label>
                             <Input
@@ -118,6 +123,7 @@ export function UpdateChildDialog({ child }: { child: childProps }) {
                                 defaultValue={child.firstName}
                                 name="firstName"
                                 placeholder="Enter child's first name"
+                                required
                             />
                         </Field>
                         <Field>
@@ -127,6 +133,7 @@ export function UpdateChildDialog({ child }: { child: childProps }) {
                                 defaultValue={child.lastName}
                                 name="lastName"
                                 placeholder="Enter child's last name"
+                                required
                             />
                         </Field>
 
@@ -138,6 +145,7 @@ export function UpdateChildDialog({ child }: { child: childProps }) {
                                 type="date"
                                 name="dateOfBirth"
                                 placeholder="Enter date of birth"
+                                required
                             />
                         </Field>
 
@@ -148,17 +156,17 @@ export function UpdateChildDialog({ child }: { child: childProps }) {
                                 defaultValue={child.dream}
                                 name="dream"
                                 placeholder="Dream profession"
+                                required
                             />
                         </Field>
 
-                        <Field>
-                            <Label htmlFor="imageUrl">Image Link</Label>
-                            <Input
-                                id="imageUrl"
-                                defaultValue={child.imageUrl}
-                                name="imageUrl"
-                                type="url"
-                                placeholder="https://..."
+                        <Field className="md:col-span-2">
+                            <Label>Child Image</Label>
+                            <ImageDropzone
+                                value={images}
+                                onChange={setImages}
+                                maxFiles={1}
+                                existingImageUrl={child.imageUrl}
                             />
                         </Field>
 
@@ -168,8 +176,9 @@ export function UpdateChildDialog({ child }: { child: childProps }) {
                                 id="summary"
                                 defaultValue={child.summary}
                                 name="summary"
-                                rows={3}
-                                placeholder="Short summary..."
+                                rows={2}
+                                placeholder="Short summary about the child..."
+                                required
                             />
                         </Field>
 
@@ -179,8 +188,9 @@ export function UpdateChildDialog({ child }: { child: childProps }) {
                                 id="story"
                                 defaultValue={child.story}
                                 name="story"
-                                rows={10}
-                                placeholder="Tell the child's story..."
+                                rows={6}
+                                placeholder="Tell the child's story in detail..."
+                                required
                             />
                         </Field>
                     </FieldGroup>
@@ -192,7 +202,7 @@ export function UpdateChildDialog({ child }: { child: childProps }) {
                             </Button>
                         </DialogClose>
 
-                        <Button type="submit" disabled={isLoading}>
+                        <Button type="submit" disabled={isLoading} className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold">
                             {isLoading ? "Saving..." : "Save"}
                         </Button>
                     </DialogFooter>

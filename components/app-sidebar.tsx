@@ -15,12 +15,14 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { LayoutDashboardIcon, ListIcon, ChartBarIcon, FolderIcon, UsersIcon, CameraIcon, FileTextIcon, Settings2Icon, CircleHelpIcon, SearchIcon, DatabaseIcon, FileChartColumnIcon, FileIcon, CommandIcon, VideoIcon, File, LogOut } from "lucide-react"
+import { LayoutDashboardIcon, ListIcon, ChartBarIcon, FolderIcon, UsersIcon, CameraIcon, FileTextIcon, Settings2Icon, CircleHelpIcon, SearchIcon, DatabaseIcon, FileChartColumnIcon, FileIcon, CommandIcon, VideoIcon, File, LogOut, Mail, ClipboardList } from "lucide-react"
 import { FaChild } from "react-icons/fa6"
 import { GoSponsorTiers } from "react-icons/go"
 import { SiMediapipe } from "react-icons/si"
 import { Button } from "./ui/button"
 import Image from "next/image"
+import { logoutAction } from "@/app/actions/auth"
+import { Loader2 } from "lucide-react"
 
 const data = {
   navMain: [
@@ -63,10 +65,32 @@ const data = {
         />
       ),
     },
+    {
+      title: "Newsletters",
+      url: "/admin/newsletters",
+      icon: (
+        <Mail />
+      ),
+    },
+    {
+      title: "Reports",
+      url: "/admin/reports",
+      icon: (
+        <ClipboardList />
+      ),
+    },
   ]
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const [isLoggingOut, startLogout] = React.useTransition();
+
+  const handleLogout = () => {
+    startLogout(async () => {
+      await logoutAction();
+    });
+  };
+
   return (
     <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
@@ -91,7 +115,24 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavMain  items={data.navMain} />
       </SidebarContent>
       <SidebarFooter>
-        <Button><LogOut/> Logout</Button>
+        <Button
+          variant="outline"
+          onClick={handleLogout}
+          disabled={isLoggingOut}
+          className="w-full justify-center gap-2 cursor-pointer hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 transition-colors"
+        >
+          {isLoggingOut ? (
+            <>
+              <Loader2 className="size-4 animate-spin" />
+              <span>Logging out...</span>
+            </>
+          ) : (
+            <>
+              <LogOut className="size-4" />
+              <span>Logout</span>
+            </>
+          )}
+        </Button>
       </SidebarFooter>
     </Sidebar>
   )

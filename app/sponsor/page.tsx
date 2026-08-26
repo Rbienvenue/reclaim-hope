@@ -1,36 +1,75 @@
 "use client";
 
-import { Suspense, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import ChildGrid, { children as childList } from "@/components/ChildGrid";
+import ChildGrid, { ChildItem, children as defaultList } from "@/components/ChildGrid";
 import FeaturedChild, { ChildProfile } from "@/components/FeaturedChild";
+import SponsorHero from "@/components/SponsorHero";
+import SponsorshipSection from "@/components/SponsorshipSection";
+import useSWR from "swr";
+
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 function SponsorPageContent() {
   const searchParams = useSearchParams();
   const queryChildId = searchParams.get("child");
   const featuredRef = useRef<HTMLDivElement>(null);
-  const defaultChildId = childList[0].id;
-  const [selectedChildStateId, setSelectedChildStateId] = useState(defaultChildId);
-  const validQueryChildId =
-    queryChildId && childList.some((child) => child.id === queryChildId)
-      ? queryChildId
-      : null;
-  const selectedChildId = validQueryChildId ?? selectedChildStateId;
-  const selectedChild =
-    childList.find((child) => child.id === selectedChildId) ?? childList[0];
 
-  const toChildProfile = (c: any): ChildProfile => ({
+  const { data: apiChildren, isLoading } = useSWR<any[]>('/api/children', fetcher, {
+    revalidateOnFocus: true,
+  });
+
+  const childList: ChildItem[] = (apiChildren && apiChildren.length > 0)
+    ? apiChildren.map((c: any) => {
+        const birthDate = new Date(c.dateOfBirth);
+        const today = new Date();
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+          age--;
+        }
+        return {
+          id: c.id,
+          name: c.name || `${c.firstName} ${c.lastName}`.trim(),
+          age: Math.max(0, age),
+          dream: c.dream,
+          image: c.imageUrl || "/mentors_kids.jpg",
+          summary: c.summary,
+          story: Array.isArray(c.story) ? c.story : [c.story],
+          isSponsored: c.isSponsored ?? (c.sponsorshipStatus === "Sponsored"),
+          sponsorName: c.sponsorName,
+        };
+      })
+    : defaultList;
+
+  const defaultChildId = childList[0]?.id || "matambi-shakira";
+  const [selectedChildStateId, setSelectedChildStateId] = useState(defaultChildId);
+
+  // Sync state if query param or list changes
+  useEffect(() => {
+    if (queryChildId && childList.some((child) => child.id === queryChildId)) {
+      setSelectedChildStateId(queryChildId);
+      featuredRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [queryChildId, childList]);
+
+  const selectedChild =
+    childList.find((child) => child.id === selectedChildStateId) ?? childList[0];
+
+  const toChildProfile = (c: ChildItem): ChildProfile => ({
     id: c.id,
     name: c.name ?? "",
     age: c.age ?? 0,
     dream: c.dream ?? "",
     image: c.image ?? "/mentors_kids.jpg",
     summary: c.summary ?? "",
-    story: c.story ?? (c.summary ? [c.summary] : []),
+    story: Array.isArray(c.story) ? c.story : [c.story],
     goals: c.goals ?? [],
     needs: c.needs ?? [],
     updates: c.updates ?? [],
     sponsorshipImpact: c.sponsorshipImpact ?? "",
+    isSponsored: c.isSponsored,
+    sponsorName: c.sponsorName,
   });
 
   const handleChildSelect = (id: string) => {
@@ -40,20 +79,28 @@ function SponsorPageContent() {
 
   return (
     <>
-      <div ref={featuredRef}>
-        <FeaturedChild child={toChildProfile(selectedChild)} />
+      <SponsorHero />
+
+      {/* Featured Child Detail View */}
+      <div ref={featuredRef} className="scroll-mt-10">
+        {selectedChild && <FeaturedChild child={toChildProfile(selectedChild)} />}
       </div>
+
+      {/* Child Browsing Grid */}
       <ChildGrid
-        activeChildId={selectedChildId}
+        childrenList={childList}
+        activeChildId={selectedChild?.id}
         onChildSelect={handleChildSelect}
       />
+
+      <SponsorshipSection />
     </>
   );
 }
 
 export default function SponsorPage() {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-gray-500">Loading child sponsorship...</div>}>
       <SponsorPageContent />
     </Suspense>
   );

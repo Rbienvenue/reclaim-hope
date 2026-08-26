@@ -2,26 +2,194 @@ generator client {
   provider = "prisma-client"
   output   = "../lib/generated/prisma"
 }
-enum SponsorshipStatus {
-        Sponsored
-        NotSponsored
-    }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-model Child {
-  id         String   @id @default(cuid())
-  firstName       String
-  lastName   String
-  dateOfBirth DateTime
-  dream      String
-  imageUrl   String?
-  summary    String
-  story      String   @db.Text
-  sponsorshipStatus  SponsorshipStatus  @default(NotSponsored)
 
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+enum SponsorshipFrequency {
+  MONTHLY
+  YEARLY
+}
+
+enum SponsorshipStatus {
+  PENDING
+  ACTIVE
+  PAUSED
+  CANCELLED
+  COMPLETED
+}
+
+enum DonationCategory {
+  MEALS
+  HEALTH
+  EDUCATION
+  LOVE_GIFT
+}
+
+enum DonationStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCESSFUL
+  FAILED
+  CANCELLED
+  REFUNDED
+}
+
+enum PaymentProvider {
+  NOT_CONFIGURED
+  MANUAL
+  STRIPE
+  FLUTTERWAVE
+  PAYPACK
+  MOMO
+}
+
+model Child {
+  id           String        @id @default(cuid())
+  firstName    String
+  lastName     String
+  dateOfBirth  DateTime
+  dream        String
+  imageUrl     String?
+  summary      String
+  story        String        @db.Text
+
+  sponsorships Sponsorship[]
+
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model Donor {
+  id           String        @id @default(cuid())
+  firstName    String
+  lastName     String
+  email        String        @unique
+  phoneNumber  String?
+  country      String?
+  address      String?
+
+  sponsorships Sponsorship[]
+  donations    Donation[]
+
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  @@index([email])
+}
+
+model Sponsorship {
+  id         String               @id @default(cuid())
+
+  donorId    String
+  childId    String
+
+  amount     Decimal              @db.Decimal(10, 2)
+  currency   String               @default("USD")
+
+  frequency  SponsorshipFrequency
+  status     SponsorshipStatus    @default(PENDING)
+
+  startedAt  DateTime?
+  endedAt    DateTime?
+
+  donor      Donor                @relation(fields: [donorId], references: [id])
+  child      Child                @relation(fields: [childId], references: [id])
+
+  payments   Payment[]
+
+  createdAt  DateTime             @default(now())
+  updatedAt  DateTime             @updatedAt
+
+  @@index([donorId])
+  @@index([childId])
+  @@index([status])
+}
+
+model Donation {
+  id        String           @id @default(cuid())
+
+  donorId   String?
+
+  amount    Decimal          @db.Decimal(10, 2)
+  currency  String           @default("RWF")
+
+  category  DonationCategory
+  status    DonationStatus   @default(PENDING)
+
+  donor     Donor?           @relation(fields: [donorId], references: [id])
+
+  payments  Payment[]
+
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+
+  @@index([donorId])
+  @@index([category])
+  @@index([status])
+}
+
+model Payment {
+  id            String          @id @default(cuid())
+
+  sponsorshipId String?
+  donationId    String?
+
+  reference     String          @unique
+  transactionId String?         @unique
+
+  amount        Decimal         @db.Decimal(10, 2)
+  currency      String
+
+  provider      PaymentProvider @default(NOT_CONFIGURED)
+  status        PaymentStatus   @default(PENDING)
+
+  paidAt        DateTime?
+
+  sponsorship   Sponsorship?    @relation(fields: [sponsorshipId], references: [id])
+  donation      Donation?       @relation(fields: [donationId], references: [id])
+
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+
+  @@index([sponsorshipId])
+  @@index([donationId])
+  @@index([status])
+}
+
+model Newsletter {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  category    String
+  date        String
+  imageUrl    String?
+  pdfUrl      String?
+  summary     String
+  content     String   @db.Text
+  highlights  String[]
+  published   Boolean  @default(true)
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([slug])
+  @@index([category])
+}
+
+model Report {
+  id        String   @id @default(cuid())
+  title     String
+  fileUrl   String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

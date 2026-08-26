@@ -9,6 +9,9 @@ const nextConfig = {
   },
   experimental: {
     optimizeCss: true,
+    serverActions: {
+      bodySizeLimit: '75mb',
+    },
   },
   compress: true,
   poweredByHeader: false,
