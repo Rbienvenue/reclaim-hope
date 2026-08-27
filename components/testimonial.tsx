@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { INITIAL_CHILDREN } from "@/lib/initial-children";
+import { getR2ObjectUrl } from "@/lib/r2";
 
 interface TestimonialChild {
   id: string;
@@ -59,7 +60,7 @@ export default async function TestimonialSection() {
           name: `${child.firstName} ${child.lastName}`.trim(),
           age: calculateAge(child.dateOfBirth),
           dream: child.dream,
-          image: child.imageUrl || "/mentors_kids.jpg",
+          image: child.imageUrl ? getR2ObjectUrl(child.imageUrl) : "/mentors_kids.jpg",
           summary: child.summary,
           isSponsored,
         };

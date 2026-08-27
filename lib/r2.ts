@@ -28,3 +28,12 @@ export const R2_BUCKET_NAME = process.env.R2_BUCKET_NAME;
 if (!R2_BUCKET_NAME) {
   throw new Error("R2_BUCKET_NAME is not configured");
 }
+
+export function getR2ObjectUrl(keyOrUrl: string) {
+  if (/^(https?:|blob:|data:)/.test(keyOrUrl) || keyOrUrl.startsWith("/")) {
+    return keyOrUrl;
+  }
+
+  const publicUrl = process.env.R2_PUBLIC_URL?.replace(/\/$/, "");
+  return publicUrl ? `${publicUrl}/${keyOrUrl}` : `/api/r2/${keyOrUrl}`;
+}

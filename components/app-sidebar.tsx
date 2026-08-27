@@ -50,22 +50,6 @@ const data = {
       ),
     },
     {
-      title: "Media",
-      url: "/admin/media",
-      icon: (
-        <VideoIcon
-        />
-      ),
-    },
-    {
-      title: "Documents",
-      url: "/admin/documents",
-      icon: (
-        <File
-        />
-      ),
-    },
-    {
       title: "Newsletters",
       url: "/admin/newsletters",
       icon: (

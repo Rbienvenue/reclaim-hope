@@ -31,7 +31,7 @@ function getImageSrc(imageUrl: string) {
     return imageUrl
   }
 
-  return `/${imageUrl}`
+  return `/api/r2/${imageUrl}`
 }
 
 function getFileSrc(fileUrl: string) {
@@ -39,7 +39,7 @@ function getFileSrc(fileUrl: string) {
     return fileUrl
   }
 
-  return `/${fileUrl}`
+  return `/api/r2/${fileUrl}`
 }
 
 function NewsletterForm({ newsletter, onSaved }: NewsletterFormProps) {

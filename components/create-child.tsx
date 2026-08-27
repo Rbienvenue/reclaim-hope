@@ -142,7 +142,7 @@ export function CreateChildDialog() {
                         </Field>
 
                         <Field className="md:col-span-2">
-                            <Label htmlFor="summary">Summary</Label>
+                            <Label htmlFor="summary">Child & Family Information</Label>
                             <Textarea
                                 id="summary"
                                 name="summary"

@@ -171,7 +171,7 @@ export function UpdateChildDialog({ child }: { child: childProps }) {
                         </Field>
 
                         <Field className="md:col-span-2">
-                            <Label htmlFor="summary">Summary</Label>
+                            <Label htmlFor="summary">Child & Family Information</Label>
                             <Textarea
                                 id="summary"
                                 defaultValue={child.summary}

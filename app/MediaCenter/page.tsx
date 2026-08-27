@@ -1,45 +1,43 @@
-"use client";
-
-import { useState } from "react";
-import GallerySection from "@/components/gallery";
-import MediaArticles from "@/components/Grid";
-import MediaCategories from "@/components/MediaCategories";
-import MediaFeaturedStory from "@/components/MediaFeaturedStory";
-import MediaHero from "@/components/MediaHero";
-import MediaTestimonials from "@/components/MediaTestimonials";
+import { prisma } from "@/lib/prisma";
+import { getR2ObjectUrl } from "@/lib/r2";
 import NewsletterArchive from "@/components/NewsletterArchive";
 import ReportsArchive from "@/components/ReportsArchive";
 
-export default function MediaCenterPage() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+export default async function MediaCenterPage() {
+  const [newsletters, reports] = await Promise.all([
+    prisma.newsletter.findMany({
+      where: { published: true },
+      select: {
+        id: true,
+        title: true,
+        imageUrl: true,
+        pdfUrl: true,
+        summary: true,
+        createdAt: true,
+      },
+      orderBy: { createdAt: "desc" },
+    }),
+    prisma.report.findMany({
+      select: { id: true, title: true, fileUrl: true, createdAt: true },
+      orderBy: { createdAt: "desc" },
+    }),
+  ]);
 
   return (
     <>
-      <MediaHero />
-      <MediaCategories
-        selectedCategory={selectedCategory}
-        onCategoryChange={setSelectedCategory}
+      <NewsletterArchive
+        newsletters={newsletters.map((newsletter) => ({
+          ...newsletter,
+          imageUrl: newsletter.imageUrl ? getR2ObjectUrl(newsletter.imageUrl) : null,
+          pdfUrl: newsletter.pdfUrl ? getR2ObjectUrl(newsletter.pdfUrl) : null,
+        }))}
       />
-
-      {(selectedCategory === "All" || selectedCategory === "Stories") && (
-        <MediaFeaturedStory />
-      )}
-
-      {(selectedCategory === "All" || selectedCategory === "Updates") && (
-        <MediaArticles />
-      )}
-
-      {(selectedCategory === "All" || selectedCategory === "Testimonials") && (
-        <MediaTestimonials />
-      )}
-
-      {(selectedCategory === "All" || selectedCategory === "Newsletters") && (
-        <NewsletterArchive />
-      )}
-
-      {(selectedCategory === "All" || selectedCategory === "Reports") && (
-        <ReportsArchive />
-      )}
+      <ReportsArchive
+        reports={reports.map((report) => ({
+          ...report,
+          fileUrl: getR2ObjectUrl(report.fileUrl),
+        }))}
+      />
     </>
   );
 }

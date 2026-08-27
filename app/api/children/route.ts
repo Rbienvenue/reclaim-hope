@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { verifySessionToken, SESSION_COOKIE_NAME } from "@/lib/auth";
 import { revalidatePath } from "next/cache";
 import { PutObjectCommand } from "@aws-sdk/client-s3";
-import { r2, R2_BUCKET_NAME } from "@/lib/r2";
+import { getR2ObjectUrl, r2, R2_BUCKET_NAME } from "@/lib/r2";
 
 const ACCEPTED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp", "image/avif"];
 const MAX_IMAGE_SIZE = 10 * 1024 * 1024;
@@ -112,7 +112,7 @@ export async function GET() {
         name: `${c.firstName} ${c.lastName}`.trim(),
         dateOfBirth: c.dateOfBirth,
         dream: c.dream,
-        imageUrl: c.imageUrl,
+        imageUrl: c.imageUrl ? getR2ObjectUrl(c.imageUrl) : null,
         summary: c.summary,
         story: c.story,
         isSponsored: !!activeSponsorship,

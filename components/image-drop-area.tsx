@@ -13,7 +13,7 @@ const getImageSrc = (imageUrl: string) => {
     return imageUrl;
   }
 
-  return `/${imageUrl}`;
+  return `/api/r2/${imageUrl}`;
 };
 
 interface ImageDropzoneProps {
