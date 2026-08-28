@@ -364,6 +364,8 @@ export async function verifyPaymentAction(paymentId: string) {
     revalidatePath("/sponsor")
     revalidatePath("/donate")
     revalidatePath("/admin/sponsors")
+    revalidatePath("/admin/donations")
+    revalidatePath("/admin/payments")
     revalidatePath("/admin/children")
 
     return {

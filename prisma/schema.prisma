@@ -44,12 +44,7 @@ enum PaymentStatus {
 }
 
 enum PaymentProvider {
-  NOT_CONFIGURED
-  MANUAL
-  STRIPE
-  FLUTTERWAVE
-  PAYPACK
-  MOMO
+  IPAY
 }
 
 model Child {
@@ -101,8 +96,8 @@ model Sponsorship {
   startedAt  DateTime?
   endedAt    DateTime?
 
-  donor      Donor                @relation(fields: [donorId], references: [id])
-  child      Child                @relation(fields: [childId], references: [id])
+  donor      Donor                @relation(fields: [donorId], references: [id], onDelete: Cascade)
+  child      Child                @relation(fields: [childId], references: [id], onDelete: Cascade)
 
   payments   Payment[]
 
@@ -125,7 +120,7 @@ model Donation {
   category  DonationCategory
   status    DonationStatus   @default(PENDING)
 
-  donor     Donor?           @relation(fields: [donorId], references: [id])
+  donor     Donor?           @relation(fields: [donorId], references: [id], onDelete: Cascade)
 
   payments  Payment[]
 
@@ -149,13 +144,13 @@ model Payment {
   amount        Decimal         @db.Decimal(10, 2)
   currency      String
 
-  provider      PaymentProvider @default(NOT_CONFIGURED)
+  provider      PaymentProvider @default(IPAY)
   status        PaymentStatus   @default(PENDING)
 
   paidAt        DateTime?
 
-  sponsorship   Sponsorship?    @relation(fields: [sponsorshipId], references: [id])
-  donation      Donation?       @relation(fields: [donationId], references: [id])
+  sponsorship   Sponsorship?    @relation(fields: [sponsorshipId], references: [id], onDelete: Cascade)
+  donation      Donation?       @relation(fields: [donationId], references: [id], onDelete: Cascade)
 
   createdAt     DateTime        @default(now())
   updatedAt     DateTime        @updatedAt

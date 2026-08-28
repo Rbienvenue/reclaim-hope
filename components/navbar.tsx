@@ -31,7 +31,7 @@ export default function Navbar() {
     };
 
     return (
-        <div className="w-full bg-white md:flex items-center justify-between px-10 py-4 shadow-sm">
+        <div className="w-full bg-white md:flex items-center justify-between px-10 shadow-sm">
             <nav className="flex justify-between w-full" >
 
                 {/* Logo */}
@@ -40,7 +40,7 @@ export default function Navbar() {
                     <img
                         src="/logo.png"
                         alt="Reclaim hope logo"
-                        className="h-12 w-auto"
+                        className="h-[80px] w-auto"
                     />
                 </a>
 

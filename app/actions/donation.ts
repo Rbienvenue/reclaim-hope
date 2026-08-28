@@ -3,6 +3,8 @@
 import { prisma } from "@/lib/prisma"
 import { revalidatePath } from "next/cache"
 import { DonorInput } from "./sponsorship"
+import IremboPay from "@irembo/irembopay-node-sdk";
+const iPay = new IremboPay(process.env.IPAY_SECRET_KEY, process.env.IPAY_ENVIRONMENT)
 
 export type DonationCategoryType = 'MEALS' | 'HEALTH' | 'EDUCATION' | 'LOVE_GIFT'
 
@@ -13,6 +15,34 @@ export interface CreateDonationInput {
   donor?: DonorInput & { message?: string }
 }
 
+
+async function createIpayInvoice({ donor }: { donor: any }, amount: number, currency: string, category: string, paymentId: string) {
+   iPay.invoice.createInvoice({
+    transactionId: paymentId,
+    paymentAccountIdentifier: "07808652516",
+    customer: {
+      email: donor?.email,
+      phoneNumber: "0780000001",
+      name: donor?.firstName + " " + donor?.lastName,
+    },
+    paymentItems: [
+      {
+        unitAmount: amount,
+        quantity: 1,
+        code: "PC-aaf751b73f",
+      },
+    ],
+    description: "test",
+    language: "EN",
+  }).then((data: any) => {
+    console.log(data);
+  }).catch((error: any) => {
+    console.log(error);
+  });
+
+  
+
+}
 function generateReference(prefix: string): string {
   const timestamp = Date.now().toString(36).toUpperCase()
   const random = Math.random().toString(36).substring(2, 6).toUpperCase()
@@ -76,7 +106,7 @@ export async function createPendingDonation(input: CreateDonationInput) {
           reference,
           amount,
           currency,
-          provider: "NOT_CONFIGURED",
+          provider: "IPAY",
           status: "PENDING",
         },
       })
@@ -84,8 +114,11 @@ export async function createPendingDonation(input: CreateDonationInput) {
       return { donation, payment }
     })
 
+    await createIpayInvoice({ donor }, amount, currency, category, result.payment.id)
     revalidatePath("/donate")
     revalidatePath("/admin/sponsors")
+    revalidatePath("/admin/donations")
+    revalidatePath("/admin/payments")
 
     return {
       success: true,
@@ -105,10 +138,10 @@ export async function createPendingDonation(input: CreateDonationInput) {
       },
       donor: donor
         ? {
-            id: donor.id,
-            name: `${donor.firstName} ${donor.lastName}`.trim(),
-            email: donor.email,
-          }
+          id: donor.id,
+          name: `${donor.firstName} ${donor.lastName}`.trim(),
+          email: donor.email,
+        }
         : null,
     }
   } catch (error: any) {
@@ -141,18 +174,18 @@ export async function getDonationsList() {
       createdAt: d.createdAt.toISOString(),
       donor: d.donor
         ? {
-            name: `${d.donor.firstName} ${d.donor.lastName}`.trim(),
-            email: d.donor.email,
-            country: d.donor.country,
-          }
+          name: `${d.donor.firstName} ${d.donor.lastName}`.trim(),
+          email: d.donor.email,
+          country: d.donor.country,
+        }
         : null,
       latestPayment: d.payments[0]
         ? {
-            id: d.payments[0].id,
-            reference: d.payments[0].reference,
-            status: d.payments[0].status,
-            paidAt: d.payments[0].paidAt?.toISOString() || null,
-          }
+          id: d.payments[0].id,
+          reference: d.payments[0].reference,
+          status: d.payments[0].status,
+          paidAt: d.payments[0].paidAt?.toISOString() || null,
+        }
         : null,
     }))
   } catch (error) {

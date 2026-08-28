@@ -15,7 +15,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { LayoutDashboardIcon, ListIcon, ChartBarIcon, FolderIcon, UsersIcon, CameraIcon, FileTextIcon, Settings2Icon, CircleHelpIcon, SearchIcon, DatabaseIcon, FileChartColumnIcon, FileIcon, CommandIcon, VideoIcon, File, LogOut, Mail, ClipboardList } from "lucide-react"
+import { LayoutDashboardIcon, ListIcon, ChartBarIcon, FolderIcon, UsersIcon, CameraIcon, FileTextIcon, Settings2Icon, CircleHelpIcon, SearchIcon, DatabaseIcon, FileChartColumnIcon, FileIcon, CommandIcon, VideoIcon, File, LogOut, Mail, ClipboardList, UsersRound, HandCoins, CreditCard } from "lucide-react"
 import { FaChild } from "react-icons/fa6"
 import { GoSponsorTiers } from "react-icons/go"
 import { SiMediapipe } from "react-icons/si"
@@ -50,6 +50,27 @@ const data = {
       ),
     },
     {
+      title: "Donors",
+      url: "/admin/donors",
+      icon: (
+        <UsersRound />
+      ),
+    },
+    {
+      title: "Donations",
+      url: "/admin/donations",
+      icon: (
+        <HandCoins />
+      ),
+    },
+    {
+      title: "Payments",
+      url: "/admin/payments",
+      icon: (
+        <CreditCard />
+      ),
+    },
+    {
       title: "Newsletters",
       url: "/admin/newsletters",
       icon: (
@@ -79,20 +100,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
         <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton
-              asChild
-              className="data-[slot=sidebar-menu-button]:p-1.5!"
-            >
-              <Image
+          <Image
                 alt="reclaim hope logo"
                 src="/logo.png"
-                width={160}
-                height={60}
-                className="h-[120px] w-auto object-contain"
+                width={100}
+                height={100}
+                className="h-[160px] w-[160px] rounded-full object-contain "
               />
-            </SidebarMenuButton>
-          </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent >
