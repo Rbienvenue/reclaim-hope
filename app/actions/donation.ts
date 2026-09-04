@@ -7,22 +7,37 @@ import IremboPay from "@irembo/irembopay-node-sdk";
 const iPay = new IremboPay(process.env.IPAY_SECRET_KEY, process.env.IPAY_ENVIRONMENT)
 
 export type DonationCategoryType = 'MEALS' | 'HEALTH' | 'EDUCATION' | 'LOVE_GIFT'
+export type DonationPaymentMethod = 'MTN_MOMO' | 'AIRTEL_MONEY' | 'CARD' | 'BANK'
+export type DonationBank = 'GT_BANK' | 'EQUITY_BANK' | 'BPR_BANK' | 'ECOBANK' | 'BANK_OF_KIGALI' | 'IM_BANK'
 
 export interface CreateDonationInput {
   category: DonationCategoryType
   amount: number
-  currency?: 'USD' | 'RWF'
+  currency: 'USD' | 'RWF'
+  paymentMethod: DonationPaymentMethod
+  bank?: DonationBank
   donor?: DonorInput & { message?: string }
 }
 
+type InvoiceDonor = Pick<DonorInput, 'firstName' | 'lastName' | 'email'> & {
+  phoneNumber: string | null
+}
 
-async function createIpayInvoice({ donor }: { donor: any }, amount: number, currency: string, category: string, paymentId: string) {
-   iPay.invoice.createInvoice({
+async function createIpayInvoice({ donor }: { donor: InvoiceDonor | null }, amount: number, currency: 'USD' | 'RWF', category: string, paymentId: string, bank?: DonationBank): Promise<{ invoiceNumber: string; paymentLinkUrl?: string }> {
+  const paymentAccountIdentifier = currency === 'RWF'
+    ? process.env.IPAY_RWF_ACCOUNT_IDENTIFIER
+    : process.env.IPAY_USD_ACCOUNT_IDENTIFIER
+
+  if (!paymentAccountIdentifier) {
+    throw new Error(`IremboPay ${currency} account identifier is not configured.`)
+  }
+
+  const invoice = await iPay.invoice.createInvoice({
     transactionId: paymentId,
-    paymentAccountIdentifier: "07808652516",
+    paymentAccountIdentifier,
     customer: {
       email: donor?.email,
-      phoneNumber: "0780000001",
+      phoneNumber: donor?.phoneNumber,
       name: donor?.firstName + " " + donor?.lastName,
     },
     paymentItems: [
@@ -32,15 +47,18 @@ async function createIpayInvoice({ donor }: { donor: any }, amount: number, curr
         code: "PC-aaf751b73f",
       },
     ],
-    description: "test",
+    description: `Donation for ${category}${bank ? ` via ${bank}` : ''}`,
     language: "EN",
-  }).then((data: any) => {
-    console.log(data);
-  }).catch((error: any) => {
-    console.log(error);
-  });
+  }) as { invoiceNumber?: string; paymentLinkUrl?: string }
 
-  
+  if (!invoice?.invoiceNumber) {
+    throw new Error("IremboPay did not return an invoice number.")
+  }
+
+  return {
+    invoiceNumber: invoice.invoiceNumber,
+    paymentLinkUrl: invoice.paymentLinkUrl,
+  }
 
 }
 function generateReference(prefix: string): string {
@@ -54,7 +72,15 @@ function generateReference(prefix: string): string {
  */
 export async function createPendingDonation(input: CreateDonationInput) {
   try {
-    const { category, amount, currency = "USD", donor: donorInput } = input
+    const { category, amount, currency, paymentMethod, bank, donor: donorInput } = input
+
+    const expectedCurrency = paymentMethod === 'CARD' ? 'USD' : 'RWF'
+    if (paymentMethod === 'BANK' && !bank) {
+      return { success: false, error: "Please choose a bank for your payment." }
+    }
+    if (currency !== expectedCurrency) {
+      return { success: false, error: `${paymentMethod === 'CARD' ? 'Card payments' : 'Mobile money payments'} must use ${expectedCurrency}.` }
+    }
 
     if (!amount || isNaN(amount) || amount <= 0) {
       return { success: false, error: "Please enter a valid donation amount." }
@@ -114,7 +140,7 @@ export async function createPendingDonation(input: CreateDonationInput) {
       return { donation, payment }
     })
 
-    await createIpayInvoice({ donor }, amount, currency, category, result.payment.id)
+    const invoice = await createIpayInvoice({ donor }, amount, currency, category, result.payment.id, bank)
     revalidatePath("/donate")
     revalidatePath("/admin/sponsors")
     revalidatePath("/admin/donations")
@@ -135,6 +161,8 @@ export async function createPendingDonation(input: CreateDonationInput) {
         amount: Number(result.payment.amount),
         currency: result.payment.currency,
         status: result.payment.status,
+        invoiceNumber: invoice.invoiceNumber,
+        paymentLinkUrl: invoice.paymentLinkUrl || null,
       },
       donor: donor
         ? {
@@ -144,9 +172,9 @@ export async function createPendingDonation(input: CreateDonationInput) {
         }
         : null,
     }
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error creating pending donation:", error)
-    return { success: false, error: error.message || "Failed to initiate donation." }
+    return { success: false, error: error instanceof Error ? error.message : "Failed to initiate donation." }
   }
 }
 

@@ -5,6 +5,7 @@ import "./globals.css";
 import AOSInit from "@/components/AOSInit";
 import ConditionalNavFooter from "@/components/ConditionalNavFooter";
 import { Toaster } from "@/components/ui/sonner";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -145,6 +146,10 @@ export default function RootLayout({
           {children}
         </ConditionalNavFooter>
         <Toaster richColors position="top-right" />
+        <Script
+          src={`${process.env.IPAY_ENVIRONMENT === "production" ? "https://dashboard.irembopay.com" : "https://dashboard.sandbox.irembopay.com"}/assets/payment/inline.js`}
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

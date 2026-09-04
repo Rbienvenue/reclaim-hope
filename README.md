@@ -16,6 +16,12 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## IremboPay Configuration
+
+Copy `.env.example` to `.env` and provide the IremboPay credentials and payment account identifiers. The RWF account is used for MTN MoMo and Airtel Money; the USD account is used for card payments. `NEXT_PUBLIC_IPAY_PUBLIC_KEY` is used by the browser checkout widget.
+
+The donation form uses IremboPay's inline widget, which supports MTN Mobile Money, Airtel Money, Visa, MasterCard, and American Express.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.

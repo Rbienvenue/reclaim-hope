@@ -12,7 +12,6 @@ import {
   ArrowLeft,
   Building2,
   Sparkles,
-  FileCheck,
   ShieldCheck,
   Heart,
   DollarSign,
@@ -22,19 +21,29 @@ import {
   Phone,
   MapPin,
   MessageSquareQuote,
+  Smartphone,
+  CreditCard,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import {
   createPendingDonation,
   DonationCategoryType,
+  DonationBank,
+  DonationPaymentMethod,
 } from '@/app/actions/donation';
-import { verifyPaymentAction } from '@/app/actions/sponsorship';
 import { toast } from 'sonner';
 
-type Step = 'category' | 'amount' | 'donor_info' | 'review' | 'pending_gateway' | 'confirmed';
+type Step = 'category' | 'amount' | 'donor_info' | 'review' | 'pending_gateway';
 
 interface CategoryOption {
   key: DonationCategoryType;
@@ -83,11 +92,38 @@ const CATEGORIES: CategoryOption[] = [
 const PRESET_AMOUNTS_USD = [25, 50, 100, 250, 500];
 const PRESET_AMOUNTS_RWF = [25000, 50000, 100000, 250000, 500000];
 
+const PAYMENT_METHODS: { key: DonationPaymentMethod; title: string; subtitle: string; icon: typeof Smartphone }[] = [
+  { key: 'MTN_MOMO', title: 'MTN MoMo', subtitle: 'Pay with MTN Mobile Money', icon: Smartphone },
+  { key: 'AIRTEL_MONEY', title: 'Airtel Money', subtitle: 'Pay with Airtel Money', icon: Smartphone },
+  { key: 'CARD', title: 'Cards', subtitle: 'Visa, MasterCard, or American Express', icon: CreditCard },
+  { key: 'BANK', title: 'Bank transfer', subtitle: 'Pay from a supported Rwandan bank', icon: Building2 },
+];
+
+const BANKS: { key: DonationBank; title: string }[] = [
+  { key: 'GT_BANK', title: 'GT Bank' },
+  { key: 'EQUITY_BANK', title: 'Equity Bank' },
+  { key: 'BPR_BANK', title: 'BPR Bank' },
+  { key: 'ECOBANK', title: 'Ecobank' },
+  { key: 'BANK_OF_KIGALI', title: 'Bank of Kigali (BK)' },
+  { key: 'IM_BANK', title: 'I&M Bank (I&M)' },
+];
+
+declare global {
+  interface Window {
+    IremboPay?: {
+      locale: { EN: string };
+      initiate: (options: { publicKey: string; invoiceNumber: string; locale: string; callback: (error: unknown, response: unknown) => void }) => void;
+    };
+  }
+}
+
 export default function DonationForm() {
   const [step, setStep] = useState<Step>('category');
   const [category, setCategory] = useState<DonationCategoryType>('MEALS');
-  const [currency, setCurrency] = useState<'USD' | 'RWF'>('USD');
-  const [amount, setAmount] = useState<number>(50);
+  const [paymentMethod, setPaymentMethod] = useState<DonationPaymentMethod>('MTN_MOMO');
+  const [bank, setBank] = useState<DonationBank>('GT_BANK');
+  const [currency, setCurrency] = useState<'USD' | 'RWF'>('RWF');
+  const [amount, setAmount] = useState<number>(50000);
   const [customAmount, setCustomAmount] = useState<string>('');
 
   const [donor, setDonor] = useState({
@@ -108,12 +144,8 @@ export default function DonationForm() {
     amount: number;
     currency: string;
     category: string;
-  } | null>(null);
-
-  const [verifiedData, setVerifiedData] = useState<{
-    transactionId: string;
-    reference: string;
-    paidAt: string;
+    invoiceNumber: string;
+    paymentLinkUrl: string | null;
   } | null>(null);
 
   const activeCategory = CATEGORIES.find((c) => c.key === category) || CATEGORIES[0];
@@ -147,6 +179,8 @@ export default function DonationForm() {
         category,
         amount: currentAmount,
         currency,
+        paymentMethod,
+        bank: paymentMethod === 'BANK' ? bank : undefined,
         donor,
       });
 
@@ -162,50 +196,51 @@ export default function DonationForm() {
         amount: res.payment.amount,
         currency: res.payment.currency,
         category: res.donation.category,
+        invoiceNumber: res.payment.invoiceNumber,
+        paymentLinkUrl: res.payment.paymentLinkUrl,
       });
 
       toast.success('Donation initiated! Status: PENDING');
       setStep('pending_gateway');
-    } catch (err: any) {
-      toast.error(err.message || 'An error occurred.');
+    } catch (err: unknown) {
+      toast.error(err instanceof Error ? err.message : 'An error occurred.');
     } finally {
       setIsLoading(false);
     }
   };
 
-  const handleSimulatePaymentVerification = async () => {
-    if (!createdData?.paymentId) return;
+  const handleOpenIremboPay = () => {
+    if (!createdData?.invoiceNumber) return;
 
-    try {
-      setIsLoading(true);
-      const res = await verifyPaymentAction(createdData.paymentId);
-
-      if (!res.success || !res.payment) {
-        toast.error(res.error || 'Failed to verify payment.');
-        return;
-      }
-
-      setVerifiedData({
-        transactionId: res.payment.transactionId || `TXN-${Date.now()}`,
-        reference: res.payment.reference,
-        paidAt: res.payment.paidAt || new Date().toISOString(),
-      });
-
-      toast.success('Payment verified! Donation is now COMPLETED.');
-      setStep('confirmed');
-    } catch (err: any) {
-      toast.error(err.message || 'Simulation failed.');
-    } finally {
-      setIsLoading(false);
+    if (!window.IremboPay) {
+      toast.error('The IremboPay checkout is still loading. Please try again.');
+      return;
     }
+
+    const publicKey = process.env.NEXT_PUBLIC_IPAY_PUBLIC_KEY;
+    if (!publicKey) {
+      toast.error('IremboPay is not configured yet.');
+      return;
+    }
+
+    window.IremboPay.initiate({
+      publicKey,
+      invoiceNumber: createdData.invoiceNumber,
+      locale: window.IremboPay.locale.EN,
+      callback: (error) => {
+        if (error) toast.error('Payment was not completed. Please try again.');
+        else toast.success('Payment submitted. We are waiting for confirmation.');
+      },
+    });
   };
 
   const resetDonation = () => {
     setStep('category');
     setCreatedData(null);
-    setVerifiedData(null);
     setCustomAmount('');
-    setAmount(50);
+    setPaymentMethod('MTN_MOMO');
+    setCurrency('RWF');
+    setAmount(50000);
   };
 
   return (
@@ -244,7 +279,7 @@ export default function DonationForm() {
             </div>
             <div className="w-4 h-0.5 bg-gray-200" />
             <div className={`flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full ${
-              step === 'review' || step === 'pending_gateway' || step === 'confirmed' ? 'bg-yellow-500 text-white shadow-sm' : 'bg-gray-100 text-gray-600'
+              step === 'review' || step === 'pending_gateway' ? 'bg-yellow-500 text-white shadow-sm' : 'bg-gray-100 text-gray-600'
             }`}>
               <span>4. Complete</span>
             </div>
@@ -330,40 +365,57 @@ export default function DonationForm() {
                   </p>
                 </div>
 
-                {/* Currency Switcher */}
-                <div className="flex items-center bg-gray-100 p-1 rounded-xl self-start">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setCurrency('USD');
-                      setAmount(50);
-                      setCustomAmount('');
-                    }}
-                    className={`px-4 py-1.5 rounded-lg text-xs font-bold transition ${
-                      currency === 'USD'
-                        ? 'bg-white text-gray-900 shadow-sm'
-                        : 'text-gray-600 hover:text-gray-900'
-                    }`}
-                  >
-                    USD ($)
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setCurrency('RWF');
-                      setAmount(50000);
-                      setCustomAmount('');
-                    }}
-                    className={`px-4 py-1.5 rounded-lg text-xs font-bold transition ${
-                      currency === 'RWF'
-                        ? 'bg-white text-gray-900 shadow-sm'
-                        : 'text-gray-600 hover:text-gray-900'
-                    }`}
-                  >
-                    RWF (Frw)
-                  </button>
+              </div>
+
+              <div>
+                <Label className="text-sm font-semibold text-gray-700">Choose a payment method</Label>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-2">
+                  {PAYMENT_METHODS.map((method) => {
+                    const Icon = method.icon;
+                    const isSelected = paymentMethod === method.key;
+                    return (
+                      <button
+                        key={method.key}
+                        type="button"
+                        onClick={() => {
+                          setPaymentMethod(method.key);
+                          const nextCurrency = method.key === 'CARD' ? 'USD' : 'RWF';
+                          setCurrency(nextCurrency);
+                          setAmount(nextCurrency === 'USD' ? 50 : 50000);
+                          setCustomAmount('');
+                        }}
+                        className={`text-left p-4 rounded-xl border-2 transition ${isSelected ? 'border-yellow-500 bg-yellow-50 shadow-sm' : 'border-gray-200 hover:border-gray-300'}`}
+                        aria-pressed={isSelected}
+                      >
+                        <Icon className={`w-5 h-5 mb-3 ${isSelected ? 'text-yellow-700' : 'text-gray-500'}`} />
+                        <span className="block text-sm font-bold text-gray-900">{method.title}</span>
+                        <span className="block text-xs text-gray-500 mt-1">{method.subtitle}</span>
+                        <span className="block text-xs font-semibold text-yellow-700 mt-2">Currency: {method.key === 'CARD' ? 'USD' : 'RWF'}</span>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
+
+              {paymentMethod === 'BANK' && (
+                <div>
+                  <Label htmlFor="donation-bank" className="text-sm font-semibold text-gray-700">Choose your bank</Label>
+                  <Select
+                    value={bank}
+                    onValueChange={(value) => setBank(value as DonationBank)}
+                  >
+                    <SelectTrigger id="donation-bank" className="mt-2 h-12 w-full rounded-xl border-gray-200 bg-white px-4 text-sm text-gray-900 focus:border-yellow-500 focus:ring-yellow-500/20">
+                      <SelectValue placeholder="Select your bank" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {BANKS.map((bankOption) => (
+                        <SelectItem key={bankOption.key} value={bankOption.key}>{bankOption.title}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <p className="mt-2 text-xs text-gray-500">Bank payments are processed in RWF through IremboPay.</p>
+                </div>
+              )}
 
               {/* Preset Amounts Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
@@ -663,10 +715,10 @@ export default function DonationForm() {
                   Status: Pending Payment
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
-                  Payment Gateway Integration Pending
+                  Payment Awaiting Confirmation
                 </h3>
                 <p className="text-sm text-gray-600 max-w-md mx-auto mt-2">
-                  Your donation for <strong>{activeCategory.title}</strong> has been registered. Payment gateway integration will be connected shortly.
+                  Your donation for <strong>{activeCategory.title}</strong> has been registered. Complete payment in the IremboPay checkout, then we will update your donation when IremboPay confirms it.
                 </p>
               </div>
 
@@ -688,17 +740,16 @@ export default function DonationForm() {
                 </div>
               </div>
 
-              {/* Simulation Action */}
-              <div className="pt-2 max-w-md mx-auto space-y-3">
-                <Button
-                  onClick={handleSimulatePaymentVerification}
-                  disabled={isLoading}
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-6 rounded-2xl font-bold text-base shadow-lg shadow-emerald-600/25 flex items-center justify-center gap-2"
-                >
-                  <CheckCircle2 className="w-5 h-5" />
-                  {isLoading ? 'Verifying...' : 'Simulate Payment Verification (Demo Mode)'}
-                </Button>
+              <Button
+                onClick={handleOpenIremboPay}
+                disabled={isLoading}
+                className="w-full max-w-md mx-auto bg-yellow-500 hover:bg-yellow-600 text-white py-6 rounded-2xl font-bold text-base shadow-lg shadow-yellow-500/25 flex items-center justify-center gap-2"
+              >
+                <ArrowRight className="w-5 h-5" />
+                Open IremboPay Checkout
+              </Button>
 
+              <div className="pt-2 max-w-md mx-auto">
                 <Button
                   type="button"
                   variant="outline"
@@ -706,66 +757,6 @@ export default function DonationForm() {
                   className="w-full text-gray-600 rounded-xl py-3 text-sm"
                 >
                   Save as Pending & Return
-                </Button>
-              </div>
-            </div>
-          )}
-
-          {/* STEP 6: CONFIRMED / THANK-YOU CONFIRMATION */}
-          {step === 'confirmed' && (
-            <div className="p-6 sm:p-10 space-y-6 text-center">
-              <div className="w-20 h-20 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center shadow-lg">
-                <CheckCircle2 className="w-10 h-10" />
-              </div>
-
-              <div>
-                <span className="inline-block px-3.5 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
-                  Status: Donation Completed
-                </span>
-                <h3 className="text-3xl font-extrabold text-gray-900">
-                  Thank You for Your Generous Support!
-                </h3>
-                <p className="text-sm text-gray-600 max-w-md mx-auto mt-2">
-                  Your donation to <strong>{activeCategory.title}</strong> has been successfully received and recorded.
-                </p>
-              </div>
-
-              {/* Receipt Summary */}
-              <div className="bg-emerald-50/50 border border-emerald-200 rounded-2xl p-6 text-left space-y-3 max-w-lg mx-auto">
-                <div className="flex items-center gap-2 text-emerald-900 font-bold text-sm pb-2 border-b border-emerald-200">
-                  <FileCheck className="w-4 h-4 text-emerald-600" />
-                  Official Donation Receipt
-                </div>
-                <div className="flex justify-between text-xs text-gray-600">
-                  <span>Reference ID:</span>
-                  <span className="font-mono font-bold text-gray-900">{verifiedData?.reference || createdData?.reference}</span>
-                </div>
-                <div className="flex justify-between text-xs text-gray-600">
-                  <span>Transaction ID:</span>
-                  <span className="font-mono font-semibold text-gray-800">{verifiedData?.transactionId}</span>
-                </div>
-                <div className="flex justify-between text-xs text-gray-600">
-                  <span>Target Purpose:</span>
-                  <span className="font-bold text-gray-900">{activeCategory.title}</span>
-                </div>
-                <div className="flex justify-between text-xs text-gray-600">
-                  <span>Amount Paid:</span>
-                  <span className="font-bold text-emerald-700">
-                    {currency === 'USD' ? `$${currentAmount} USD` : `${currentAmount.toLocaleString()} RWF`}
-                  </span>
-                </div>
-                <div className="flex justify-between text-xs text-gray-600">
-                  <span>Donor:</span>
-                  <span className="font-medium text-gray-900">{donor.firstName} {donor.lastName} ({donor.email})</span>
-                </div>
-              </div>
-
-              <div className="pt-2 max-w-md mx-auto">
-                <Button
-                  onClick={resetDonation}
-                  className="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-6 rounded-2xl font-bold text-base shadow-lg shadow-yellow-500/25"
-                >
-                  Make Another Donation
                 </Button>
               </div>
             </div>
