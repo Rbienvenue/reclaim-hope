@@ -11,10 +11,7 @@ import DonateFinalCTA from '@/components/DonateFinalCTA';
 export default function DonatePage() {
   return (
     <div className="min-h-screen">
-      <DonateHero />
-      <SuggestedAmounts />
       <DonationForm />
-      <ImpactTransparency />
       <DonateFAQ />
     </div>
   );

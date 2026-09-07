@@ -3,8 +3,6 @@ export default function StillHaveQuestion() {
         <>
             <div
                 className="text-center mt-12 bg-blue-50 border border-blue-200 rounded-xl p-8"
-                data-aos="fade-up"
-                data-aos-delay="600"
             >
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     Still Have Questions?

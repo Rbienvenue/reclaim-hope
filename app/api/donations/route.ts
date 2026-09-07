@@ -1,6 +1,6 @@
+import { Donor } from "@/lib/generated/prisma/client";
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
-
 
 export async function GET() {
   try {
@@ -46,8 +46,107 @@ export async function GET() {
     console.error("Error fetching donations:", error);
     return NextResponse.json(
       { success: false, error: "Failed to fetch donations." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
+const IremboPay = require("@irembo/irembopay-node-sdk").default;
+const iPay = new IremboPay(
+  process.env.IPAY_SECRET_KEY,
+  process.env.IPAY_ENVIRONMENT,
+);
+export async function POST(request: Request) {
+  try {
+    const data = await request.formData();
+    const firstName = data.get("firstName") as string;
+    const lastName = data.get("lastName") as string;
+    const email = data.get("email") as string;  
+    const phoneNumber = data.get("phoneNumber") as string;
+    const amount = Number(data.get("amount"));
+    const currency = "USD"; // Default to USD for now, you can change this based on your requirements
 
+    console.log("Received donation data:", {
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      amount,
+      currency,
+    });
+    const donor = await prisma.donor.create({
+      data: {
+        firstName,
+        lastName,
+        email,
+        phoneNumber,
+      },
+    });
+
+    const donation = await prisma.donation.create({
+      data: {
+        amount,
+        currency,
+        donorId: donor.id,
+      },
+    });
+
+   const invoiceData = await createIpayInvoice({ donor }, amount, "USD", donation.id);
+
+   console.log("Invoice Data:", invoiceData);
+
+    return NextResponse.json(
+      {
+        success: true,
+        invoiceNumber: invoiceData.invoiceNumber,
+        paymentLinkUrl: invoiceData.paymentLinkUrl,
+      },
+      { status: 201 },
+    );
+
+  } catch (error) {
+    console.error("Error creating donation:", error);
+    return NextResponse.json(
+      { success: false, error: "Failed to create donation." },
+      { status: 500 },
+    );
+  }
+}
+async function createIpayInvoice(
+  { donor }: { donor: Donor },
+  amount: number,
+  currency: "USD" | "RWF",
+  paymentId: string,
+) {
+  const paymentAccountIdentifier =
+    currency === "RWF"
+      ? process.env.IPAY_RWF_ACCOUNT_IDENTIFIER
+      : process.env.IPAY_USD_ACCOUNT_IDENTIFIER;
+
+  if (!paymentAccountIdentifier) {
+    throw new Error(
+      `IremboPay ${currency} account identifier is not configured.`,
+    );
+  }
+
+  const invoice = (await iPay.invoice.createInvoice({
+    transactionId: paymentId,
+    paymentAccountIdentifier,
+    customer: {
+      email: donor?.email,
+      phoneNumber: donor?.phoneNumber,
+      name: donor?.firstName + " " + donor?.lastName,
+    },
+    paymentItems: [
+      {
+        unitAmount: amount,
+        quantity: 1,
+        code: process.env.IPAY_PRODUCT_IDENTIFIER_USD,
+      },
+    ],
+    description: `testing donations sandbox`,
+    language: "EN",
+  })) as { data: { invoiceNumber?: string; paymentLinkUrl?: string } };
+
+  console.log("IremboPay Invoice Response:", invoice.data);
+  return invoice.data;
+}

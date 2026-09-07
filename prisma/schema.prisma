@@ -67,7 +67,7 @@ model Donor {
   id           String        @id @default(cuid())
   firstName    String
   lastName     String
-  email        String        @unique
+  email        String        
   phoneNumber  String?
   country      String?
   address      String?
@@ -117,7 +117,7 @@ model Donation {
   amount    Decimal          @db.Decimal(10, 2)
   currency  String           @default("RWF")
 
-  category  DonationCategory
+  category  DonationCategory?
   status    DonationStatus   @default(PENDING)
 
   donor     Donor?           @relation(fields: [donorId], references: [id], onDelete: Cascade)
